@@ -42,18 +42,12 @@
     </v-app-bar>
     <v-content>
       <v-container class="fill-height" fluid>
-        <v-row align="center" justify="center">
-          <vue-page-transition name="overlay-right">
-            <!-- component matched by the route will render here -->
-            <router-view></router-view>
-          </vue-page-transition>
-        </v-row>
+        <vue-page-transition name="overlay-right">
+          <!-- component matched by the route will render here -->
+          <router-view></router-view>
+        </vue-page-transition>
       </v-container>
     </v-content>
-
-    <v-btn bottom color="pink" dark fab fixed right>
-      <v-icon>mdi-plus</v-icon>
-    </v-btn>
   </v-app>
 </template>
 
@@ -76,27 +70,3 @@ export default {
   })
 };
 </script>
-
-<style scoped>
-.slide-left-enter-active,
-.slide-left-leave-active,
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition-duration: 2s;
-  transition-property: height, opacity, transform;
-  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  overflow: hidden;
-}
-
-.slide-left-enter,
-.slide-right-leave-active {
-  opacity: 0;
-  transform: translate(2em, 0);
-}
-
-.slide-left-leave-active,
-.slide-right-enter {
-  opacity: 0;
-  transform: translate(-2em, 0);
-}
-</style>
