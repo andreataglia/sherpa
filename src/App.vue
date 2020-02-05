@@ -1,9 +1,10 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :clipped="$vuetify.breakpoint.lgAndUp"
       app
+      right
     >
       <v-list dense>
         <template v-for="item in items">
@@ -24,10 +25,9 @@
     <v-app-bar
       :clipped-left="$vuetify.breakpoint.lgAndUp"
       app
-      color="blue darken-3"
-      dark
+      hide-on-scroll
+      dense
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
         <span>Sherpa</span>
       </v-toolbar-title>
@@ -39,14 +39,13 @@
             alt="Sherpa"
         /></v-avatar>
       </v-btn>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
     <v-content>
-      <v-container class="fill-height" fluid>
-        <vue-page-transition name="overlay-right">
-          <!-- component matched by the route will render here -->
-          <router-view></router-view>
-        </vue-page-transition>
-      </v-container>
+      <vue-page-transition name="overlay-right">
+        <!-- component matched by the route will render here -->
+        <router-view></router-view>
+      </vue-page-transition>
     </v-content>
   </v-app>
 </template>
