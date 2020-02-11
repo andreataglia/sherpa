@@ -22,11 +22,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      app
-      hide-on-scroll
-    >
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app hide-on-scroll>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
         <span>Sherpa</span>
       </v-toolbar-title>
@@ -70,7 +66,13 @@ export default {
 </script>
 
 <style>
- .overlay-left,  .overlay-right,  .overlay-top,  .overlay-bottom   {
-    background: #ff0000 !important;
+.overlay-left,
+.overlay-right,
+.overlay-top,
+.overlay-bottom {
+  background: #ff0000 !important;
+}
+body {
+  background-color: grey;
 }
 </style>

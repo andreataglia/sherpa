@@ -57,11 +57,20 @@
           </v-stepper-items>
         </v-stepper>
         <v-btn
+          v-if="parseInt(activeStep) < 3"
           class="md-12 mt-6"
           color="primary"
           width="100%"
           @click="activeStep = parseInt(activeStep) > 2 ? 1 : parseInt(activeStep) + 1"
           >Next</v-btn
+        >
+        <v-btn
+          v-else
+          class="md-12 mt-6"
+          color="primary"
+          width="100%"
+          to="/team"
+          >Let's Go</v-btn
         >
       </v-col>
     </v-row>
