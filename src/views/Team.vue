@@ -11,49 +11,45 @@
       <v-col cols="12">
         <div>My Team</div>
         <v-divider inset style="margin-top:-10px;" class="pb-3"></v-divider>
-
-        <v-avatar class="myTeamAvatar">
-          <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
-        </v-avatar>
-
-        <v-avatar class="myTeamAvatar">
-          <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
-        </v-avatar>
-
+        <team-avatar
+          v-for="memberId of currentTeam"
+          :key="memberId"
+          :id="memberId"
+        />
         <v-divider class="mt-3"></v-divider>
       </v-col>
     </v-row>
     <v-row style="text-align:center;">
-      <team-card class="mx-auto my-2" name="Andrea Taglia" img="https://cdn.vuetifyjs.com/images/john.jpg"></team-card>
-      <team-card class="mx-auto my-2" name="Ciao Ciao" img="https://cdn.vuetifyjs.com/images/john.jpg"></team-card>
-      <team-card class="mx-auto my-2" name="Paolo Debellini" img="https://cdn.vuetifyjs.com/images/john.jpg"></team-card>
+      <ambassador-card
+        v-for="amb of ambassadors"
+        :key="amb.id"
+        class="mx-auto my-2"
+        :id="amb.id"
+      ></ambassador-card>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import TeamCard from '@/components/TeamCard.vue';
+import AmbassadorCard from '@/components/AmbassadorCard.vue';
+import TeamAvatar from '@/components/TeamAvatar.vue';
 
 export default {
   components: {
-    TeamCard
+    AmbassadorCard,
+    TeamAvatar
   },
   data: () => ({
-    dialog: false,
-    drawer: null,
-    team: [
-      { icon: 'mdi-contacts', name: 'Andrea Taglia', admin: true },
-      { icon: 'mdi-contacts', name: 'Paolo Debellini', admin: true }
-    ]
-  })
+  }),
+  computed: {
+    currentTeam() {
+      return this.$store.getters.currentTeam;
+    },
+    ambassadors() {
+      return this.$store.state.ambassadors;
+    }
+  }
 };
 </script>
 
-<style scoped>
-.myTeamAvatar {
-  border-style: solid;
-  border-width: 2px;
-  border-color: red;
-  margin-right: 5px;
-}
-</style>
+<style scoped></style>

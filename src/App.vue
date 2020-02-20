@@ -38,7 +38,6 @@
     </v-app-bar>
     <v-content>
       <vue-page-transition name="overlay-right">
-        <!-- component matched by the route will render here -->
         <router-view></router-view>
       </vue-page-transition>
     </v-content>
