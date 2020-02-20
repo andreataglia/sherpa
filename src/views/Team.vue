@@ -23,8 +23,10 @@
         <v-divider class="mt-3"></v-divider>
       </v-col>
     </v-row>
-    <v-row>
-      <team-card name="Andrea Taglia" img="https://cdn.vuetifyjs.com/images/john.jpg"></team-card>
+    <v-row style="text-align:center;">
+      <team-card class="mx-auto my-2" name="Andrea Taglia" img="https://cdn.vuetifyjs.com/images/john.jpg"></team-card>
+      <team-card class="mx-auto my-2" name="Ciao Ciao" img="https://cdn.vuetifyjs.com/images/john.jpg"></team-card>
+      <team-card class="mx-auto my-2" name="Paolo Debellini" img="https://cdn.vuetifyjs.com/images/john.jpg"></team-card>
     </v-row>
   </v-container>
 </template>

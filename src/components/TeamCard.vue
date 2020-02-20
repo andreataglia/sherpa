@@ -1,5 +1,5 @@
 <template>
-  <v-card shaped>
+  <v-card>
     <v-img
       :src="img"
       class="white--text align-end"
@@ -10,7 +10,7 @@
     </v-img>
     <v-card-text> A true <b>sea lover</b> lorem ipsum </v-card-text>
     <v-card-actions>
-      <v-icon class="mr-1">mdi-heart</v-icon>
+      <v-icon size="x-large" class="mr-2">mdi-thumb-up</v-icon>
       <span class="subheading mr-2">256</span>
       <v-spacer></v-spacer>
       <v-btn color="primary">
