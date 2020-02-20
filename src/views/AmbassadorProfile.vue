@@ -1,11 +1,15 @@
 <template>
   <v-container fluid>
     <v-row style="text-align:center;">
-      <ambassador-card class="mx-auto my-2" :id="id" no-link></ambassador-card>
+      <ambassador-card
+        class="mx-auto my-2"
+        :id="getAmbassadorById.id"
+        no-view
+      ></ambassador-card>
 
       <v-card class="mx-auto my-2">
         <v-card-text>
-          Ambassador <b>{{ id }}</b> lorem ipsum
+          Ambassador <b>{{ getAmbassadorById.name }}</b> lorem ipsum
         </v-card-text>
       </v-card>
 
@@ -34,8 +38,8 @@ export default {
   },
   data: () => ({}),
   computed: {
-    id() {
-      return parseInt(this.$route.params.id);
+    getAmbassadorById() {
+      return this.$store.getters.getAmbassadorById(parseInt(this.$route.params.id));
     }
   }
 };

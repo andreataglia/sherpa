@@ -12,9 +12,9 @@
         <div>My Team</div>
         <v-divider inset style="margin-top:-10px;" class="pb-3"></v-divider>
         <team-avatar
-          v-for="memberId of currentTeam"
-          :key="memberId"
-          :id="memberId"
+          v-for="amb of currentTeam"
+          :key="amb.id"
+          :id="amb.id"
         />
         <v-divider class="mt-3"></v-divider>
       </v-col>
@@ -51,5 +51,3 @@ export default {
   }
 };
 </script>
-
-<style scoped></style>

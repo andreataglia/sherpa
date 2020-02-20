@@ -26,9 +26,18 @@ export default new Vuex.Store({
   getters: {
     currentTeam: state => {
       return state.ambassadors.filter(el => el.inTeam)
+    },
+    getAmbassadorById: (state) => (id) => {
+      return state.ambassadors.find(amb => amb.id === id)
     }
   },
   mutations: {
+    addToTeam(state, id){
+      state.ambassadors.find(amb => amb.id === id).inTeam = true;
+    },
+    removeFromTeam(state, id){
+      state.ambassadors.find(amb => amb.id === id).inTeam = false;
+    }
   },
   actions: {
   },

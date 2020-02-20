@@ -1,6 +1,9 @@
 <template>
   <v-avatar class="myTeamAvatar mr-2">
-    <img src="https://cdn.vuetifyjs.com/images/john.jpg" :title="id" />
+    <img
+      src="https://cdn.vuetifyjs.com/images/john.jpg"
+      :title="getAmbassadorById.name"
+    />
   </v-avatar>
 </template>
 
@@ -8,14 +11,12 @@
 export default {
   name: 'TeamAvatar',
   props: {
-    id: Number,
+    id: Number
   },
-  data: () => ({
-    
-  }),
-  methods: {
-    getProfileUrl: function(){
-      return "team/" + this.name.trim().toLowerCase()
+  data: () => ({}),
+  computed: {
+    getAmbassadorById() {
+      return this.$store.getters.getAmbassadorById(this.id);
     }
   }
 };
