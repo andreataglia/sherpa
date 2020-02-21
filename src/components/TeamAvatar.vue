@@ -1,19 +1,31 @@
 <template>
-  <v-avatar class="myTeamAvatar mr-2">
-    <img
-      src="https://cdn.vuetifyjs.com/images/john.jpg"
-      :title="getAmbassadorById.name"
-    />
-  </v-avatar>
+  <span>
+    <v-avatar class="myTeamAvatar mr-2" @click.stop="dialog = true">
+      <img
+        src="https://cdn.vuetifyjs.com/images/john.jpg"
+        :title="getAmbassadorById.name"
+      />
+    </v-avatar>
+    <v-dialog v-model="dialog" max-width="400">
+      <ambassador-card :id="getAmbassadorById.id"></ambassador-card>
+    </v-dialog>
+  </span>
 </template>
 
 <script>
+import AmbassadorCard from '@/components/AmbassadorCard.vue';
+
 export default {
+  components: {
+    AmbassadorCard
+  },
   name: 'TeamAvatar',
   props: {
     id: Number
   },
-  data: () => ({}),
+  data: () => ({
+    dialog: false
+  }),
   computed: {
     getAmbassadorById() {
       return this.$store.getters.getAmbassadorById(this.id);
