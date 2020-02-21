@@ -46,11 +46,11 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: 'mdi-contacts', text: 'Home', to: '/' },
-      { icon: 'mdi-history', text: 'How It Works', to: '/howitworks' },
-      { icon: 'mdi-history', text: 'Team', to: '/team' },
-      { icon: 'mdi-content-copy', text: 'FAQ', to: '/faq' },
-      { icon: 'mdi-content-copy', text: 'About', to: '/about' }
+      { icon: 'mdi-home', text: 'Home', to: '/' },
+      { icon: 'mdi-help-circle', text: 'How It Works', to: '/howitworks' },
+      { icon: 'mdi-account-multiple', text: 'Team', to: '/team' },
+      { icon: 'mdi-message-processing', text: 'FAQ', to: '/faq' },
+      { icon: 'mdi-city', text: 'About', to: '/about' }
     ]
   })
 };

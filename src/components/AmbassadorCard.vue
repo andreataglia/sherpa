@@ -30,7 +30,7 @@
         </v-btn>
       </v-card-actions>
     </v-card>
-    <v-snackbar v-model="snackbar" timeout="2000">
+    <v-snackbar v-model="snackbar" :timeout="snackbarTimer">
       {{
         teamMemberJustAdded
           ? 'Nice! One more team member added.'
@@ -54,6 +54,7 @@ export default {
   data: () => ({
     publicPath: process.env.BASE_URL,
     snackbar: false,
+    snackbarTimer: 2000,
     teamMemberJustAdded: true
   }),
   methods: {

@@ -5,66 +5,67 @@
         <v-container fluid>
           <v-row>
             <v-col v-for="n in 9" :key="n" class="d-flex child-flex" cols="4">
-              <v-card flat class="d-flex">
-                <v-dialog
-                  persistent
-                  v-model="dialog"
-                  fullscreen
-                  hide-overlay
-                  transition="dialog-bottom-transition"
+              <v-card flat class="d-flex" @click.stop="playVideo()">
+                <v-img
+                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
+                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                  aspect-ratio="1"
+                  class="grey lighten-2"
                 >
-                  <template v-slot:activator="{ on }">
-                    <v-img
-                      :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                      :lazy-src="
-                        `https://picsum.photos/10/6?image=${n * 5 + 10}`
-                      "
-                      aspect-ratio="1"
-                      class="grey lighten-2"
-                      v-on="on"
-                      @click="playVideo()"
+                  <template v-slot:placeholder>
+                    <v-row
+                      class="fill-height ma-0"
+                      align="center"
+                      justify="center"
                     >
-                      <template v-slot:placeholder>
-                        <v-row
-                          class="fill-height ma-0"
-                          align="center"
-                          justify="center"
-                        >
-                          <v-progress-circular
-                            indeterminate
-                            color="grey lighten-5"
-                          ></v-progress-circular>
-                        </v-row>
-                      </template>
-                    </v-img>
+                      <v-progress-circular
+                        indeterminate
+                        color="grey lighten-5"
+                      ></v-progress-circular>
+                    </v-row>
                   </template>
-                  <v-card>
-                    qui video
-                    <video class="videoPlayer">
-                      <source
-                        src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm"
-                        type="video/webm"
-                      />
-                      Your browser does not support HTML5 video.
-                    </video>
-                    e qui
-                  </v-card>
-                  <!-- <v-btn
-                    bottom
-                    color="primary"
-                    elevation="8"
-                    dark
-                    fixed
-                    left
-                    @click="dialog = false"
-                  >
-                    <v-icon>mdi-arrow-left-bold</v-icon>
-                    Back
-                  </v-btn> -->
-                </v-dialog>
+                </v-img>
               </v-card>
             </v-col>
           </v-row>
+          <v-dialog
+            ref="mediaDialog"
+            persistent
+            v-model="dialog"
+            fullscreen
+            hide-overlay
+            transition="dialog-bottom-transition"
+          >
+            <v-card>
+              <video-box
+                source="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm"
+                type="video/webm"
+              />
+              <v-btn
+                bottom
+                color="primary"
+                elevation="8"
+                fixed
+                left
+                @click.stop="dialog = false"
+              >
+                <v-icon>mdi-arrow-left-bold</v-icon>
+                Back
+              </v-btn>
+              <v-btn
+                rounded
+                bottom
+                color="secondary"
+                elevation="0"
+                fixed
+                right
+                @click.stop="dialog = false"
+              >
+                120
+                <v-icon class="ml-2">mdi-heart</v-icon>
+              </v-btn>
+            </v-card>
+          </v-dialog>
         </v-container>
       </v-col>
     </v-row>
@@ -72,7 +73,12 @@
 </template>
 
 <script>
+import VideoBox from '@/components/VideoBox.vue';
+
 export default {
+  components: {
+    VideoBox
+  },
   name: 'AmbassadorGallery',
   props: {
     id: Number
@@ -83,7 +89,7 @@ export default {
   }),
   methods: {
     playVideo() {
-      // console.log('ciao')
+      this.dialog = true;
     }
   }
 };

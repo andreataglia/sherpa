@@ -6,7 +6,7 @@
         :title="getAmbassadorById.name"
       />
     </v-avatar>
-    <v-dialog v-model="dialog" max-width="400">
+    <v-dialog v-model="dialog" max-width="400" overlay-opacity="0.95">
       <ambassador-card :id="getAmbassadorById.id"></ambassador-card>
     </v-dialog>
   </span>
