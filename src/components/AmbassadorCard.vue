@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card min-width="350" max-width="400">
     <v-img
       src="https://cdn.vuetifyjs.com/images/john.jpg"
       class="white--text align-end"
@@ -9,6 +9,7 @@
       <v-card-title v-text="getAmbassadorById.name"></v-card-title>
     </v-img>
     <v-card-text> A true <b>sea lover</b> lorem ipsum </v-card-text>
+    <v-divider></v-divider>
     <v-card-actions>
       <v-icon size="x-large" class="mr-2">mdi-thumb-up</v-icon>
       <span class="subheading mr-2">256</span>
