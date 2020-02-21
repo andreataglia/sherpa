@@ -2,7 +2,7 @@
   <span>
     <v-avatar class="myTeamAvatar mr-2" @click.stop="dialog = true">
       <img
-        src="https://cdn.vuetifyjs.com/images/john.jpg"
+        :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
         :title="getAmbassadorById.name"
       />
     </v-avatar>
@@ -24,7 +24,8 @@ export default {
     id: Number
   },
   data: () => ({
-    dialog: false
+    dialog: false,
+    publicPath: process.env.BASE_URL
   }),
   computed: {
     getAmbassadorById() {

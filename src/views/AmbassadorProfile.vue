@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-row style="text-align:center;">
+    <v-row class="pb-10" style="text-align:center;">
       <ambassador-card
         class="mx-auto my-2"
         :id="getAmbassadorById.id"
@@ -39,10 +39,7 @@
           </v-row>
         </v-card-text>
       </v-card>
-
-      <v-card class="mx-auto my-2">
-        <v-card-text> A true <b>sea lover</b> lorem ipsum </v-card-text>
-      </v-card>
+      <ambassador-gallery :id="parseInt(this.$route.params.id)" />
     </v-row>
 
     <v-btn bottom color="red" elevation="8" dark fixed left to="/team">
@@ -54,10 +51,12 @@
 
 <script>
 import AmbassadorCard from '@/components/AmbassadorCard.vue';
+import AmbassadorGallery from '@/components/AmbassadorGallery.vue';
 
 export default {
   components: {
-    AmbassadorCard
+    AmbassadorCard,
+    AmbassadorGallery
   },
   data: () => ({}),
   computed: {
