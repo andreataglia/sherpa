@@ -4,11 +4,22 @@
       <v-col cols="12" sm="6" offset-sm="3">
         <v-container fluid>
           <v-row>
-            <v-col v-for="n in 9" :key="n" class="d-flex child-flex" cols="4">
-              <v-card flat class="d-flex" @click.stop="playVideo()">
+            <v-col
+              v-for="media in getAmbassadorById.media"
+              :key="media.id"
+              class="d-flex child-flex"
+              cols="4"
+            >
+              <v-card
+                flat
+                class="d-flex"
+                @click.stop="openMediaDialog(media.isVideo, media.id)"
+              >
+                <!-- :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
+                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`" -->
                 <v-img
-                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                  :src="getMediaThumbUrl(media.id)"
+                  :lazy-src="getMediaThumbUrl(media.id)"
                   aspect-ratio="1"
                   class="grey lighten-2"
                 >
@@ -37,17 +48,31 @@
             transition="dialog-bottom-transition"
           >
             <v-card>
-              <video-box
-                source="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm"
-                type="video/webm"
-              />
+              <v-sheet>
+                <video
+                  v-if="dialogIsVideo"
+                  ref="videoBox"
+                  @click.stop="videoClick()"
+                >
+                  <source :src="videoSrc" type="video/webm" />
+                </video>
+                <v-img
+                  v-else
+                  ref="imageBox"
+                  :src="imageSrc"
+                  class="white--text align-end"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  height="200px"
+                >
+                </v-img>
+              </v-sheet>
               <v-btn
                 bottom
                 color="primary"
                 elevation="8"
                 fixed
                 left
-                @click.stop="dialog = false"
+                @click.stop="closeMediaDialog()"
               >
                 <v-icon>mdi-arrow-left-bold</v-icon>
                 Back
@@ -73,23 +98,80 @@
 </template>
 
 <script>
-import VideoBox from '@/components/VideoBox.vue';
-
 export default {
-  components: {
-    VideoBox
-  },
   name: 'AmbassadorGallery',
   props: {
     id: Number
   },
   data: () => ({
     dialog: false,
-    publicPath: process.env.BASE_URL
+    publicPath: process.env.BASE_URL,
+    videoPlaying: false,
+    dialogIsVideo: true,
+    videoSrc: '#',
+    imageSrc: '#'
   }),
   methods: {
-    playVideo() {
+    openMediaDialog(isVideo, source) {
+      this.dialogIsVideo = isVideo;
       this.dialog = true;
+      this.$nextTick(function() {
+        let video = this.$refs.videoBox;
+        if (isVideo) {
+          this.videoSrc = this.getMediaUrl(isVideo, source);
+          video.play();
+          this.videoPlaying = true;
+          video.loop = true;
+        } else {
+          this.imageSrc = this.getMediaUrl(isVideo, source);
+        }
+      });
+    },
+    closeMediaDialog() {
+      if (this.dialogIsVideo) {
+        this.$refs.videoBox.pause();
+        this.videoPlaying = false;
+        this.$refs.videoBox.currentTime = 0;
+      }
+      this.dialog = false;
+    },
+    videoClick() {
+      if (this.videoPlaying) {
+        this.$refs.videoBox.pause();
+        this.videoPlaying = false;
+      } else {
+        this.$refs.videoBox.play();
+        this.videoPlaying = true;
+      }
+    },
+    getMediaUrl(isVideo, source) {
+      if (isVideo) {
+        return this.publicPath + 'video/amb' + this.id + '-' + source + '.webm';
+      } else {
+        return (
+          this.publicPath +
+          'img/ambassadorGallery/amb' +
+          this.id +
+          '-' +
+          source +
+          '.jpg'
+        );
+      }
+    },
+    getMediaThumbUrl(source) {
+      return (
+        this.publicPath +
+        'img/ambassadorGallery/amb' +
+        this.id +
+        '-' +
+        source +
+        '-thumb.jpg'
+      );
+    }
+  },
+  computed: {
+    getAmbassadorById() {
+      return this.$store.getters.getAmbassadorById(parseInt(this.id));
     }
   }
 };
