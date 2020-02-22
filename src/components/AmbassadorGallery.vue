@@ -1,19 +1,20 @@
 <template>
   <v-card class="mx-auto my-2 text-left" width="350">
     <v-row>
-      <v-col cols="12" sm="6" offset-sm="3">
-        <v-container fluid>
+      <v-col cols="12" class="py-0">
+        <v-container fluid class="py-0">
           <v-row>
             <v-col
               v-for="media in getAmbassadorById.media"
               :key="media.id"
-              class="d-flex child-flex"
+              class="d-flex child-flex pa-0"
               cols="4"
             >
               <v-card
                 flat
                 class="d-flex"
                 @click.stop="openMediaDialog(media.isVideo, media.id)"
+                tile
               >
                 <!-- :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
                   :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`" -->
@@ -21,8 +22,14 @@
                   :src="getMediaThumbUrl(media.id)"
                   :lazy-src="getMediaThumbUrl(media.id)"
                   aspect-ratio="1"
-                  class="grey lighten-2"
+                  class="grey lighten-2 white--text align-end"
                 >
+                  <v-card-title class="pl-1 pb-0 body-1"
+                    ><v-icon dark>{{
+                      media.isVideo ? 'mdi-video' : 'mdi-file-image'
+                    }}</v-icon
+                    >150</v-card-title
+                  >
                   <template v-slot:placeholder>
                     <v-row
                       class="fill-height ma-0"
@@ -46,11 +53,13 @@
             fullscreen
             hide-overlay
             transition="dialog-bottom-transition"
+            dark
           >
             <v-card>
               <v-sheet>
                 <video
                   v-if="dialogIsVideo"
+                  class="mediaBox"
                   ref="videoBox"
                   @click.stop="videoClick()"
                 >
@@ -60,9 +69,9 @@
                   v-else
                   ref="imageBox"
                   :src="imageSrc"
-                  class="white--text align-end"
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  height="200px"
+                  class="mediaBox"
+                  aspect-ratio="1"
+                  contain
                 >
                 </v-img>
               </v-sheet>
@@ -146,7 +155,7 @@ export default {
     },
     getMediaUrl(isVideo, source) {
       if (isVideo) {
-        return this.publicPath + 'video/amb' + this.id + '-' + source + '.webm';
+        return this.publicPath + 'video/amb' + this.id + '-' + source + '.mp4';
       } else {
         return (
           this.publicPath +
@@ -178,8 +187,11 @@ export default {
 </script>
 
 <style scoped>
-.videoPlayer {
-  height: 700px;
-  max-width: 100%;
+.mediaBox {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

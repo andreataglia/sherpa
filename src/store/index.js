@@ -22,7 +22,7 @@ export default new Vuex.Store({
           },
           {
             id: 2,
-            isVideo: false
+            isVideo: true
           },
           {
             id: 3,
@@ -58,7 +58,7 @@ export default new Vuex.Store({
         media: [
           {
             id: 0,
-            isVideo: true
+            isVideo: false
           },
           {
             id: 1,
@@ -66,11 +66,11 @@ export default new Vuex.Store({
           },
           {
             id: 2,
-            isVideo: false
+            isVideo: true
           },
           {
             id: 3,
-            isVideo: true
+            isVideo: false
           },
           {
             id: 4,

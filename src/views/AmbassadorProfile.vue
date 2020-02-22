@@ -1,23 +1,23 @@
 <template>
   <v-container fluid>
-    <v-row class="pb-10" style="text-align:center;">
-      <ambassador-card
-        class="mx-auto my-2"
-        :id="getAmbassadorById.id"
-        no-view
-      ></ambassador-card>
-
-      <v-card class="mx-auto my-2" max-width="350">
-        <v-card-text>
-          Ambassador <b>{{ getAmbassadorById.name }}</b> lorem ipsum Lorem
-          ipsum, or lipsum as it is sometimes known, is dummy text used in
-          laying out print, graphic or web designs. The passage is attributed to
-          an unknown typesetter in the 15th century who is thought to have
-          scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
-          type specimen book.
-        </v-card-text>
-      </v-card>
-
+    <v-row class="pb-10" style="text-align:center;" cols="12">
+      <v-col cols="12">
+        <ambassador-card
+          class="mx-auto my-2"
+          :id="getAmbassadorById.id"
+          no-view
+        ></ambassador-card>
+      </v-col>
+        <v-card class="d-flex align-content-space-around" max-width="350">
+          <v-card-text>
+            Ambassador <b>{{ getAmbassadorById.name }}</b> lorem ipsum Lorem
+            ipsum, or lipsum as it is sometimes known, is dummy text used in
+            laying out print, graphic or web designs. The passage is attributed
+            to an unknown typesetter in the 15th century who is thought to have
+            scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in
+            a type specimen book.
+          </v-card-text>
+        </v-card>
       <v-card class="mx-auto my-2 text-left" width="350">
         <v-card-text>
           <v-row no-gutters>
