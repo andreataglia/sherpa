@@ -13,7 +13,9 @@
               <v-card
                 flat
                 class="d-flex"
-                @click.stop="openMediaDialog(media.isVideo, media.id)"
+                @click.stop="
+                  openMediaDialog(media.isVideo, media.id, media.likes)
+                "
                 tile
               >
                 <!-- :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
@@ -28,7 +30,7 @@
                     ><v-icon dark>{{
                       media.isVideo ? 'mdi-video' : 'mdi-file-image'
                     }}</v-icon
-                    >150</v-card-title
+                    >{{ media.likes }}</v-card-title
                   >
                   <template v-slot:placeholder>
                     <v-row
@@ -61,9 +63,10 @@
                   v-if="dialogIsVideo"
                   class="mediaBox"
                   ref="videoBox"
+                  autoplay="true"
                   @click.stop="videoClick()"
                 >
-                  <source :src="videoSrc" type="video/webm" />
+                  <source :src="videoSrc" type="video/mp4" />
                 </video>
                 <v-img
                   v-else
@@ -93,9 +96,9 @@
                 elevation="0"
                 fixed
                 right
-                @click.stop="dialog = false"
+                @click.stop="putLike()"
               >
-                120
+                {{ mediaLikes }}
                 <v-icon class="ml-2">mdi-heart</v-icon>
               </v-btn>
             </v-card>
@@ -118,21 +121,27 @@ export default {
     videoPlaying: false,
     dialogIsVideo: true,
     videoSrc: '#',
-    imageSrc: '#'
+    imageSrc: '#',
+    mediaLikes: 0,
+    mediaId: 0,
+    likesPut: []
   }),
   methods: {
-    openMediaDialog(isVideo, source) {
+    openMediaDialog(isVideo, mediaId, likes) {
       this.dialogIsVideo = isVideo;
       this.dialog = true;
+      this.mediaLikes = likes;
+      this.mediaId = mediaId;
       this.$nextTick(function() {
         let video = this.$refs.videoBox;
         if (isVideo) {
-          this.videoSrc = this.getMediaUrl(isVideo, source);
+          this.videoSrc = this.getMediaUrl(isVideo, mediaId);
+          video.playsinline = true;
           video.play();
           this.videoPlaying = true;
           video.loop = true;
         } else {
-          this.imageSrc = this.getMediaUrl(isVideo, source);
+          this.imageSrc = this.getMediaUrl(isVideo, mediaId);
         }
       });
     },
@@ -153,29 +162,39 @@ export default {
         this.videoPlaying = true;
       }
     },
-    getMediaUrl(isVideo, source) {
+    getMediaUrl(isVideo, mediaId) {
       if (isVideo) {
-        return this.publicPath + 'video/amb' + this.id + '-' + source + '.mp4';
+        return this.publicPath + 'video/amb' + this.id + '-' + mediaId + '.mp4';
       } else {
         return (
           this.publicPath +
           'img/ambassadorGallery/amb' +
           this.id +
           '-' +
-          source +
+          mediaId +
           '.jpg'
         );
       }
     },
-    getMediaThumbUrl(source) {
+    getMediaThumbUrl(mediaId) {
       return (
         this.publicPath +
         'img/ambassadorGallery/amb' +
         this.id +
         '-' +
-        source +
+        mediaId +
         '-thumb.jpg'
       );
+    },
+    putLike() {
+      if (!this.likesPut.includes(this.mediaId)) {
+        this.$store.commit('addLike', {
+          ambId: this.id,
+          mediaId: this.mediaId
+        });
+        this.likesPut.push(this.mediaId);
+        this.mediaLikes += 1;
+      }
     }
   },
   computed: {

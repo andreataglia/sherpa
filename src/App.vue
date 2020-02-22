@@ -29,7 +29,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
     <v-content>
-      <vue-page-transition name="overlay-right">
+      <vue-page-transition name="fade">
         <router-view></router-view>
       </vue-page-transition>
     </v-content>
@@ -57,12 +57,6 @@ export default {
 </script>
 
 <style>
-.overlay-left,
-.overlay-right,
-.overlay-top,
-.overlay-bottom {
-  background: #ff0000 !important;
-}
 body {
   background-color: grey;
 }

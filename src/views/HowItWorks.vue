@@ -88,10 +88,6 @@ export default {
 </script>
 
 <style scoped>
-.stepper-container {
-  /* height: 100%; */
-}
-
 .v-stepper__step__step{
   width: 50px;
 }

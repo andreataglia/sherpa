@@ -14,39 +14,48 @@ export default new Vuex.Store({
         media: [
           {
             id: 0,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 1,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 2,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 3,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 4,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 5,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 6,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 7,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 8,
-            isVideo: true
+            isVideo: true,
+            likes: 89
           }
         ]
       },
@@ -58,39 +67,48 @@ export default new Vuex.Store({
         media: [
           {
             id: 0,
-            isVideo: false
+            isVideo: false,
+            likes: 78
           },
           {
             id: 1,
-            isVideo: false
+            isVideo: false,
+            likes: 572
           },
           {
             id: 2,
-            isVideo: true
+            isVideo: true,
+            likes: 10
           },
           {
             id: 3,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 4,
-            isVideo: false
+            isVideo: false,
+            likes: 25
           },
           {
             id: 5,
-            isVideo: false
+            isVideo: false,
+            likes: 490
           },
           {
             id: 6,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 7,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 8,
-            isVideo: true
+            isVideo: true,
+            likes: 70
           }
         ]
       },
@@ -102,39 +120,48 @@ export default new Vuex.Store({
         media: [
           {
             id: 0,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 1,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 2,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 3,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 4,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 5,
-            isVideo: false
+            isVideo: false,
+            likes: 50
           },
           {
             id: 6,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 7,
-            isVideo: true
+            isVideo: true,
+            likes: 50
           },
           {
             id: 8,
-            isVideo: true
+            isVideo: true,
+            likes: 60
           }
         ]
       }
@@ -154,6 +181,11 @@ export default new Vuex.Store({
     },
     removeFromTeam(state, id) {
       state.ambassadors.find(amb => amb.id === id).inTeam = false;
+    },
+    addLike(state, payload){
+      state.ambassadors
+        .find(amb => amb.id === payload.ambId)
+        .media.find(media => media.id === payload.mediaId).likes += 1;
     }
   },
   actions: {},

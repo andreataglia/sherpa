@@ -17,7 +17,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/HowItWorks.vue')
+      import(/* webpackChunkName: "howitworks" */ '../views/HowItWorks.vue')
   },
   {
     path: '/team',
@@ -26,20 +26,18 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Team.vue')
+      import(/* webpackChunkName: "team" */ '../views/Team.vue')
   },
   {
     path: '/team/:id',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    name: 'teamid',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/AmbassadorProfile.vue')
+      import(/* webpackChunkName: "teamid" */ '../views/AmbassadorProfile.vue')
   },
   {
     path: '/faq',
     name: 'faq',
-    component: () => import(/* webpackChunkName: "about" */ '../views/FAQ.vue')
+    component: () => import(/* webpackChunkName: "faq" */ '../views/FAQ.vue')
   },
   {
     path: '/about',
@@ -49,6 +47,15 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/teamisset',
+    name: 'teamisset',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "teamisset" */ '../views/TeamSet.vue')
   }
 ];
 

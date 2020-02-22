@@ -2,7 +2,12 @@
   <v-container fluid>
     <v-row class="px-4">
       <v-col cols="12" class="text-center">
-        <v-btn class="md-12" color="primary" width="100%" disabled
+        <v-btn
+          class="md-12"
+          color="primary"
+          width="100%"
+          :disabled="currentTeam.length < minTeamSize"
+          to="/teamisset"
           >My Team Is Set
         </v-btn>
       </v-col>
@@ -11,11 +16,12 @@
       <v-col cols="12">
         <div>My Team</div>
         <v-divider inset style="margin-top:-10px;" class="pb-3"></v-divider>
-        <team-avatar
-          v-for="amb of currentTeam"
-          :key="amb.id"
-          :id="amb.id"
-        />
+        <team-avatar v-for="amb of currentTeam" :key="amb.id" :id="amb.id" />
+        <span
+          v-if="currentTeam.length < minTeamSize"
+          class="body-2 font-weight-thin ml-2"
+          >(pick at least {{ minTeamSize - currentTeam.length }} more)</span
+        >
         <v-divider class="mt-3"></v-divider>
       </v-col>
     </v-row>
@@ -40,6 +46,7 @@ export default {
     TeamAvatar
   },
   data: () => ({
+    minTeamSize: 3
   }),
   computed: {
     currentTeam() {
