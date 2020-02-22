@@ -4,6 +4,7 @@ import colors from 'vuetify/lib/util/colors';
 
 Vue.use(Vuetify);
 
+//remember to update the _variables.scss file as well
 export default new Vuetify({
   theme: {
     themes: {
@@ -15,9 +16,6 @@ export default new Vuetify({
         info: '#2196F3',
         success: '#4CAF50',
         warning: '#FFC107'
-      },
-      options: {
-        customProperties: true
       }
     }
   }

@@ -49,8 +49,8 @@ export default {
       { icon: 'mdi-home', text: 'Home', to: '/' },
       { icon: 'mdi-help-circle', text: 'How It Works', to: '/howitworks' },
       { icon: 'mdi-account-multiple', text: 'Team', to: '/team' },
-      { icon: 'mdi-message-processing', text: 'FAQ', to: '/faq' },
-      { icon: 'mdi-city', text: 'About', to: '/about' }
+      { icon: 'mdi-message-processing', text: 'FAQ & Contacts', to: '/faq' },
+      { icon: 'mdi-city', text: 'Terms of Service', to: '/about' }
     ]
   })
 };
