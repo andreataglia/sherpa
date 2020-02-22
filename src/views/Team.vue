@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row class="px-4">
       <v-col cols="12" class="text-center">
-        <v-btn class="md-12 mt-6" color="primary" width="100%" disabled
+        <v-btn class="md-12" color="primary" width="100%" disabled
           >My Team Is Set
         </v-btn>
       </v-col>
@@ -19,11 +19,11 @@
         <v-divider class="mt-3"></v-divider>
       </v-col>
     </v-row>
-    <v-row style="text-align:center;">
+    <v-row class="d-flex flex-column">
       <ambassador-card
         v-for="amb of ambassadors"
         :key="amb.id"
-        class="mx-auto my-2"
+        class="mx-auto my-2 ambassadorCard"
         :id="amb.id"
       ></ambassador-card>
     </v-row>
@@ -51,3 +51,21 @@ export default {
   }
 };
 </script>
+<style scoped>
+.ambassadorCard {
+  width: 400px;
+}
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  .ambassadorCard {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  /* small phones */
+  .ambassadorCard {
+    width: 350px;
+  }
+}
+</style>

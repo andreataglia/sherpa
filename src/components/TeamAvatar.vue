@@ -1,9 +1,10 @@
 <template>
   <span>
-    <v-avatar class="myTeamAvatar mr-2" @click.stop="dialog = true">
+    <v-avatar class="myTeamAvatar mr-2" v-bind:class="{adminAvatar: getAmbassadorById.admin}" @click.stop="dialog = true">
       <img
         :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
         :title="getAmbassadorById.name"
+        aspect-ratio="1"
       />
     </v-avatar>
     <v-dialog v-model="dialog" max-width="400" overlay-opacity="0.95">
@@ -40,5 +41,8 @@ export default {
   border-style: solid;
   border-width: 2px;
   border-color: red;
+}
+.adminAvatar{
+  border-color: blue;
 }
 </style>

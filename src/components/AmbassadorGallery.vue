@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto my-2 text-left" width="350">
+  <v-card class="pa-2">
     <v-row>
       <v-col cols="12" class="py-0">
         <v-container fluid class="py-0">

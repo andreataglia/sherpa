@@ -98,7 +98,7 @@ export default new Vuex.Store({
         id: 2,
         name: 'Lorenzo Sciuto',
         inTeam: false,
-        admin: true,
+        admin: false,
         media: [
           {
             id: 0,

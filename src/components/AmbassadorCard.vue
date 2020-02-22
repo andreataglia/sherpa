@@ -22,6 +22,16 @@
         >
           Add
         </v-btn>
+        <v-tooltip v-else-if="getAmbassadorById.admin" top open-on-hover>
+          <template v-slot:activator="{ on }">
+            <v-sheet v-on="on">
+              <v-btn disabled width="80" class="mr-2">
+                Remove
+              </v-btn>
+            </v-sheet>
+          </template>
+          <span>Admins cannot be removed from team</span>
+        </v-tooltip>
         <v-btn v-else color="primary" v-on:click="removeFromTeam()">
           Remove
         </v-btn>
@@ -44,7 +54,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'AmbassadorCard',
   props: {
