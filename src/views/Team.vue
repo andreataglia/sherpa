@@ -16,7 +16,17 @@
       <v-col cols="12">
         <div>My Team</div>
         <v-divider inset style="margin-top:-10px;" class="pb-3"></v-divider>
-        <team-avatar v-for="amb of currentTeam" :key="amb.id" :id="amb.id" />
+        <v-sheet class="mx-auto" max-width="700">
+          <v-slide-group multiple show-arrows>
+            <v-slide-item
+              v-for="amb of currentTeam"
+              :key="amb.id"
+              v-slot:default="{ active, toggle }"
+            >
+              <team-avatar :id="amb.id" />
+            </v-slide-item>
+          </v-slide-group>
+        </v-sheet>
         <span
           v-if="currentTeam.length < minTeamSize"
           class="body-2 font-weight-thin ml-2"

@@ -1,6 +1,6 @@
 <template>
   <span>
-    <v-avatar class="myTeamAvatar mr-2" v-bind:class="{adminAvatar: getAmbassadorById.admin}" @click.stop="dialog = true">
+    <v-avatar size="55" class="myTeamAvatar mr-2" v-bind:class="{adminAvatar: getAmbassadorById.admin}" @click.stop="dialog = true">
       <img
         :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
         :title="getAmbassadorById.name"
@@ -36,13 +36,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/_variables.scss";
 .myTeamAvatar {
   border-style: solid;
   border-width: 2px;
-  border-color: red;
+  border-color: $secondary;
 }
 .adminAvatar{
-  border-color: blue;
+  border-color: #0097A7;
 }
 </style>
