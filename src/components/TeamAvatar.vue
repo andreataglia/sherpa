@@ -7,7 +7,7 @@
         aspect-ratio="1"
       />
     </v-avatar>
-    <v-dialog v-model="dialog" max-width="400" overlay-opacity="0.95">
+    <v-dialog v-model="dialog" overlay-opacity="0.95">
       <ambassador-card :id="getAmbassadorById.id"></ambassador-card>
     </v-dialog>
   </span>

@@ -8,7 +8,7 @@ import VuePageTransition from 'vue-page-transition'
 
 Vue.config.productionTip = false
 Vue.use(VuePageTransition)
-
+ 
 new Vue({
   router,
   store,
