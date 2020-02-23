@@ -4,7 +4,7 @@
       <v-col cols="12" class="text-center">
         <v-tooltip top open-on-hover>
           <template v-slot:activator="{ on }">
-            <v-sheet v-on="on">
+            <div v-on="on">
               <v-btn
                 class="md-12"
                 color="primary"
@@ -13,7 +13,7 @@
                 to="/teamisset"
                 >My Team Is Set
               </v-btn>
-            </v-sheet>
+            </div>
           </template>
           <span>Your team needs at least {{ minTeamSize }} ambassadors</span>
         </v-tooltip>
@@ -23,7 +23,7 @@
       <v-col cols="12">
         <div>My Team</div>
         <v-divider inset style="margin-top:-10px;" class="pb-3"></v-divider>
-        <v-sheet class="mx-auto" max-width="700">
+        <div class="mx-auto" max-width="700">
           <v-slide-group multiple show-arrows class="bgColor">
             <v-slide-item
               v-for="amb of currentTeam"
@@ -33,12 +33,7 @@
               <team-avatar :id="amb.id" />
             </v-slide-item>
           </v-slide-group>
-        </v-sheet>
-        <!-- <span
-          v-if="currentTeam.length < minTeamSize"
-          class="body-2 font-weight-thin ml-2"
-          >(pick at least {{ minTeamSize - currentTeam.length }} more)</span
-        > -->
+        </div>
         <v-divider class="mt-3"></v-divider>
       </v-col>
     </v-row>

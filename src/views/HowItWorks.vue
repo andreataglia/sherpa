@@ -2,7 +2,7 @@
   <v-container fluid style="max-width:600px">
     <v-row class="mx-0">
       <v-col cols="12" class="text-center">
-        <h3>HOW IT WORKS:</h3>
+        <div class="title">HOW IT WORKS</div>
         <v-card color="primary" dark flat tile class="mt-2">
           <v-card-actions class="justify-space-around">
             <v-item-group v-model="onboarding" class="text-center" mandatory>
