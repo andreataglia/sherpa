@@ -28,7 +28,7 @@
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
-    <v-content>
+    <v-content class="bgColor">
       <vue-page-transition name="fade">
         <router-view></router-view>
       </vue-page-transition>
@@ -56,8 +56,10 @@ export default {
 };
 </script>
 
-<style>
-body {
-  background-color: grey;
+<style lang="scss">
+@import "@/assets/_variables.scss";
+
+.bgColor{
+  background-color: $background-color;
 }
 </style>

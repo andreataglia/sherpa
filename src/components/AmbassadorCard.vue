@@ -1,6 +1,6 @@
 <template>
   <span>
-    <v-card min-width="350" max-width="400">
+    <v-card min-width="320" max-width="400">
       <v-img
         :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
         class="white--text align-end"
@@ -13,7 +13,7 @@
       <v-divider></v-divider>
       <v-card-actions>
         <v-icon size="x-large" class="mr-2">mdi-thumb-up</v-icon>
-        <span class="subheading mr-2">256</span>
+        <span class="subheading mr-2">{{getAmbassadorById.upvotes}}</span>
         <v-spacer></v-spacer>
         <v-btn
           v-if="!getAmbassadorById.inTeam"
@@ -25,14 +25,14 @@
         <v-tooltip v-else-if="getAmbassadorById.admin" top open-on-hover>
           <template v-slot:activator="{ on }">
             <v-sheet v-on="on">
-              <v-btn disabled width="80" class="mr-2">
+              <v-btn disabled width="80" class="mr-2" outlined>
                 Remove
               </v-btn>
             </v-sheet>
           </template>
           <span>Admins cannot be removed from team</span>
         </v-tooltip>
-        <v-btn v-else color="primary" v-on:click="removeFromTeam()">
+        <v-btn v-else color="primary" v-on:click="removeFromTeam()" outlined>
           Remove
         </v-btn>
         <v-btn v-if="!noView" color="secondary" :to="getProfileUrl()">
