@@ -9,6 +9,7 @@
                 class="md-12"
                 color="primary"
                 width="100%"
+                elevation="8"
                 :disabled="currentTeam.length < minTeamSize"
                 to="/teamisset"
                 >My Team Is Set

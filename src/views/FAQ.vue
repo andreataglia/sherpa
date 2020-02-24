@@ -20,11 +20,24 @@
         </v-expansion-panels>
       </v-col>
       <v-col>
-        <v-banner>
-          If you couldn't find your answer or simply wanna know more you can reach us out on the About Us page.
-          <template v-slot:actions>
-            <v-btn text color="primary" to="/about">About Us</v-btn>
-          </template>
+        <v-banner elevation="8">
+          If you couldn't find your answer or simply wanna know more you can
+          reach us out on Telegram. Here is the admins' usernames:
+          <br><br>
+          <ul>
+            <li>
+              Paolo:
+              <a href="https://t.me/andrea_andy_0" target="_blank"
+                >@andrea_andy_0</a
+              >
+            </li>
+            <li>
+              Andrea:
+              <a href="https://t.me/andrea_andy_0" target="_blank"
+                >@andrea_andy_0</a
+              >
+            </li>
+          </ul>
         </v-banner>
       </v-col>
     </v-row>

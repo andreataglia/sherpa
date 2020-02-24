@@ -1,9 +1,9 @@
 <template>
   <v-container fluid style="max-width:600px">
     <v-row class="mx-0">
-      <v-col cols="12" class="text-center">
-        <div class="title">HOW IT WORKS</div>
-        <v-card color="primary" dark flat tile class="mt-2">
+      <v-col cols="12" class="text-center pt-0">
+        <div class="subtitle-2">HOW IT WORKS</div>
+        <v-card class="mt-2" elevation="8">
           <v-card-actions class="justify-space-around">
             <v-item-group v-model="onboarding" class="text-center" mandatory>
               <v-item
@@ -14,22 +14,25 @@
                 <v-btn
                   fab
                   outlined
-                  color="black"
+                  color="#37474F"
                   class="mx-2 topBtn"
                   :input-value="active"
                   @click="toggle"
+                  :class="{ activeBtn: active }"
                 >
                   <v-icon>{{ pic.icon }}</v-icon>
                 </v-btn>
               </v-item>
             </v-item-group>
           </v-card-actions>
+        </v-card>
+        <v-card class="mt-2" elevation="8">
           <v-window v-model="onboarding">
             <v-window-item v-for="pic in pics" :key="pic.id">
-              <v-card light min-height="500" tile class="pb-4">
+              <v-card light min-height="400" tile class="pb-4">
                 <v-card-text>{{ pic.text }}</v-card-text>
                 <v-img
-                  src="https://picsum.photos/500/700?random"
+                  src="https://picsum.photos/400/500?random"
                   class="px-4"
                   contain
                 ></v-img>
@@ -39,9 +42,10 @@
         </v-card>
         <v-btn
           v-if="parseInt(onboarding) < pics.length - 1"
-          class="md-12 mt-6"
+          class="md-12 mt-2"
           color="primary"
           width="100%"
+          elevation="8"
           @click="
             onboarding =
               parseInt(onboarding) > pics.length - 1
@@ -50,7 +54,7 @@
           "
           >Next</v-btn
         >
-        <v-btn v-else class="md-12 mt-6" color="primary" width="100%" to="/team"
+        <v-btn v-else class="md-12 mt-2" elevation="8" color="primary" width="100%" to="/team"
           >Let's Go</v-btn
         >
       </v-col>
@@ -95,8 +99,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/_variables.scss";
+@import '@/assets/_variables.scss';
 .topBtn {
   background-color: $secondary;
+}
+.activeBtn {
+  border: 2px solid $primary;
+}
+.activeItem {
+  border-bottom: 2px solid $primary;
 }
 </style>

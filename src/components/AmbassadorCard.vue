@@ -1,6 +1,6 @@
 <template>
   <span>
-    <v-card min-width="320" max-width="400">
+    <v-card min-width="320" max-width="400" elevation="8">
       <v-img
         :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
         class="white--text align-end"
