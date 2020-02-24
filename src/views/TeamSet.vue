@@ -1,8 +1,8 @@
 <template>
   <v-container fluid style="max-width:600px">
     <v-row class="pb-10 d-flex flex-column px-4 text-center">
-      <div class="title my-2">LAST STEP</div>
-      <v-card class="mx-0">
+      <div class="subtitle-2 my-2">LAST STEP</div>
+      <v-card class="mx-0" v-if="currentUserLead.lead == ''" elevation="8">
         <v-card-text>
           Awesome! You're one step away from getting in chat with your personal
           team :)
@@ -24,7 +24,7 @@
       </v-card>
 
       <!-- Before Done card -->
-      <v-card v-if="currentUserLead.lead == ''" class="my-4">
+      <v-card v-if="currentUserLead.lead == ''" class="my-4" elevation="8">
         <v-card-text>
           If you're happy with your team selection, choose your favourite
           messaging app and let us know how to reach you out so we can create
@@ -153,7 +153,7 @@
       </v-card>
 
       <!-- After Done card -->
-      <v-card v-else class="my-4">
+      <v-card v-else class="my-4" elevation="8">
         <v-card-text class="text-left">
           <b>Great!</b> You're all set now. We'll be get in touch with you as
           soon as possible (but please let us up to 24 hours) on
