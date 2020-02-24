@@ -6,7 +6,12 @@ Vue.use(Vuex)
 const fb = require('../firebaseConfig.js')
 const store = new Vuex.Store({
   state: {
-    ambassadors: []
+    ambassadors: [],
+    userLead: {
+      isTelegram: true,
+      lead: '',
+      timestamp: ''
+    }
   },
   getters: {
     currentTeam: state => {
@@ -32,6 +37,15 @@ const store = new Vuex.Store({
       fb.ambassadorsCollection
         .doc(payload.ambId + '')
         .set({ media: medias }, { merge: true });
+    },
+    setUserLead(state, payload){
+      let userLead = ({
+        isTelegram: payload.isTelegram,
+        lead: payload.lead,
+        timestamp: new Date().getTime()
+      });
+      state.userLead = userLead;
+      fb.userLeadsCollection.add(userLead)
     }
   },
   actions: {
