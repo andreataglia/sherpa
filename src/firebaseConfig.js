@@ -14,9 +14,10 @@ const db = firebase.firestore()
 
 // firebase collections
 const ambassadorsCollection = db.collection('ambassadors')
-// const contactsCollection = db.collection('contacts')
+const userLeadsCollection = db.collection('userLeads')
 
 export {
     db,
     ambassadorsCollection,
+    userLeadsCollection
 }
