@@ -5,7 +5,18 @@
       "name": "Andrea Taglia",
       "inTeam": true,
       "admin": true,
-      "shortBio": "Sea lover, Restless Surfer, Beach Hunter",
+      "shortBio": [{
+        "text": "Sea lover",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Beach hunter",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Restless surfer",
+        "emoj": "🏄"
+      }],
       "upvotes": 50,
       "longBio": "I have been out of Sicily for some years, from the UK to Singapore, but then it hit me: “A Sicilia è u megghiu postu ro munnu”. That is “Sicily is the best place in the world” in sicilian dialect. I love surfing as much as I love pretty much anything regarding the sea. If you need any tips about beaches or surfing spots, I’m the go-to-guy for you :)",
       "media": [

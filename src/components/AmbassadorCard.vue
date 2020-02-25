@@ -11,7 +11,12 @@
           <v-card-title v-text="getAmbassadorById.name"></v-card-title>
         </v-img>
       </router-link>
-      <v-card-text> {{ getAmbassadorById.shortBio }} </v-card-text>
+      <v-card-text class="shortBio">
+        <span v-for="(bio, index) in getAmbassadorById.shortBio" :key="index">
+          <span v-html="emoj[index]"></span>
+          {{ bio.text }}
+        </span>
+      </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
         <v-icon size="x-large" class="mr-2" color="secondary"
@@ -58,6 +63,7 @@
 </template>
 
 <script>
+import Twemoji from 'twemoji';
 export default {
   name: 'AmbassadorCard',
   props: {
@@ -68,8 +74,10 @@ export default {
     publicPath: process.env.BASE_URL,
     snackbar: false,
     snackbarTimer: 2000,
-    teamMemberJustAdded: true
+    teamMemberJustAdded: true,
+    emoj: []
   }),
+
   methods: {
     addToTeam() {
       this.teamMemberJustAdded = true;
@@ -89,6 +97,20 @@ export default {
     getAmbassadorById() {
       return this.$store.getters.getAmbassadorById(this.id);
     }
+  },
+  created: function() {
+    let ambassadors = this.$store.getters.getAmbassadorById(this.id);
+    for (let i = 0; i < ambassadors.shortBio.length; i++) {
+      this.emoj.push(
+        Twemoji.parse(
+          ambassadors.shortBio[i].emoj,
+          {
+            ext: '.svg',
+            folder: 'svg'
+          }
+        )
+      );
+    }
   }
 };
 </script>
@@ -96,5 +118,13 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
+}
+
+.shortBio >>> .emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+  margin-left: 4px;
 }
 </style>
