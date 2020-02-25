@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-2">
+  <v-card class="pa-1" elevation="8">
     <v-row>
       <v-col cols="12" class="py-0">
         <v-container fluid class="py-0">
@@ -12,11 +12,12 @@
             >
               <v-card
                 flat
-                class="d-flex"
+                class="d-flex mediaCard"
                 @click.stop="
                   openMediaDialog(media.isVideo, media.id, media.likes)
                 "
                 tile
+                elevation="3"
               >
                 <!-- :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
                   :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`" -->
@@ -27,9 +28,7 @@
                   class="grey lighten-2 white--text align-end"
                 >
                   <v-card-title class="pl-1 pb-0 body-1"
-                    ><v-icon dark>{{
-                      media.isVideo ? 'mdi-video' : 'mdi-file-image'
-                    }}</v-icon
+                    ><v-icon dark>{{ media.isVideo ? 'mdi-video' : '' }}</v-icon
                     >{{ media.likes }}</v-card-title
                   >
                   <template v-slot:placeholder>
@@ -164,11 +163,18 @@ export default {
     },
     getMediaUrl(isVideo, mediaId) {
       if (isVideo) {
-        return this.publicPath + 'video/amb' + this.id + '-' + mediaId + '.mp4';
+        return (
+          this.publicPath +
+          'ambassadorGallery/amb' +
+          this.id +
+          '-' +
+          mediaId +
+          '.mp4'
+        );
       } else {
         return (
           this.publicPath +
-          'img/ambassadorGallery/amb' +
+          'ambassadorGallery/amb' +
           this.id +
           '-' +
           mediaId +
@@ -179,11 +185,12 @@ export default {
     getMediaThumbUrl(mediaId) {
       return (
         this.publicPath +
-        'img/ambassadorGallery/amb' +
+        'ambassadorGallery/amb' +
         this.id +
         '-' +
         mediaId +
-        '-thumb.jpg'
+        // '-thumb.jpg'
+        '.jpg'
       );
     },
     putLike() {
@@ -212,5 +219,9 @@ export default {
   bottom: 0;
   width: 100%;
   height: 100%;
+}
+
+.mediaCard {
+  padding: 1px;
 }
 </style>

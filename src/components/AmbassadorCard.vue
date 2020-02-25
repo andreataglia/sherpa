@@ -1,19 +1,23 @@
 <template>
   <span>
     <v-card min-width="320" max-width="400" elevation="8">
-      <v-img
-        :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
-        class="white--text align-end"
-        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-        height="200px"
-      >
-        <v-card-title v-text="getAmbassadorById.name"></v-card-title>
-      </v-img>
-      <v-card-text> A true <b>sea lover</b> lorem ipsum </v-card-text>
+      <router-link :to="noView ? '#' : getProfileUrl()">
+        <v-img
+          :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
+          class="white--text align-end"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+          height="200px"
+        >
+          <v-card-title v-text="getAmbassadorById.name"></v-card-title>
+        </v-img>
+      </router-link>
+      <v-card-text> {{ getAmbassadorById.shortBio }} </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-        <v-icon size="x-large" class="mr-2">mdi-thumb-up</v-icon>
-        <span class="subheading mr-2">{{getAmbassadorById.upvotes}}</span>
+        <v-icon size="x-large" class="mr-2" color="secondary"
+          >mdi-thumb-up</v-icon
+        >
+        <span class="subheading mr-2">{{ getAmbassadorById.upvotes }}</span>
         <v-spacer></v-spacer>
         <v-btn
           v-if="!getAmbassadorById.inTeam"
@@ -88,3 +92,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>

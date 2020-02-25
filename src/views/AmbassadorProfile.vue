@@ -6,17 +6,16 @@
         :id="getAmbassadorById.id"
         no-view
       ></ambassador-card>
-      <v-card class="profileSection">
-        <v-card-text>
-          Ambassador <b>{{ getAmbassadorById.name }}</b> lorem ipsum Lorem
-          ipsum, or lipsum as it is sometimes known, is dummy text used in
-          laying out print, graphic or web designs. The passage is attributed to
-          an unknown typesetter in the 15th century who is thought to have
-          scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
-          type specimen book.
+      <ambassador-gallery
+        class="profileSection"
+        :id="parseInt(this.$route.params.id)"
+      />
+      <v-card class="profileSection" elevation="8">
+        <v-card-text class="text-justify">
+          <span class="aboutMe">About me: </span>{{ getAmbassadorById.longBio }}
         </v-card-text>
       </v-card>
-      <v-card class="text-left profileSection">
+      <v-card class="text-left profileSection" elevation="8">
         <v-card-text>
           <v-row no-gutters>
             <v-col class="font-weight-bold">From</v-col>
@@ -31,16 +30,12 @@
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>Catania</v-col>
+            <v-col>Siracusa</v-col>
             <v-col>Italian, English</v-col>
             <v-col>15 minutes</v-col>
           </v-row>
         </v-card-text>
       </v-card>
-      <ambassador-gallery
-        class="profileSection"
-        :id="parseInt(this.$route.params.id)"
-      />
     </v-row>
 
     <v-btn bottom color="red" elevation="8" dark fixed left to="/team">
@@ -70,7 +65,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/_variables.scss";
+
 .profileSection {
   width: 400px;
   margin: 0 auto;
@@ -88,5 +85,9 @@ export default {
   .profileSection {
     width: 350px;
   }
+}
+.aboutMe{
+  color: $primary;
+  font-weight: bolder;
 }
 </style>
