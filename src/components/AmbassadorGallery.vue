@@ -14,7 +14,7 @@
                 flat
                 class="d-flex mediaCard"
                 @click.stop="
-                  openMediaDialog(media.isVideo, media.id, media.likes)
+                  openMediaDialog(media.isVideo, media.id, media.likes, media.desc)
                 "
                 tile
                 elevation="3"
@@ -77,6 +77,16 @@
                 >
                 </v-img>
               </v-sheet>
+              <v-chip
+                v-if="mediaShowText"
+                class="ma-2 mediaText"
+                close
+                @click:close="mediaShowText = false"
+                color="secondary"
+                text-color="#263238"
+              >
+                {{mediaText}}
+              </v-chip>
               <v-btn
                 bottom
                 color="primary"
@@ -96,6 +106,7 @@
                 fixed
                 right
                 @click.stop="putLike()"
+                light
               >
                 {{ mediaLikes }}
                 <v-icon class="ml-2">mdi-heart</v-icon>
@@ -122,15 +133,19 @@ export default {
     videoSrc: '#',
     imageSrc: '#',
     mediaLikes: 0,
+    mediaText: '',
+    mediaShowText: true,
     mediaId: 0,
     likesPut: []
   }),
   methods: {
-    openMediaDialog(isVideo, mediaId, likes) {
+    openMediaDialog(isVideo, mediaId, likes, mediaText) {
       this.dialogIsVideo = isVideo;
       this.dialog = true;
       this.mediaLikes = likes;
       this.mediaId = mediaId;
+      this.mediaText = mediaText;
+      this.mediaShowText = true;
       this.$nextTick(function() {
         let video = this.$refs.videoBox;
         if (isVideo) {
@@ -223,5 +238,11 @@ export default {
 
 .mediaCard {
   padding: 1px;
+}
+
+.mediaText {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 </style>

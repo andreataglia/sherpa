@@ -105,18 +105,6 @@
                 ></v-text-field>
               </v-col>
             </v-row>
-            <v-btn
-              bottom
-              color="primary"
-              elevation="8"
-              dark
-              fixed
-              left
-              to="/team"
-            >
-              <v-icon>mdi-arrow-left-bold</v-icon>
-              Back
-            </v-btn>
           </v-form>
           <v-form v-else ref="form">
             <v-row>
@@ -131,18 +119,6 @@
                 ></v-text-field>
               </v-col>
             </v-row>
-            <v-btn
-              bottom
-              color="primary"
-              elevation="8"
-              dark
-              fixed
-              left
-              to="/team"
-            >
-              <v-icon>mdi-arrow-left-bold</v-icon>
-              Back
-            </v-btn>
           </v-form>
         </v-card-text>
         <v-card-actions>
@@ -167,11 +143,11 @@
               Paolo:
               <a
                 v-if="currentUserLead.isTelegram"
-                href="https://t.me/andrea_andy_0"
+                href="https://t.me/paolo_debellini"
                 target="_blank"
-                >@andrea_andy_0</a
+                >paolo_debellini</a
               >
-              <span v-else>+39 3452135892</span>
+              <span v-else>+39 3381298348</span>
             </li>
             <li>
               Andrea:

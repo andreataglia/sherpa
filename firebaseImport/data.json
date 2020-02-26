@@ -24,31 +24,31 @@
           "id": 0,
           "isVideo": true,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Welcome to Sicily!"
         },
         {
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Yep... surfing in Sicily is awesome!"
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Panino by Borderi"
         },
         {
           "id": 3,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Pillirina beach"
         },
         {
           "id": 4,
           "isVideo": true,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Feast of our patron Saint Lucia, 13th December"
         },
         {
           "id": 5,
@@ -60,19 +60,19 @@
           "id": 6,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Ortigia, summertime"
         },
         {
           "id": 7,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Lido di Avola, 24th February"
         },
         {
           "id": 8,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "How about some canoeing?!"
         }
       ]
     },
@@ -81,104 +81,226 @@
       "name": "Paolo Debellini",
       "inTeam": true,
       "admin": true,
+      "shortBio": [{
+        "text": "Sea lover",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Beach hunter",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Restless surfer",
+        "emoj": "🏄"
+      }],
+      "upvotes": 50,
+      "longBio": "I have been out of Sicily for some years, from the UK to Singapore, but then it hit me: “A Sicilia è u megghiu postu ro munnu”. That is “Sicily is the best place in the world” in sicilian dialect. I love surfing as much as I love pretty much anything regarding the sea. If you need any tips about beaches or surfing spots, I’m the go-to-guy for you :)",
       "media": [
         {
           "id": 0,
-          "isVideo": false,
-          "likes": 78
+          "isVideo": true,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 1,
           "isVideo": false,
-          "likes": 572
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 2,
-          "isVideo": true,
-          "likes": 10
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 3,
           "isVideo": false,
-          "likes": 50
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 4,
-          "isVideo": false,
-          "likes": 25
+          "isVideo": true,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 5,
           "isVideo": false,
-          "likes": 490
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 6,
-          "isVideo": true,
-          "likes": 50
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 7,
-          "isVideo": true,
-          "likes": 50
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 8,
-          "isVideo": true,
-          "likes": 70
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         }
       ]
     },
     {
       "id": 2,
-      "name": "Lorenzo Sciuto",
+      "name": "Umberto Puzzo",
       "inTeam": false,
       "admin": false,
+      "shortBio": [{
+        "text": "Sea lover",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Beach hunter",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Restless surfer",
+        "emoj": "🏄"
+      }],
+      "upvotes": 50,
+      "longBio": "I have been out of Sicily for some years, from the UK to Singapore, but then it hit me: “A Sicilia è u megghiu postu ro munnu”. That is “Sicily is the best place in the world” in sicilian dialect. I love surfing as much as I love pretty much anything regarding the sea. If you need any tips about beaches or surfing spots, I’m the go-to-guy for you :)",
       "media": [
         {
           "id": 0,
           "isVideo": true,
-          "likes": 50
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 1,
           "isVideo": false,
-          "likes": 50
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 2,
           "isVideo": false,
-          "likes": 50
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 3,
-          "isVideo": true,
-          "likes": 50
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 4,
-          "isVideo": false,
-          "likes": 50
+          "isVideo": true,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 5,
           "isVideo": false,
-          "likes": 50
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 6,
-          "isVideo": true,
-          "likes": 50
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 7,
-          "isVideo": true,
-          "likes": 50
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         },
         {
           "id": 8,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Peppe Mastronardi",
+      "inTeam": false,
+      "admin": false,
+      "shortBio": [{
+        "text": "Sea lover",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Beach hunter",
+        "emoj": "🏄"
+      },
+      {
+        "text": "Restless surfer",
+        "emoj": "🏄"
+      }],
+      "upvotes": 50,
+      "longBio": "I have been out of Sicily for some years, from the UK to Singapore, but then it hit me: “A Sicilia è u megghiu postu ro munnu”. That is “Sicily is the best place in the world” in sicilian dialect. I love surfing as much as I love pretty much anything regarding the sea. If you need any tips about beaches or surfing spots, I’m the go-to-guy for you :)",
+      "media": [
+        {
+          "id": 0,
           "isVideo": true,
-          "likes": 60
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 1,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 2,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 3,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 4,
+          "isVideo": true,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 5,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 6,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 7,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+        },
+        {
+          "id": 8,
+          "isVideo": false,
+          "likes": 50,
+          "desc": "\"Pasta ca' muddica\" by nonna Pina"
         }
       ]
     }
