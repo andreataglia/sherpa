@@ -7,11 +7,11 @@
       "admin": true,
       "shortBio": [{
         "text": "Sea lover",
-        "emoj": "🏄"
+        "emoj": "🌊"
       },
       {
         "text": "Beach hunter",
-        "emoj": "🏄"
+        "emoj": "🏖️"
       },
       {
         "text": "Restless surfer",
@@ -82,19 +82,15 @@
       "inTeam": true,
       "admin": true,
       "shortBio": [{
-        "text": "Sea lover",
-        "emoj": "🏄"
+        "text": "Outdoor sports enthusiast, ",
+        "emoj": "🏅"
       },
       {
-        "text": "Beach hunter",
-        "emoj": "🏄"
-      },
-      {
-        "text": "Restless surfer",
-        "emoj": "🏄"
+        "text": "Compulsive traveler",
+        "emoj": "🗺️"
       }],
       "upvotes": 50,
-      "longBio": "I have been out of Sicily for some years, from the UK to Singapore, but then it hit me: “A Sicilia è u megghiu postu ro munnu”. That is “Sicily is the best place in the world” in sicilian dialect. I love surfing as much as I love pretty much anything regarding the sea. If you need any tips about beaches or surfing spots, I’m the go-to-guy for you :)",
+      "longBio": "I’m originally from the north of Italy, but every time I can, I don’t think twice and I visit my best friends from Sicily. I’m constantly overwhelmed by the astonishing mix of culture and natural beauty that only Sicily can offer, and the people.. The most generous and nice! Whenever you’re thinking of hiking or discovering the natural beauties of Sicily just ping me and I’d be happy to help.",
       "media": [
         {
           "id": 0,
