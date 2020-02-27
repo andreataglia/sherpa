@@ -30,7 +30,7 @@
           <v-window v-model="onboarding">
             <v-window-item v-for="pic in pics" :key="pic.id">
               <v-card light tile class="pb-3 fitHeight">
-                <v-card-text class="font-weight-medium body-1">{{ pic.text }}</v-card-text>
+                <v-card-text class="font-weight-medium body-1 text-left">{{ pic.text }}</v-card-text>
                 <v-img
                   src="https://picsum.photos/400/500?random"
                   class="mx-3 cardFitHeight"
@@ -78,17 +78,17 @@ export default {
     pics: [
       {
         id: 0,
-        text: `In team page you'll find plenty of nice people. Select the ones who best fit your needs`,
+        text: `In team page you'll find plenty of nice people. Select the ones who best fit your`,
         icon: 'mdi-magnify'
       },
       {
         id: 1,
-        text: `In team page you'll find plenty of nice people. Select the ones who best fit your needs`,
+        text: `In team page you'll find plenty of nice people. Select the ones who best fit your`,
         icon: 'mdi-plus'
       },
       {
         id: 2,
-        text: `In team page you'll find plenty of nice people. Select the ones who best fit your needs`,
+        text: `In team page you'll find plenty of nice people. Select the ones who best fit your`,
         icon: 'mdi-message-text-outline'
       }
     ]
