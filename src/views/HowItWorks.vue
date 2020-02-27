@@ -4,25 +4,25 @@
       <v-col cols="12" class="text-center pt-0">
         <div class="subtitle-2">HOW IT WORKS</div>
         <v-card class="mt-2" elevation="8">
-          <v-card-actions class="justify-space-around">
-            <v-item-group v-model="onboarding" class="text-center" mandatory>
-              <v-item
-                v-for="pic in pics"
-                :key="pic.id"
-                v-slot:default="{ active, toggle }"
-              >
-                <v-btn
-                  fab
-                  outlined
-                  color="#37474F"
-                  class="mx-2 topBtn"
-                  :input-value="active"
-                  @click="toggle"
-                  :class="{ activeBtn: active }"
+          <v-card-actions class="">
+            <v-item-group v-model="onboarding" class="text-center d-flex justify-space-between" style="width:100%;" mandatory>
+                <v-item
+                  v-for="pic in pics"
+                  :key="pic.id"
+                  v-slot:default="{ active, toggle }"
                 >
-                  <v-icon>{{ pic.icon }}</v-icon>
-                </v-btn>
-              </v-item>
+                  <v-btn
+                    fab
+                    outlined
+                    color="#37474F"
+                    class="mx-4 topBtn"
+                    :input-value="active"
+                    @click="toggle"
+                    :class="{ activeBtn: active }"
+                  >
+                    <v-icon>{{ pic.icon }}</v-icon>
+                  </v-btn>
+                </v-item>
             </v-item-group>
           </v-card-actions>
         </v-card>
@@ -30,7 +30,7 @@
           <v-window v-model="onboarding">
             <v-window-item v-for="pic in pics" :key="pic.id">
               <v-card light tile class="pb-3 fitHeight">
-                <v-card-text>{{ pic.text }}</v-card-text>
+                <v-card-text class="font-weight-medium body-1">{{ pic.text }}</v-card-text>
                 <v-img
                   src="https://picsum.photos/400/500?random"
                   class="mx-3 cardFitHeight"
@@ -108,16 +108,17 @@ export default {
 
 <style lang="scss">
 @import '@/assets/_variables.scss';
+
+$btn-active-opacity: 0.1;
+
 .topBtn {
   background-color: $secondary;
 }
 .activeBtn {
-  border: 2px solid $primary;
+  border: 3px solid $primary;
+  background-color: $secondary;
 }
-.activeItem {
-  border-bottom: 2px solid $primary;
-}
-.cardFitHeight{
+.cardFitHeight {
   max-height: calc(100vh - 335px);
 }
 </style>
