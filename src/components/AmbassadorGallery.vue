@@ -14,7 +14,12 @@
                 flat
                 class="d-flex mediaCard"
                 @click.stop="
-                  openMediaDialog(media.isVideo, media.id, media.likes, media.desc)
+                  openMediaDialog(
+                    media.isVideo,
+                    media.id,
+                    media.likes,
+                    media.desc
+                  )
                 "
                 tile
                 elevation="3"
@@ -74,6 +79,12 @@
                   class="mediaBox"
                   aspect-ratio="1"
                   contain
+                  v-touch="{
+                    left: () => swipe('Left'),
+                    right: () => swipe('Right'),
+                    up: () => swipe('Up'),
+                    down: () => swipe('Down')
+                  }"
                 >
                 </v-img>
               </v-sheet>
@@ -85,7 +96,7 @@
                 color="secondary"
                 text-color="#263238"
               >
-                {{mediaText}}
+                {{ mediaText }}
               </v-chip>
               <v-btn
                 bottom
@@ -216,6 +227,15 @@ export default {
         });
         this.likesPut.push(this.mediaId);
         this.mediaLikes += 1;
+      }
+    },
+    swipe(direction) {
+      // eslint-disable-next-line no-console
+      console.log(direction);
+      if (direction == 'Right') {
+        this.mediaLikes++;
+      } else {
+        this.mediaLikes--;
       }
     }
   },

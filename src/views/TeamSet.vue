@@ -35,7 +35,6 @@
                 v-if="!isTelegram"
                 hover
                 ripple
-                shaped
                 color="secondary"
                 class="title"
                 ><v-img
@@ -45,7 +44,7 @@
                 ></v-img>
                 WhatsApp
               </v-card>
-              <v-card v-else hover ripple shaped
+              <v-card v-else hover ripple
                 ><v-img
                   src="../assets/whatsapp.png"
                   contain
@@ -60,7 +59,6 @@
                 v-if="isTelegram"
                 hover
                 ripple
-                shaped
                 color="secondary"
                 class="title"
                 ><v-img
@@ -70,7 +68,7 @@
                 ></v-img>
                 Telegram
               </v-card>
-              <v-card v-else hover ripple shaped
+              <v-card v-else hover ripple
                 ><v-img
                   src="../assets/telegram.png"
                   contain
@@ -122,7 +120,12 @@
           </v-form>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" style="width:100%;" @click="done()">
+          <v-btn
+            color="primary"
+            height="50"
+            style="width:100%;"
+            @click="done()"
+          >
             Done!
           </v-btn>
         </v-card-actions>
@@ -162,7 +165,8 @@
           </ul>
           <v-divider class="my-2" />
           <div class="title text-center">
-            See you very soon and...<br> Welcome to Sicily! :)
+            See you very soon and...<br />
+            Welcome to Sicily! :)
           </div>
         </v-card-text>
       </v-card>

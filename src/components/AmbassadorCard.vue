@@ -5,7 +5,7 @@
         <v-img
           :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
           class="white--text align-end"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+          gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)"
           height="300"
         >
           <v-card-title v-text="getAmbassadorById.name"></v-card-title>
@@ -34,12 +34,12 @@
         <v-tooltip v-else-if="getAmbassadorById.admin" top open-on-hover>
           <template v-slot:activator="{ on }">
             <v-sheet v-on="on">
-              <v-btn disabled width="80" class="mr-2" outlined>
-                Remove
+              <v-btn disabled width="120" class="mr-2" text>
+                Moderator
               </v-btn>
             </v-sheet>
           </template>
-          <span>Admins cannot be removed from team</span>
+          <span>Moderators cannot be removed from team</span>
         </v-tooltip>
         <v-btn v-else color="primary" v-on:click="removeFromTeam()" outlined>
           Remove
