@@ -24,10 +24,8 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app hide-on-scroll dense>
-  
+    <v-app-bar app dense>
       <v-spacer />
-
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
     <v-content class="bgColor">

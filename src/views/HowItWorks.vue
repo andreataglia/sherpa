@@ -29,11 +29,11 @@
         <v-card class="mt-2" elevation="8">
           <v-window v-model="onboarding">
             <v-window-item v-for="pic in pics" :key="pic.id">
-              <v-card light min-height="400" tile class="pb-4">
+              <v-card light tile class="pb-3 fitHeight">
                 <v-card-text>{{ pic.text }}</v-card-text>
                 <v-img
                   src="https://picsum.photos/400/500?random"
-                  class="px-4"
+                  class="mx-3 cardFitHeight"
                   contain
                 ></v-img>
               </v-card>
@@ -42,10 +42,11 @@
         </v-card>
         <v-btn
           v-if="parseInt(onboarding) < pics.length - 1"
-          class="md-12 mt-2"
+          class="md-12 mt-6"
           color="primary"
           width="100%"
           elevation="8"
+          height="50"
           @click="
             onboarding =
               parseInt(onboarding) > pics.length - 1
@@ -54,9 +55,16 @@
           "
           >Next</v-btn
         >
-        <v-btn v-else class="md-12 mt-2" elevation="8" color="primary" width="100%" to="/team"
-          >Let's Go</v-btn
-        >
+        <v-btn
+          v-else
+          class="md-12 mt-6"
+          elevation="8"
+          color="primary"
+          width="100%"
+          to="/team"
+          height="50"
+          >Let's Go
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -108,5 +116,8 @@ export default {
 }
 .activeItem {
   border-bottom: 2px solid $primary;
+}
+.cardFitHeight{
+  max-height: calc(100vh - 335px);
 }
 </style>
