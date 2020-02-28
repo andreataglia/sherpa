@@ -5,7 +5,7 @@
         <v-img
           :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
           class="white--text align-end"
-          gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)"
+          gradient="to bottom, rgba(0,0,0,0), 80%, rgba(0,0,0,0.9)"
           height="300"
         >
           <v-card-title v-text="getAmbassadorById.name"></v-card-title>

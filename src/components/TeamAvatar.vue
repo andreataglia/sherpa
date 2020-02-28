@@ -42,6 +42,7 @@ export default {
   border-style: solid;
   border-width: 2px;
   border-color: $secondary;
+  cursor: pointer;
 }
 .adminAvatar{
   border-color: #0097A7;

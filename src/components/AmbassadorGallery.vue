@@ -46,7 +46,6 @@
             </v-col>
           </v-row>
           <v-dialog
-            ref="mediaDialog"
             persistent
             v-model="dialog"
             fullscreen
@@ -104,8 +103,8 @@
               <v-btn
                 rounded
                 bottom
-                color="secondary"
-                elevation="0"
+                color="primary"
+                elevation="8"
                 fixed
                 right
                 @click.stop="putLike()"
@@ -118,6 +117,10 @@
           </v-dialog>
         </v-container>
       </v-col>
+      <div v-show="blackDialog" id="blackDiv">
+        ah
+        <br /><br /><br /><br /><br /><br /><br />
+      </div>
     </v-row>
   </v-card>
 </template>
@@ -130,6 +133,7 @@ export default {
   },
   data: () => ({
     dialog: false,
+    blackDialog: true,
     publicPath: process.env.BASE_URL,
     videoPlaying: false,
     dialogIsVideo: true,
@@ -224,7 +228,8 @@ export default {
     },
     swipe(direction) {
       if (direction == 'Left') {
-        this.dialogTransition = "slide-x-reverse-transition";
+        this.dialogTransition = 'slide-x-reverse-transition';
+        this.blackDialog = true;
         this.closeMediaDialog();
         let self = this;
         setTimeout(function() {
@@ -232,11 +237,12 @@ export default {
             self.mediaId == self.getAmbassadorById.media.length - 1
               ? 0
               : self.mediaId + 1;
+          self.blackDialog = false;
           self.openMediaDialog(nextMediaId);
-          this.dialogTransition = "dialog-bottom-transition";
+          this.dialogTransition = 'dialog-bottom-transition';
         }, 400);
       } else if (direction == 'Right') {
-        this.dialogTransition = "slide-x-transition";
+        this.dialogTransition = 'slide-x-transition';
         this.closeMediaDialog();
         let self = this;
         setTimeout(function() {
@@ -245,7 +251,7 @@ export default {
               ? self.getAmbassadorById.media.length - 1
               : self.mediaId - 1;
           self.openMediaDialog(nextMediaId);
-          this.dialogTransition = "dialog-bottom-transition";
+          this.dialogTransition = 'dialog-bottom-transition';
         }, 400);
       }
     }
@@ -275,5 +281,14 @@ export default {
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+#blackDiv {
+  width: 100vh;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  z-index: 900;
+  background-color: black;
 }
 </style>
