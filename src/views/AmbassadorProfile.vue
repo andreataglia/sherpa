@@ -10,11 +10,6 @@
         class="profileSection"
         :id="parseInt(this.$route.params.id)"
       />
-      <v-card class="profileSection" elevation="8">
-        <v-card-text class="text-justify">
-          <span class="aboutMe">About me: </span>{{ getAmbassadorById.longBio }}
-        </v-card-text>
-      </v-card>
       <v-card class="text-left profileSection" elevation="8">
         <v-card-text>
           <v-row no-gutters>
@@ -34,6 +29,11 @@
             <v-col>Italian, English</v-col>
             <v-col>15 minutes</v-col>
           </v-row>
+        </v-card-text>
+      </v-card>
+      <v-card class="profileSection" elevation="8">
+        <v-card-text class="text-justify">
+          <span class="aboutMe">About me: </span>{{ getAmbassadorById.longBio }}
         </v-card-text>
       </v-card>
     </v-row>

@@ -30,7 +30,7 @@
           <v-window v-model="onboarding">
             <v-window-item v-for="pic in pics" :key="pic.id">
               <v-card light tile class="pb-3 fitHeight">
-                <v-card-text class="font-weight-medium body-1 text-left">{{ pic.text }}</v-card-text>
+                <v-card-text class="font-weight-medium body-1 text-left cardText">{{ pic.text }}</v-card-text>
                 <v-img
                   src="https://picsum.photos/400/500?random"
                   class="mx-3 cardFitHeight"
@@ -71,6 +71,11 @@
 </template>
 
 <script>
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// // Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 export default {
   data: () => ({
     onboarding: 0,
@@ -78,17 +83,17 @@ export default {
     pics: [
       {
         id: 0,
-        text: `In team page you'll find plenty of nice people. Select the ones who best fit your`,
+        text: `In team page you'll find plenty of nice people. Select the ones `,
         icon: 'mdi-magnify'
       },
       {
         id: 1,
-        text: `In team page you'll find plenty of nice people. Select the ones who best fit your`,
+        text: `In team page you'll find plenty of nice people. Select the ones`,
         icon: 'mdi-plus'
       },
       {
         id: 2,
-        text: `In team page you'll find plenty of nice people. Select the ones who best fit your`,
+        text: `In team page you'll find plenty of nice people. Select the ones`,
         icon: 'mdi-message-text-outline'
       }
     ]
@@ -119,6 +124,11 @@ $btn-active-opacity: 0.1;
   background-color: $secondary;
 }
 .cardFitHeight {
-  max-height: calc(100vh - 335px);
+  max-height: 50vh; /* Fallback for browsers that do not support Custom Properties */
+  max-height: calc(var(--vh, 1vh) * 50);
+  // max-height: calc(100vh - 335px);
+}
+.cardText {
+  max-height: 70px;
 }
 </style>
