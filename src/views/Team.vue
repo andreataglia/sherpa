@@ -27,13 +27,15 @@
         <v-divider inset style="margin-top:-10px;" class="pb-3"></v-divider>
         <div class="mx-auto" max-width="700">
           <v-slide-group multiple show-arrows class="bgColor">
-            <v-slide-item
-              v-for="amb of currentTeam"
-              :key="amb.id"
-              v-slot:default="{ active, toggle }"
-            >
-              <team-avatar :id="amb.id" />
-            </v-slide-item>
+            <transition-group name="list" tag="p">
+              <v-slide-item
+                v-for="amb of currentTeam"
+                :key="amb.id"
+                v-slot:default="{ active, toggle }"
+              >
+                <team-avatar :id="amb.id" />
+              </v-slide-item>
+            </transition-group>
           </v-slide-group>
         </div>
         <v-divider class="mt-3"></v-divider>
@@ -88,5 +90,14 @@ export default {
   .ambassadorCard {
     width: 350px;
   }
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>

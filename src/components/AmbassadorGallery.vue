@@ -13,14 +13,7 @@
               <v-card
                 flat
                 class="d-flex mediaCard"
-                @click.stop="
-                  openMediaDialog(
-                    media.isVideo,
-                    media.id,
-                    media.likes,
-                    media.desc
-                  )
-                "
+                @click.stop="openMediaDialog(media.id)"
                 tile
                 elevation="3"
               >
@@ -58,11 +51,16 @@
             v-model="dialog"
             fullscreen
             hide-overlay
-            transition="dialog-bottom-transition"
+            :transition="dialogTransition"
             dark
           >
             <v-card>
-              <v-sheet>
+              <v-sheet
+                v-touch="{
+                  left: () => swipe('Left'),
+                  right: () => swipe('Right')
+                }"
+              >
                 <video
                   v-if="dialogIsVideo"
                   class="mediaBox"
@@ -79,12 +77,6 @@
                   class="mediaBox"
                   aspect-ratio="1"
                   contain
-                  v-touch="{
-                    left: () => swipe('Left'),
-                    right: () => swipe('Right'),
-                    up: () => swipe('Up'),
-                    down: () => swipe('Down')
-                  }"
                 >
                 </v-img>
               </v-sheet>
@@ -147,26 +139,27 @@ export default {
     mediaText: '',
     mediaShowText: true,
     mediaId: 0,
-    likesPut: []
+    likesPut: [],
+    dialogTransition: 'dialog-bottom-transition'
   }),
   methods: {
-    openMediaDialog(isVideo, mediaId, likes, mediaText) {
-      this.dialogIsVideo = isVideo;
-      this.dialog = true;
-      this.mediaLikes = likes;
+    openMediaDialog(mediaId) {
       this.mediaId = mediaId;
-      this.mediaText = mediaText;
+      this.dialogIsVideo = this.getAmbassadorById.media[mediaId].isVideo;
+      this.mediaLikes = this.getAmbassadorById.media[mediaId].likes;
+      this.mediaText = this.getAmbassadorById.media[mediaId].desc;
+      this.dialog = true;
       this.mediaShowText = true;
       this.$nextTick(function() {
         let video = this.$refs.videoBox;
-        if (isVideo) {
-          this.videoSrc = this.getMediaUrl(isVideo, mediaId);
+        if (this.dialogIsVideo) {
+          this.videoSrc = this.getMediaUrl(this.dialogIsVideo, mediaId);
           video.playsinline = true;
           video.play();
           this.videoPlaying = true;
           video.loop = true;
         } else {
-          this.imageSrc = this.getMediaUrl(isVideo, mediaId);
+          this.imageSrc = this.getMediaUrl(this.dialogIsVideo, mediaId);
         }
       });
     },
@@ -230,12 +223,30 @@ export default {
       }
     },
     swipe(direction) {
-      // eslint-disable-next-line no-console
-      console.log(direction);
-      if (direction == 'Right') {
-        this.mediaLikes++;
-      } else {
-        this.mediaLikes--;
+      if (direction == 'Left') {
+        this.dialogTransition = "slide-x-reverse-transition";
+        this.closeMediaDialog();
+        let self = this;
+        setTimeout(function() {
+          let nextMediaId =
+            self.mediaId == self.getAmbassadorById.media.length - 1
+              ? 0
+              : self.mediaId + 1;
+          self.openMediaDialog(nextMediaId);
+          this.dialogTransition = "dialog-bottom-transition";
+        }, 400);
+      } else if (direction == 'Right') {
+        this.dialogTransition = "slide-x-transition";
+        this.closeMediaDialog();
+        let self = this;
+        setTimeout(function() {
+          let nextMediaId =
+            self.mediaId == 0
+              ? self.getAmbassadorById.media.length - 1
+              : self.mediaId - 1;
+          self.openMediaDialog(nextMediaId);
+          this.dialogTransition = "dialog-bottom-transition";
+        }, 400);
       }
     }
   },
