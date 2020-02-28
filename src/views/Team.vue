@@ -38,7 +38,7 @@
             </transition-group>
           </v-slide-group>
         </div>
-        <v-divider class="mt-3"></v-divider>
+        <v-divider class=""></v-divider>
       </v-col>
     </v-row>
     <v-row class="d-flex flex-column">
