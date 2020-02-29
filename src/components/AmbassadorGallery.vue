@@ -50,35 +50,46 @@
             v-model="dialog"
             fullscreen
             hide-overlay
-            :transition="dialogTransition"
+            transition="dialog-bottom-transition"
             dark
           >
             <v-card>
-              <v-sheet
-                v-touch="{
-                  left: () => swipe('Left'),
-                  right: () => swipe('Right')
-                }"
-              >
-                <video
-                  v-if="dialogIsVideo"
-                  class="mediaBox"
-                  ref="videoBox"
-                  autoplay="true"
-                  @click.stop="videoClick()"
+              <v-window v-model="mediaId" vertical continuous>
+                <v-window-item
+                  v-for="media in getAmbassadorById.media"
+                  :key="media.id"
                 >
-                  <source :src="videoSrc" type="video/mp4" />
-                </video>
-                <v-img
-                  v-else
-                  ref="imageBox"
-                  :src="imageSrc"
-                  class="mediaBox"
-                  aspect-ratio="1"
-                  contain
-                >
-                </v-img>
-              </v-sheet>
+                  <video
+                    v-if="currentMediaInfo.isVideo"
+                    class="mediaBox"
+                    :ref="'videoBox' + media.id"
+                    autoplay="false"
+                    @click.stop="videoClick()"
+                    playsinline="true"
+                    loop="true"
+                  >
+                    <source
+                      :src="getMediaUrl(currentMediaInfo.isVideo, mediaId)"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <v-img
+                    v-else
+                    :src="getMediaUrl(currentMediaInfo.isVideo, mediaId)"
+                    class="mediaBox"
+                    aspect-ratio="1"
+                    contain
+                  >
+                  </v-img>
+                </v-window-item>
+              </v-window>
+              <v-icon
+                id="playButton"
+                v-if="showPlayButton"
+                @click.stop="videoClick()"
+                size="80"
+                >mdi-play-circle
+              </v-icon>
               <v-chip
                 v-if="mediaShowText"
                 class="ma-2 mediaText"
@@ -87,7 +98,7 @@
                 color="secondary"
                 text-color="#263238"
               >
-                {{ mediaText }}
+                {{ currentMediaInfo.desc }}
               </v-chip>
               <v-btn
                 bottom
@@ -110,17 +121,13 @@
                 @click.stop="putLike()"
                 light
               >
-                {{ mediaLikes }}
+                {{ currentMediaInfo.likes }}
                 <v-icon class="ml-2">mdi-heart</v-icon>
               </v-btn>
             </v-card>
           </v-dialog>
         </v-container>
       </v-col>
-      <div v-show="blackDialog" id="blackDiv">
-        ah
-        <br /><br /><br /><br /><br /><br /><br />
-      </div>
     </v-row>
   </v-card>
 </template>
@@ -133,55 +140,33 @@ export default {
   },
   data: () => ({
     dialog: false,
-    blackDialog: true,
     publicPath: process.env.BASE_URL,
     videoPlaying: false,
     dialogIsVideo: true,
-    videoSrc: '#',
-    imageSrc: '#',
     mediaLikes: 0,
     mediaText: '',
     mediaShowText: true,
     mediaId: 0,
-    likesPut: [],
-    dialogTransition: 'dialog-bottom-transition'
+    likesPut: []
   }),
   methods: {
     openMediaDialog(mediaId) {
       this.mediaId = mediaId;
-      this.dialogIsVideo = this.getAmbassadorById.media[mediaId].isVideo;
-      this.mediaLikes = this.getAmbassadorById.media[mediaId].likes;
-      this.mediaText = this.getAmbassadorById.media[mediaId].desc;
       this.dialog = true;
       this.mediaShowText = true;
-      this.$nextTick(function() {
-        let video = this.$refs.videoBox;
-        if (this.dialogIsVideo) {
-          this.videoSrc = this.getMediaUrl(this.dialogIsVideo, mediaId);
-          video.playsinline = true;
-          video.play();
-          this.videoPlaying = true;
-          video.loop = true;
-        } else {
-          this.imageSrc = this.getMediaUrl(this.dialogIsVideo, mediaId);
-        }
-      });
     },
     closeMediaDialog() {
-      if (this.dialogIsVideo) {
-        this.$refs.videoBox.pause();
-        this.videoPlaying = false;
-        this.$refs.videoBox.currentTime = 0;
-      }
+      this.stopVideo(this.mediaId);
       this.dialog = false;
     },
     videoClick() {
+      let video = this.$refs['videoBox' + this.mediaId][0];
       if (this.videoPlaying) {
-        this.$refs.videoBox.pause();
         this.videoPlaying = false;
+        video.pause();
       } else {
-        this.$refs.videoBox.play();
         this.videoPlaying = true;
+        video.play();
       }
     },
     getMediaUrl(isVideo, mediaId) {
@@ -223,42 +208,34 @@ export default {
           mediaId: this.mediaId
         });
         this.likesPut.push(this.mediaId);
-        this.mediaLikes += 1;
       }
     },
-    swipe(direction) {
-      if (direction == 'Left') {
-        this.dialogTransition = 'slide-x-reverse-transition';
-        this.blackDialog = true;
-        this.closeMediaDialog();
-        let self = this;
-        setTimeout(function() {
-          let nextMediaId =
-            self.mediaId == self.getAmbassadorById.media.length - 1
-              ? 0
-              : self.mediaId + 1;
-          self.blackDialog = false;
-          self.openMediaDialog(nextMediaId);
-          this.dialogTransition = 'dialog-bottom-transition';
-        }, 400);
-      } else if (direction == 'Right') {
-        this.dialogTransition = 'slide-x-transition';
-        this.closeMediaDialog();
-        let self = this;
-        setTimeout(function() {
-          let nextMediaId =
-            self.mediaId == 0
-              ? self.getAmbassadorById.media.length - 1
-              : self.mediaId - 1;
-          self.openMediaDialog(nextMediaId);
-          this.dialogTransition = 'dialog-bottom-transition';
-        }, 400);
+    stopVideo(mediaId) {
+      try {
+        let video = this.$refs['videoBox' + mediaId][0];
+        video.pause();
+        this.videoPlaying = false;
+        video.currentTime = 0;
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.log(e);
       }
     }
   },
   computed: {
     getAmbassadorById() {
       return this.$store.getters.getAmbassadorById(parseInt(this.id));
+    },
+    currentMediaInfo() {
+      return this.getAmbassadorById.media[this.mediaId];
+    },
+    showPlayButton() {
+      return this.currentMediaInfo.isVideo && !this.videoPlaying;
+    }
+  },
+  watch: {
+    mediaId: function() {
+      this.videoPlaying = false;
     }
   }
 };
@@ -283,12 +260,12 @@ export default {
   left: 10px;
 }
 
-#blackDiv {
-  width: 100vh;
-  height: 100vh;
+#playButton {
   position: absolute;
-  top: 0px;
-  z-index: 900;
-  background-color: black;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  opacity: 0.9;
 }
 </style>
