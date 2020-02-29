@@ -69,13 +69,13 @@
                     loop="true"
                   >
                     <source
-                      :src="getMediaUrl(currentMediaInfo.isVideo, mediaId)"
+                      :src="getMediaUrl(currentMediaInfo.isVideo, media.id)"
                       type="video/mp4"
                     />
                   </video>
                   <v-img
                     v-else
-                    :src="getMediaUrl(currentMediaInfo.isVideo, mediaId)"
+                    :src="getMediaUrl(currentMediaInfo.isVideo, media.id)"
                     class="mediaBox"
                     aspect-ratio="1"
                     contain
