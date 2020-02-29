@@ -7,9 +7,8 @@
     Why should i keep going?
 
     <h2>No registration, totally free. We only ask a tip at the end in case you wish to contribute.</h2>
-    <v-btn bottom color="primary" elevation="8" dark fixed right to="/howitworks">
+    <v-btn bottom color="primary" elevation="8" width="250" height="50" dark to="/howitworks">
       Let's Go
-      <v-icon>mdi-arrow-right-bold</v-icon>
     </v-btn>
   </div>
 </template>

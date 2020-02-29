@@ -1,6 +1,6 @@
 <template>
   <span>
-    <v-avatar size="55" class="myTeamAvatar mr-2" v-bind:class="{adminAvatar: getAmbassadorById.admin}" @click.stop="dialog = true">
+    <v-avatar size="55" class="myTeamAvatar ml-2 elevation-5 my-2" @click.stop="dialog = true">
       <img
         :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
         :title="getAmbassadorById.name"
@@ -43,8 +43,5 @@ export default {
   border-width: 2px;
   border-color: $secondary;
   cursor: pointer;
-}
-.adminAvatar{
-  border-color: #0097A7;
 }
 </style>

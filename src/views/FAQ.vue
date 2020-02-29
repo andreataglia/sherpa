@@ -2,10 +2,8 @@
   <v-container fluid style="max-width:600px">
     <v-row class="px-4">
       <v-col cols="12" class="text-center">
-        <h3>FREQUENTLY ASKED QUESTIONS:</h3>
-      </v-col>
-      <v-col cols="12">
-        <v-expansion-panels>
+        <div class="subtitle-2">FREQUENTLY ASKED QUESTIONS</div>
+        <v-expansion-panels class="mt-2">
           <v-expansion-panel v-for="faq in faq" :key="faq.header">
             <v-expansion-panel-header>
               {{ faq.header }}
@@ -23,7 +21,7 @@
         <v-banner elevation="8">
           If you couldn't find your answer or simply wanna know more you can
           reach us out on Telegram. Here is the admins' usernames:
-          <br><br>
+          <br /><br />
           <ul>
             <li>
               Paolo:
