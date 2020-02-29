@@ -63,10 +63,9 @@
                     v-if="currentMediaInfo.isVideo"
                     class="mediaBox"
                     :ref="'videoBox' + media.id"
-                    autoplay="false"
                     @click.stop="videoClick()"
-                    playsinline="true"
-                    loop="true"
+                    playsinline
+                    loop
                   >
                     <source
                       :src="getMediaUrl(currentMediaInfo.isVideo, media.id)"
@@ -156,7 +155,7 @@ export default {
       this.mediaShowText = true;
     },
     closeMediaDialog() {
-      this.stopVideo(this.mediaId);
+      this.stopVideo();
       this.dialog = false;
     },
     videoClick() {
@@ -210,15 +209,17 @@ export default {
         this.likesPut.push(this.mediaId);
       }
     },
-    stopVideo(mediaId) {
-      try {
-        let video = this.$refs['videoBox' + mediaId][0];
-        video.pause();
-        this.videoPlaying = false;
-        video.currentTime = 0;
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.log(e);
+    stopVideo() {
+      if (this.currentMediaInfo.isVideo) {
+        try {
+          let video = this.$refs['videoBox' + this.mediaId][0];
+          video.pause();
+          this.videoPlaying = false;
+          video.currentTime = 0;
+        } catch (e) {
+          // eslint-disable-next-line no-console
+          console.log(e);
+        }
       }
     }
   },

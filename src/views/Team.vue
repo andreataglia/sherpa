@@ -8,7 +8,7 @@
               <v-btn
                 class="md-12"
                 color="primary"
-                width="100%"
+                width="250"
                 height="50"
                 elevation="8"
                 :disabled="currentTeam.length < minTeamSize"
@@ -23,11 +23,15 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <div>My Team</div>
-        <v-divider inset style="margin-top:-10px;" class="pb-3"></v-divider>
+        <div class="body-2 font-weight-medium">My Team</div>
+        <v-divider
+          inset
+          style="margin-top:-10px;"
+          class="pb-3"
+        ></v-divider>
         <div class="mx-auto" max-width="700">
           <v-slide-group multiple show-arrows class="bgColor">
-            <transition-group name="list" tag="p">
+            <transition-group name="list" tag="p" class="mb-1">
               <v-slide-item
                 v-for="amb of currentTeam"
                 :key="amb.id"
@@ -37,15 +41,15 @@
               </v-slide-item>
             </transition-group>
           </v-slide-group>
+          <v-divider></v-divider>
         </div>
-        <v-divider class=""></v-divider>
       </v-col>
     </v-row>
     <v-row class="d-flex flex-column">
       <ambassador-card
         v-for="amb of ambassadors"
         :key="amb.id"
-        class="mx-auto my-2 ambassadorCard"
+        class="mx-auto px-2 my-2 ambassadorCard"
         :id="amb.id"
       ></ambassador-card>
     </v-row>
@@ -84,11 +88,10 @@ export default {
     width: 400px;
   }
 }
-
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 400px) {
   /* small phones */
   .ambassadorCard {
-    width: 350px;
+    width: 370px;
   }
 }
 
