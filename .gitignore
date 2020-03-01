@@ -3,7 +3,7 @@ node_modules
 /dist
 
 # avoid publishing credentials
-/firebaseImport/serviceAccount.json
+/firebaseImport/privateKey.js
 
 # local env files
 .env.local
