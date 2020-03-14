@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    img super figa qui: <br> 
+    Intro IMAGE HERE: <br> 
     <img alt="Vue logo" src="../assets/logo.png">
     <br>
     What the hell is this?

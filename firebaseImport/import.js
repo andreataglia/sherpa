@@ -3,9 +3,6 @@
 const firestoreService = require('firestore-export-import');
 const firebaseConfig = require('./config.js');
 let serviceAccount = require('./serviceAccount.json');
-const privateKey = require('./privateKey.js');
-serviceAccount['private_key_id'] = privateKey['private_key_id'];
-serviceAccount['private_key'] = privateKey['private_key'];
 
 // JSON To Firestore
 const jsonToFirestore = async () => {
