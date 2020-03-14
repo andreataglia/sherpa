@@ -17,8 +17,6 @@
                 tile
                 elevation="3"
               >
-                <!-- :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`" -->
                 <v-img
                   :src="getMediaThumbUrl(media.id)"
                   :lazy-src="getMediaThumbUrl(media.id)"
@@ -27,8 +25,8 @@
                 >
                   <v-card-title class="pl-1 pb-0 body-1"
                     ><v-icon dark>{{ media.isVideo ? 'mdi-video' : '' }}</v-icon
-                    >{{ media.likes }}</v-card-title
-                  >
+                    >{{ media.likes }}
+                  </v-card-title>
                   <template v-slot:placeholder>
                     <v-row
                       class="fill-height ma-0"
@@ -89,16 +87,19 @@
                 size="80"
                 >mdi-play-circle
               </v-icon>
-              <v-chip
-                v-if="mediaShowText"
-                class="ma-2 mediaText"
-                close
-                @click:close="mediaShowText = false"
+              <v-banner
+                two-line
+                @click:icon="mediaShowText = false"
+                id="chip-desc"
+                v-model="mediaShowText"
                 color="secondary"
-                text-color="#263238"
+                transition="slide-y-transition"
               >
+                <v-icon slot="icon" size="30">
+                  mdi-close-circle
+                </v-icon>
                 {{ currentMediaInfo.desc }}
-              </v-chip>
+              </v-banner>
               <v-btn
                 bottom
                 color="primary"
@@ -225,7 +226,8 @@ export default {
   },
   computed: {
     getAmbassadorById() {
-      return this.$store.getters.getAmbassadorById(parseInt(this.id));
+      let id = this.id;
+      return this.$store.getters.getAmbassadorById(parseInt(id));
     },
     currentMediaInfo() {
       return this.getAmbassadorById.media[this.mediaId];
@@ -242,7 +244,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .mediaBox {
   position: fixed;
   right: 0;
@@ -255,12 +257,6 @@ export default {
   padding: 1px;
 }
 
-.mediaText {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
 #playButton {
   position: absolute;
   top: 50%;
@@ -268,5 +264,19 @@ export default {
   margin-top: -40px;
   margin-left: -40px;
   opacity: 0.9;
+}
+
+#chip-desc {
+  max-width: 90%;
+  position: absolute;
+  top: 10px;
+  left: 5%;
+  border-radius: 2em;
+  padding-left: 8px;
+  opacity: 0.9;
+}
+
+.v-banner__wrapper{
+  padding: 3px !important;
 }
 </style>

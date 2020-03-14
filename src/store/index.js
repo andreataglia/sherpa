@@ -31,14 +31,14 @@ const store = new Vuex.Store({
     removeFromTeam(state, id) {
       state.ambassadors.find(amb => amb.id === id).inTeam = false;
     },
-    addLike(state, payload){
+    addLike(state, payload) {
       let medias = state.ambassadors.find(amb => amb.id === payload.ambId).media;
       medias.find(media => media.id === payload.mediaId).likes+=1;
       fb.ambassadorsCollection
         .doc(payload.ambId + '')
         .set({ media: medias }, { merge: true });
     },
-    setUserLead(state, payload){
+    setUserLead(state, payload) {
       let userLead = ({
         isTelegram: payload.isTelegram,
         lead: payload.lead,
@@ -58,6 +58,9 @@ const store = new Vuex.Store({
           var ambCollection = [];
           querySnapshot.forEach(doc => {
             ambCollection.push(doc.data());
+          });
+          ambCollection.sort(function(a, b) {
+            return a.id - b.id;
           });
           commit("setAmbassadorsFromDB", ambCollection);
         }
