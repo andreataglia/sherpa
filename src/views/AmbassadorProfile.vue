@@ -25,9 +25,15 @@
             </v-col>
           </v-row>
           <v-row no-gutters>
+<<<<<<< HEAD
             <v-col>{{ getAmbassadorById.from }}</v-col>
             <v-col>{{ getAmbassadorById.languages }}</v-col>
             <v-col>{{ getAmbassadorById.resptime }}</v-col>
+=======
+            <v-col>Siracusa</v-col>
+            <v-col>Italian, English</v-col>
+            <v-col>15 minutes</v-col>
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
           </v-row>
         </v-card-text>
       </v-card>
@@ -66,7 +72,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+<<<<<<< HEAD
 @import '@/assets/_variables.scss';
+=======
+@import "@/assets/_variables.scss";
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
 
 .profileSection {
   width: 400px;
@@ -86,7 +96,11 @@ export default {
     width: 350px;
   }
 }
+<<<<<<< HEAD
 .aboutMe {
+=======
+.aboutMe{
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
   color: $primary;
   font-weight: bolder;
 }
