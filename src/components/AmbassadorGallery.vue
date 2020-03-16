@@ -264,6 +264,9 @@ export default {
   margin-top: -40px;
   margin-left: -40px;
   opacity: 0.9;
+  -moz-opacity: 0.9; /* Firefox and Mozilla browsers */
+  -webkit-opacity: 0.9; /* WebKit browser e.g. Safari */
+  filter: alpha(opacity=90); /* For IE8 and earlier */
 }
 
 #chip-desc {
@@ -274,9 +277,12 @@ export default {
   border-radius: 2em;
   padding-left: 8px;
   opacity: 0.9;
+  -moz-opacity: 0.9; /* Firefox and Mozilla browsers */
+  -webkit-opacity: 0.9; /* WebKit browser e.g. Safari */
+  filter: alpha(opacity=90); /* For IE8 and earlier */
 }
 
-.v-banner__wrapper{
+.v-banner__wrapper {
   padding: 3px !important;
 }
 </style>
