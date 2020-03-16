@@ -31,14 +31,22 @@ const store = new Vuex.Store({
     removeFromTeam(state, id) {
       state.ambassadors.find(amb => amb.id === id).inTeam = false;
     },
+<<<<<<< HEAD
     addLike(state, payload) {
+=======
+    addLike(state, payload){
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
       let medias = state.ambassadors.find(amb => amb.id === payload.ambId).media;
       medias.find(media => media.id === payload.mediaId).likes+=1;
       fb.ambassadorsCollection
         .doc(payload.ambId + '')
         .set({ media: medias }, { merge: true });
     },
+<<<<<<< HEAD
     setUserLead(state, payload) {
+=======
+    setUserLead(state, payload){
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
       let userLead = ({
         isTelegram: payload.isTelegram,
         lead: payload.lead,
@@ -59,9 +67,12 @@ const store = new Vuex.Store({
           querySnapshot.forEach(doc => {
             ambCollection.push(doc.data());
           });
+<<<<<<< HEAD
           ambCollection.sort(function(a, b) {
             return a.id - b.id;
           });
+=======
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
           commit("setAmbassadorsFromDB", ambCollection);
         }
       });

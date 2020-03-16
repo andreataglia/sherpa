@@ -25,8 +25,13 @@
                 >
                   <v-card-title class="pl-1 pb-0 body-1"
                     ><v-icon dark>{{ media.isVideo ? 'mdi-video' : '' }}</v-icon
+<<<<<<< HEAD
                     >{{ media.likes }}
                   </v-card-title>
+=======
+                    >{{ media.likes }}</v-card-title
+                  >
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
                   <template v-slot:placeholder>
                     <v-row
                       class="fill-height ma-0"
@@ -87,6 +92,7 @@
                 size="80"
                 >mdi-play-circle
               </v-icon>
+<<<<<<< HEAD
               <v-banner
                 two-line
                 @click:icon="mediaShowText = false"
@@ -100,6 +106,18 @@
                 </v-icon>
                 {{ currentMediaInfo.desc }}
               </v-banner>
+=======
+              <v-chip
+                v-if="mediaShowText"
+                class="ma-2 mediaText"
+                close
+                @click:close="mediaShowText = false"
+                color="secondary"
+                text-color="#263238"
+              >
+                {{ currentMediaInfo.desc }}
+              </v-chip>
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
               <v-btn
                 bottom
                 color="primary"
@@ -226,8 +244,12 @@ export default {
   },
   computed: {
     getAmbassadorById() {
+<<<<<<< HEAD
       let id = this.id;
       return this.$store.getters.getAmbassadorById(parseInt(id));
+=======
+      return this.$store.getters.getAmbassadorById(parseInt(this.id));
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
     },
     currentMediaInfo() {
       return this.getAmbassadorById.media[this.mediaId];
@@ -257,6 +279,15 @@ export default {
   padding: 1px;
 }
 
+<<<<<<< HEAD
+=======
+.mediaText {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
 #playButton {
   position: absolute;
   top: 50%;
@@ -264,6 +295,7 @@ export default {
   margin-top: -40px;
   margin-left: -40px;
   opacity: 0.9;
+<<<<<<< HEAD
   -moz-opacity: 0.9; /* Firefox and Mozilla browsers */
   -webkit-opacity: 0.9; /* WebKit browser e.g. Safari */
   filter: alpha(opacity=90); /* For IE8 and earlier */
@@ -284,5 +316,7 @@ export default {
 
 .v-banner__wrapper {
   padding: 3px !important;
+=======
+>>>>>>> 3d2d2f53a5300e36d47b09ba386d78ef7eafe3c8
 }
 </style>
