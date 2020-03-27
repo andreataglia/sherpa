@@ -37,6 +37,10 @@
 </template>
 
 <script>
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// // Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 export default {
   name: 'App',
   props: {
@@ -61,5 +65,14 @@ export default {
 
 .bgColor{
   background-color: $background-color;
+}
+
+.fillHeight {
+  height: calc(100vh - 74px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  // max-width: calc(var(--vh, 1vh) * 60);
+  margin: 0 auto;
 }
 </style>
