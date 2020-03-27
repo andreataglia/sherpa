@@ -91,7 +91,7 @@ export default {
 @media only screen and (max-width: 400px) {
   /* small phones */
   .ambassadorCard {
-    width: 370px;
+    width: 350px;
   }
 }
 

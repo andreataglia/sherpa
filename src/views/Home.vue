@@ -1,16 +1,25 @@
 <template>
-  <div class="home">
-    Intro IMAGE HERE: <br> 
-    <img alt="Vue logo" src="../assets/logo.png">
-    <br>
-    What the hell is this?
-    Why should i keep going?
-
-    <h2>No registration, totally free. We only ask a tip at the end in case you wish to contribute.</h2>
-    <v-btn bottom color="primary" elevation="8" width="250" height="50" dark to="/howitworks">
-      Let's Go
-    </v-btn>
-  </div>
+  <v-container fluid style="max-width:600px">
+    <v-row no-gutters class="fillHeight">
+      <v-img
+        laz-src="../assets/welcome.jpg"
+        src="../assets/welcome.jpg"
+        contain
+        class="flexItem mb-4"
+      />
+      <v-btn
+        color="primary"
+        elevation="8"
+        width="100%"
+        height="50"
+        dark
+        to="/howitworks"
+        class="myButton"
+      >
+        Let's Go
+      </v-btn>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -22,5 +31,12 @@ export default {
   components: {
     // HelloWorld
   }
-}
+};
 </script>
+
+<style lang="scss" scoped>
+  .flexItem{
+    flex: 1;
+    max-height: calc(100vh - 80px);
+  }
+</style>
