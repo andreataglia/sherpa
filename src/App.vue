@@ -68,11 +68,10 @@ export default {
 }
 
 .fillHeight {
-  height: calc(100vh - 74px);
+  // height: calc(100vh - 74px);
+  // align-items: stretch;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  // max-width: calc(var(--vh, 1vh) * 60);
   margin: 0 auto;
 }
 </style>
