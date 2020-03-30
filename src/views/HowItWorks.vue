@@ -1,8 +1,8 @@
 <template>
-  <v-container fluid style="max-width:600px">
+  <v-container fluid style="max-width:460px">
     <v-row no-gutters class="fillHeight text-center mx-auto">
       <div class="subtitle-2 mb-1 flexStatic">HOW IT WORKS</div>
-      <v-card class="mb-2 flexStatic" elevation="8" max-height="55">
+      <v-card class="mb-2" elevation="8" max-height="55">
         <v-card-actions>
           <v-item-group
             v-model="onboarding"
@@ -31,29 +31,33 @@
           </v-item-group>
         </v-card-actions>
       </v-card>
-      <v-card elevation="8" class="mb-4 flexItem flexStatic">
-        <v-window v-model="onboarding">
-          <v-window-item v-for="pic in pics" :key="pic.id">
-            <v-card light tile class="pb-2">
-              <v-card-text
-                class="font-weight-small body-2 text-center cardText"
-                >{{ pic.text }}</v-card-text
-              >
-              <v-img
-                :src="getGifName(pic.id)"
-                class="mx-2 cardFitHeight"
-                contain
-              ></v-img>
-            </v-card>
-          </v-window-item>
-        </v-window>
-      </v-card>
+      <v-window v-model="onboarding">
+        <v-window-item v-for="pic in pics" :key="pic.id" eager>
+          <v-card
+            light
+            tile
+            class="pb-2 capHeight d-flex flex-column"
+            elevation="8"
+          >
+            <v-card-text class="font-weight-small body-2 text-center cardText"
+              >{{ pic.text }}
+            </v-card-text>
+            <v-img
+              :src="getGifName(pic.id)"
+              :lazy-src="getGifName(pic.id)"
+              eager
+              class="mx-auto capHeightImage"
+              contain
+            ></v-img>
+          </v-card>
+        </v-window-item>
+      </v-window>
       <v-btn
         v-if="parseInt(onboarding) < pics.length - 1"
         color="primary"
-        class="flexStatic"
         width="100%"
         elevation="8"
+        class="mt-4"
         height="50"
         @click="
           onboarding =
@@ -66,8 +70,8 @@
       <v-btn
         v-else
         elevation="8"
-        class="flexStatic"
         color="primary"
+        class="mt-4"
         width="100%"
         to="/team"
         height="50"
@@ -116,7 +120,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/_variables.scss';
 
 $btn-active-opacity: 0.1;
@@ -128,22 +132,17 @@ $btn-active-opacity: 0.1;
   border: 3px solid $primary;
   background-color: $secondary;
 }
-.cardFitHeight {
-  max-height: calc(100vh - 280px);
-  // align-items: align-self;
-}
 .cardText {
   padding-bottom: 0.5em;
+  font-size: 2vh !important;
 }
 
-.flexItem {
-  flex: 1;
-  align-items: align-self;
+.capHeightImage {
+  max-height: calc(100vh - 280px);
+  max-width: 86%;
 }
 
-.flexStatic {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.capHeight {
+  height: calc(100vh - 230px);
 }
 </style>
