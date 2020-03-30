@@ -133,13 +133,13 @@ a {
 @media only screen and (max-width: 410px) {
   /* small phones */
   .ambCard {
-    max-width: 380px;
+    max-width: 370px;
   }
 }
 @media only screen and (max-width: 380px) {
   /* small phones */
   .ambCard {
-    max-width: 350px;
+    max-width: 330px;
   }
 }
 @media only screen and (max-width: 340px) {
