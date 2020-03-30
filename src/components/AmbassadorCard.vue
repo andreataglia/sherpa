@@ -1,12 +1,12 @@
 <template>
   <span>
-    <v-card min-width="320" max-width="400" elevation="8">
+    <v-card elevation="8" class="ambCard">
       <router-link :to="noView ? '#' : getProfileUrl()">
         <v-img
           :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
           class="white--text align-end"
           gradient="to bottom, rgba(0,0,0,0), 80%, rgba(0,0,0,0.9)"
-          height="300"
+          max-height="300"
         >
           <v-card-title v-text="getAmbassadorById.name"></v-card-title>
         </v-img>
@@ -102,13 +102,10 @@ export default {
     let ambassadors = this.$store.getters.getAmbassadorById(this.id);
     for (let i = 0; i < ambassadors.shortBio.length; i++) {
       this.emoj.push(
-        Twemoji.parse(
-          ambassadors.shortBio[i].emoj,
-          {
-            ext: '.svg',
-            folder: 'svg'
-          }
-        )
+        Twemoji.parse(ambassadors.shortBio[i].emoj, {
+          ext: '.svg',
+          folder: 'svg'
+        })
       );
     }
   }
@@ -126,5 +123,29 @@ a {
   margin: 0 0.05em 0 0.1em;
   vertical-align: -0.1em;
   margin-left: 4px;
+}
+
+
+.ambCard {
+  max-width: 400px;
+  min-width: 300px;
+}
+@media only screen and (max-width: 410px) {
+  /* small phones */
+  .ambCard {
+    max-width: 380px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  /* small phones */
+  .ambCard {
+    max-width: 350px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  /* small phones */
+  .ambCard {
+    max-width: 300px;
+  }
 }
 </style>

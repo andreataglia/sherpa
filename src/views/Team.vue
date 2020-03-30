@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid style="max-width:900px;">
     <v-row class="px-4">
       <v-col cols="12" class="text-center">
         <v-tooltip top open-on-hover>
@@ -45,11 +45,11 @@
         </div>
       </v-col>
     </v-row>
-    <v-row class="d-flex flex-column">
+    <v-row class="d-flex flex-raw flex-wrap">
       <ambassador-card
         v-for="amb of ambassadors"
         :key="amb.id"
-        class="mx-auto px-2 my-2 ambassadorCard"
+        class="mx-auto px-2 my-2"
         :id="amb.id"
       ></ambassador-card>
     </v-row>
@@ -79,21 +79,6 @@ export default {
 };
 </script>
 <style scoped>
-.ambassadorCard {
-  width: 400px;
-}
-@media only screen and (min-width: 768px) {
-  /* tablets and desktop */
-  .ambassadorCard {
-    width: 400px;
-  }
-}
-@media only screen and (max-width: 400px) {
-  /* small phones */
-  .ambassadorCard {
-    width: 350px;
-  }
-}
 
 .list-enter-active,
 .list-leave-active {
