@@ -2,9 +2,10 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
-      :clipped="$vuetify.breakpoint.lgAndUp"
+      temporary
       app
       right
+      bottom
       dark
       color="primary"
     >
@@ -24,7 +25,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app dense>
+    <v-app-bar app dense hide-on-scroll>
       <v-spacer />
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
@@ -61,9 +62,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/_variables.scss";
+@import '@/assets/_variables.scss';
 
-.bgColor{
+.bgColor {
   background-color: $background-color;
 }
 
@@ -73,5 +74,9 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+}
+
+.primary-color {
+  color: $primary;
 }
 </style>

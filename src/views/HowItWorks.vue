@@ -44,7 +44,7 @@
             </v-card-text>
             <v-img
               :src="getGifName(pic.id)"
-              :lazy-src="getGifName(pic.id)"
+              :lazy-src="getLazyImg(pic.id)"
               eager
               class="mx-auto capHeightImage"
               contain
@@ -89,17 +89,17 @@ export default {
     pics: [
       {
         id: 0,
-        text: `In team page you'll find plenty of nice people. `,
+        text: `Browse through the local ambassadors`,
         icon: 'mdi-magnify'
       },
       {
         id: 1,
-        text: `In team page you'll find plenty of nice people.`,
+        text: `Create your team by adding the ones you wish`,
         icon: 'mdi-plus'
       },
       {
         id: 2,
-        text: `In team page you'll find plenty of nice people.`,
+        text: `We'll create a Whatsapp/Telegram group with them`,
         icon: 'mdi-message-text-outline'
       }
     ]
@@ -115,6 +115,9 @@ export default {
     },
     getGifName(id) {
       return `${this.publicPath}img/sherpa_howitworks_${id}.gif`;
+    },
+    getLazyImg(id) {
+      return this.getGifName(id).substr(-4) + `_lazy.jpg`;
     }
   }
 };

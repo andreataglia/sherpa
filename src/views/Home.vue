@@ -2,8 +2,8 @@
   <v-container fluid style="max-width:600px">
     <v-row no-gutters class="fillHeight">
       <v-img
-        laz-src="../assets/welcome.jpg"
-        src="../assets/welcome.jpg"
+        laz-src="../assets/welcome.png"
+        src="../assets/welcome.png"
         contain
         class="flexItem mb-4"
       />
@@ -37,6 +37,6 @@ export default {
 <style lang="scss" scoped>
   .flexItem{
     flex: 1;
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 130px);
   }
 </style>

@@ -130,19 +130,19 @@ a {
   max-width: 400px;
   min-width: 300px;
 }
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 414px) {
   /* small phones */
   .ambCard {
-    max-width: 370px;
+    max-width: 400px;
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 375px) {
   /* small phones */
   .ambCard {
-    max-width: 330px;
+    max-width: 350px;
   }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 320px) {
   /* small phones */
   .ambCard {
     max-width: 300px;

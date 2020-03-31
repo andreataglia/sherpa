@@ -17,7 +17,7 @@
               </v-btn>
             </div>
           </template>
-          <span>Your team needs at least {{ minTeamSize }} ambassadors</span>
+          <span>Select at least {{ parseInt(minTeamSize) - currentTeam.length }} more ambassador to complete the team!</span>
         </v-tooltip>
       </v-col>
     </v-row>
@@ -49,7 +49,7 @@
       <ambassador-card
         v-for="amb of ambassadors"
         :key="amb.id"
-        class="mx-auto px-2 my-2"
+        class="mx-auto my-2"
         :id="amb.id"
       ></ambassador-card>
     </v-row>

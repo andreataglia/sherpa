@@ -25,8 +25,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "team" */ '../views/Team.vue')
+    component: () => import(/* webpackChunkName: "team" */ '../views/Team.vue')
   },
   {
     path: '/team/:id',
@@ -40,13 +39,13 @@ const routes = [
     component: () => import(/* webpackChunkName: "faq" */ '../views/FAQ.vue')
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/tos',
+    name: 'tos',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue')
+      import(/* webpackChunkName: "tos" */ '../views/ToS.vue')
   },
   {
     path: '/teamisset',
@@ -55,7 +54,24 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "teamisset" */ '../views/TeamSet.vue')
+      import(/* webpackChunkName: "teamisset" */ '../views/TeamSet.vue'),
+    children: [
+      {
+        // when /user/:id/profile is matched
+        path: '',
+        component: () => import(/* webpackChunkName: "teamisset0" */ '../views/TeamSet0.vue')
+      },
+      {
+        // when /user/:id/profile is matched
+        path: 'msg',
+        component: () => import(/* webpackChunkName: "teamisset1" */ '../views/TeamSet1.vue')
+      },
+      {
+        // when /user/:id/posts is matched
+        path: 'final',
+        component: () => import(/* webpackChunkName: "teamisse2" */ '../views/TeamSet2.vue')
+      }
+    ]
   }
 ];
 
