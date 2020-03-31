@@ -64,6 +64,7 @@
                     @click.stop="videoClick()"
                     playsinline
                     loop
+                    autoplay
                   >
                     <source
                       :src="getMediaUrl(currentMediaInfo.isVideo, media.id)"
@@ -153,6 +154,8 @@ export default {
     openMediaDialog(mediaId) {
       this.mediaId = mediaId;
       this.dialog = true;
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       this.mediaShowText = true;
     },
     closeMediaDialog() {
