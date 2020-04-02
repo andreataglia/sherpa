@@ -46,13 +46,14 @@
 </template>
 
 <script>
-import AmbassadorCard from '@/components/AmbassadorCard.vue';
 import AmbassadorGallery from '@/components/AmbassadorGallery.vue';
+import AmbassadorCard from '@/components/AmbassadorCard.vue';
 
 export default {
+  name: 'AmbassadorProfile',
   components: {
-    AmbassadorCard,
-    AmbassadorGallery
+    AmbassadorGallery,
+    AmbassadorCard
   },
   data: () => ({}),
   computed: {
