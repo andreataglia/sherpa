@@ -9,6 +9,7 @@
     "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
+    "@algoz098/vue-player": "^0.4.3",
     "core-js": "^3.4.4",
     "firestore-export-import": "^0.3.2",
     "register-service-worker": "^1.6.2",
