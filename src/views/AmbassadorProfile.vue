@@ -38,7 +38,7 @@
       </v-card>
     </v-row>
 
-    <v-btn bottom color="red" elevation="8" dark fixed left to="/team">
+    <v-btn bottom color="red" elevation="8" dark fixed height="50" left to="/team">
       <v-icon>mdi-arrow-left-bold</v-icon>
       Back
     </v-btn>

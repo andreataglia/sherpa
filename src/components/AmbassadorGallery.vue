@@ -94,6 +94,7 @@
                 id="chip-desc"
                 v-model="mediaShowText"
                 color="secondary"
+                class="pr-3"
                 transition="slide-y-transition"
               >
                 <v-icon slot="icon" size="30">
@@ -106,6 +107,7 @@
                 color="primary"
                 elevation="8"
                 fixed
+                height="50"
                 left
                 @click.stop="closeMediaDialog()"
               >
@@ -118,6 +120,7 @@
                 color="primary"
                 elevation="8"
                 fixed
+                height="50"
                 right
                 @click.stop="putLike()"
                 light
@@ -255,11 +258,9 @@ export default {
   width: 100%;
   height: 100%;
 }
-
 .mediaCard {
   padding: 1px;
 }
-
 #playButton {
   position: absolute;
   top: 50%;
@@ -271,7 +272,6 @@ export default {
   -webkit-opacity: 0.9; /* WebKit browser e.g. Safari */
   filter: alpha(opacity=90); /* For IE8 and earlier */
 }
-
 #chip-desc {
   max-width: 90%;
   position: absolute;
@@ -284,7 +284,6 @@ export default {
   -webkit-opacity: 0.9; /* WebKit browser e.g. Safari */
   filter: alpha(opacity=90); /* For IE8 and earlier */
 }
-
 .v-banner__wrapper {
   padding: 3px !important;
 }

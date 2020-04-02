@@ -331,15 +331,23 @@
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
-          "emoj": "🌊"
+          "text": "Born in Syracuse",
+          "emoj": "☀️"
+        },
+        {
+          "text": "Based in Catania",
+          "emoj": "🌋"
+        },
+        {
+          "text": "Engineer on the road with passion for art",
+          "emoj": "👷🏽‍♀️"
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
+      "from": "Catania",
+      "languages": "Italian, English",
+      "resptime": "2 Hours",
+      "longBio": "To me Sicily means sun, sea, colors, art, good food and good people; this is why I've chosen to stay in Sicily after graduation. I'm an engineer and for work, I drive around the island by car like a \"tuppetto\" (the typical Sicilian spinning top) from the largest and most famous cities to the most remote and unknown villages. In these years I have discovered that even the tiniest village has always a secret treasure to be discovered, and best of all, there will always be a person willing to welcome and help you:)",
       "media": [
         {
           "id": 0,
@@ -351,49 +359,49 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": "Motta d'affermo, Fiumara d'arte Piramide 38 parallelo"
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": "Acicastello, Lunch break with a view"
         },
         {
           "id": 3,
           "isVideo": false,
           "likes": 50,
-          "desc": "Pillirina beach"
+          "desc": "Catania, the square of Liotru"
         },
         {
           "id": 4,
-          "isVideo": true,
+          "isVideo": false,
           "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
+          "desc": "Bronte, Her majesty etna"
         },
         {
           "id": 5,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Marsala, Le saline"
         },
         {
           "id": 6,
           "isVideo": false,
           "likes": 50,
-          "desc": "Ortigia, summertime"
+          "desc": "Siracusa, A Pillirina"
         },
         {
           "id": 7,
           "isVideo": false,
           "likes": 50,
-          "desc": "Lido di Avola, 24th February"
+          "desc": "Siracusa, Blu plemmirio"
         },
         {
           "id": 8,
           "isVideo": false,
           "likes": 50,
-          "desc": "How about some canoeing?!"
+          "desc": "Gibellina, Gretto di Burri"
         }
       ]
     },
