@@ -17,10 +17,10 @@
 import AmbassadorCard from '@/components/AmbassadorCard.vue';
 
 export default {
+  name: 'TeamAvatar',
   components: {
     AmbassadorCard
   },
-  name: 'TeamAvatar',
   props: {
     id: Number
   },
