@@ -39,7 +39,9 @@
             class="pb-2 capHeight d-flex flex-column"
             elevation="8"
           >
-            <v-card-text class="font-weight-small body-2 text-center cardText"
+            <v-card-text
+              class="font-weight-small body-2 text-center cardText text-truncate"
+              :title="pic.text"
               >{{ pic.text }}
             </v-card-text>
             <v-img
@@ -117,7 +119,8 @@ export default {
       return `${this.publicPath}img/sherpa_howitworks_${id}.gif`;
     },
     getLazyImg(id) {
-      return this.getGifName(id).substr(-4) + `_lazy.jpg`;
+      let str = this.getGifName(id);
+      return str.substr(0, str.length - 4) + `_lazy.jpg`;
     }
   }
 };

@@ -73,19 +73,25 @@ export default {
   margin: 0 auto;
   margin-bottom: 10px;
 }
-@media only screen and (min-width: 768px) {
-  /* tablets and desktop */
+@media only screen and (max-width: 414px) {
+  /* small phones */
   .profileSection {
-    width: 400px;
+    max-width: 400px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  /* small phones */
+  .profileSection {
+    max-width: 350px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* small phones */
+  .profileSection {
+    max-width: 300px;
   }
 }
 
-@media only screen and (max-width: 400px) {
-  /* small phones */
-  .profileSection {
-    width: 350px;
-  }
-}
 .aboutMe {
   color: $primary;
   font-weight: bolder;
