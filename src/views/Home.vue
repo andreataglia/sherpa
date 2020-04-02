@@ -2,8 +2,7 @@
   <v-container fluid style="max-width:600px">
     <v-row no-gutters class="fillHeight">
       <v-img
-        laz-src="../assets/welcome.png"
-        src="../assets/welcome.png"
+        src="@/assets/welcome.png"
         contain
         class="flexItem mb-4"
       />
