@@ -46,7 +46,7 @@
             </v-card-text>
             <v-img
               :src="getGifName(pic.id)"
-              :lazy-src="getLazyImg(pic.id)"
+              :lazy-src="getLazySrc()"
               eager
               class="mx-auto capHeightImage"
               contain

@@ -74,6 +74,7 @@
                   <v-img
                     v-else
                     :src="getMediaUrl(currentMediaInfo.isVideo, media.id)"
+                    :lazy-src="getLazySrc()"
                     class="mediaBox"
                     aspect-ratio="1"
                     contain

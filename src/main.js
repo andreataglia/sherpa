@@ -5,15 +5,19 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 import VuePageTransition from 'vue-page-transition'
-// import vuetwemoji from 'vue-twemoji'
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
+
 Vue.use(VuePageTransition)
-// Vue.use(vuetwemoji, {
-//   extension: '.svg', //.svg, .png
-//   size: '16x16'
-// })
+
+Vue.mixin({
+  methods: {
+    getLazySrc(){
+      return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8HxxQDwAF3gITvWeQQwAAAABJRU5ErkJggg==";
+    }
+  }
+})
  
 new Vue({
   router,

@@ -4,6 +4,7 @@
       <router-link :to="noView ? '#' : getProfileUrl()">
         <v-img
           :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
+          :lazy-src="getLazySrc()"
           class="white--text align-end"
           gradient="to bottom, rgba(0,0,0,0), 80%, rgba(0,0,0,0.9)"
           max-height="300"
