@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import HowItWorks from '../views/HowItWorks.vue'
 
 Vue.use(VueRouter)
 
@@ -13,11 +14,7 @@ const routes = [
   {
     path: '/howitworks',
     name: 'howitworks',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "howitworks" */ '../views/HowItWorks.vue')
+    component: HowItWorks
   },
   {
     path: '/team',
@@ -49,7 +46,6 @@ const routes = [
   },
   {
     path: '/teamisset',
-    name: 'teamisset',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -59,6 +55,7 @@ const routes = [
       {
         // when /user/:id/profile is matched
         path: '',
+        name: 'teamisset',
         component: () => import(/* webpackChunkName: "teamisset0" */ '../views/TeamSet0.vue')
       },
       {

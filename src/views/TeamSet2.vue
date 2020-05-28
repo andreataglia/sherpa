@@ -1,7 +1,7 @@
 <template>
    <v-row class="pb-10 d-flex flex-column px-4 text-center">
     <v-card class="mx-0 text-center" elevation="8">
-      <div class="pb-0 pt-2 title">
+      <div class="pb-0 pt-2 title font-italic red--text">
         It's all set :)
       </div>
       <v-img
@@ -10,9 +10,9 @@
         contain
         class="mx-auto px-2 mt-2 fixHeight"
       />
-      <v-card-subtitle class="pb-1 pt-1 subtitle-1 font-weight-medium">
+      <v-card-subtitle class="pb-1 pt-1 title">
         You will be invited to a chat named "Welcome to Sicily" within the next 24 hours. 
-        <br>
+        <br><br>
         See you very soon!
       </v-card-subtitle>
     </v-card>

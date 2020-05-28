@@ -412,15 +412,35 @@
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
-          "emoj": "🌊"
+          "text": "Actor and singer, theater is my job",
+          "emoj": "🎭🎶"
+        },
+        {
+          "text": "Nature lover: excursion and wild adventures",
+          "emoj": "🌳🌼"
+        },
+        {
+          "text": "Sea activities: boat trip, sailing tour, cliff diving, snorkeling, diving, surf and conoe trip",
+          "emoj": "🌊🐚"
+        },
+        {
+          "text": "Photographer, I know the best spots in town",
+          "emoj": "📷"
+        },
+        {
+          "text": "Food expert, I can suggest you the best places to eat",
+          "emoj": "🍝"
+        },
+        {
+          "text": "Archeological parks, I am very fascinated by the history, myths and culture of Sicily",
+          "emoj": "🏛️"
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
+      "from": "Syracuse",
+      "languages": "Italian, English",
+      "resptime": "30 Min",
+      "longBio": "For work I travel a lot, I do theater tours all over Italy. I have seen and lived in many important cities and none of them have ever come close to Syracuse. The strength of this city is the amount of activities related to nature, sport, culture, food and relaxation you won't find anywhere else. With the right advice you can experience this land to its fullest potential, and discover its true soul. I love my land because it never ceases to surprise me and makes me discover new things, I guess sooner or later I will be able to discover them all",
       "media": [
         {
           "id": 0,
@@ -432,49 +452,49 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": "Sunset"
         },
         {
           "id": 2,
-          "isVideo": false,
+          "isVideo": true,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": "Canoe trip (by sea)"
         },
         {
           "id": 3,
-          "isVideo": false,
+          "isVideo": true,
           "likes": 50,
-          "desc": "Pillirina beach"
+          "desc": "Canoe trip (by river)"
         },
         {
           "id": 4,
           "isVideo": true,
           "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
+          "desc": "Wild adventure in Cavagrande"
         },
         {
           "id": 5,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Etna, snowboarding in front of the sea"
         },
         {
           "id": 6,
-          "isVideo": false,
+          "isVideo": true,
           "likes": 50,
-          "desc": "Ortigia, summertime"
+          "desc": "Archeological Park of Agrigento (Valle dei templi)"
         },
         {
           "id": 7,
           "isVideo": false,
           "likes": 50,
-          "desc": "Lido di Avola, 24th February"
+          "desc": "Street market Ortigia"
         },
         {
           "id": 8,
-          "isVideo": false,
+          "isVideo": true,
           "likes": 50,
-          "desc": "How about some canoeing?!"
+          "desc": "On the road"
         }
       ]
     },

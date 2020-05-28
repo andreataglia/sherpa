@@ -55,7 +55,7 @@ export default {
       { icon: 'mdi-help-circle', text: 'How It Works', to: '/howitworks' },
       { icon: 'mdi-account-multiple', text: 'Team', to: '/team' },
       { icon: 'mdi-message-processing', text: 'FAQ & Contacts', to: '/faq' },
-      { icon: 'mdi-city', text: 'Terms of Service', to: '/about' }
+      { icon: 'mdi-city', text: 'Terms of Service', to: '/tos' }
     ]
   })
 };
@@ -78,5 +78,9 @@ export default {
 
 .primary-color {
   color: $primary;
+}
+
+.title {
+  line-height: 1.25em !important;
 }
 </style>

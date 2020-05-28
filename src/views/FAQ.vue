@@ -11,14 +11,14 @@
                 <v-icon color="primary">$expand</v-icon>
               </template>
             </v-expansion-panel-header>
-            <v-expansion-panel-content>
+            <v-expansion-panel-content class="text-left">
               {{ faq.text }}
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
       <v-col>
-        <v-banner elevation="8">
+        <v-card elevation="2" class="pa-4">
           If you couldn't find your answer or simply wanna know more you can
           reach us out on Telegram. Here is the admins' usernames:
           <br /><br />
@@ -36,7 +36,7 @@
               >
             </li>
           </ul>
-        </v-banner>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>

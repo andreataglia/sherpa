@@ -1,6 +1,6 @@
 <template>
   <span>
-    <v-avatar size="55" class="myTeamAvatar ml-2 elevation-5 my-2" @click.stop="dialog = true">
+    <v-avatar :size="size" class="myTeamAvatar ml-2 elevation-5 my-2" @click.stop="dialog = true">
       <img
         :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
         :title="getAmbassadorById.name"
@@ -22,7 +22,11 @@ export default {
     AmbassadorCard
   },
   props: {
-    id: Number
+    id: Number,
+    size: {
+      type: Number,
+      default: 55
+    }
   },
   data: () => ({
     dialog: false,
