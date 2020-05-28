@@ -468,7 +468,7 @@
         },
         {
           "id": 4,
-          "isVideo": true,
+          "isVideo": false,
           "likes": 50,
           "desc": "Wild adventure in Cavagrande"
         },

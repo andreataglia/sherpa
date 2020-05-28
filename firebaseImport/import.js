@@ -1,3 +1,6 @@
+// from: https://levelup.gitconnected.com/firebase-import-json-to-firestore-ed6a4adc2b57
+
+
 /* eslint-disable no-console */
 // Imports
 const firestoreService = require('firestore-export-import');
