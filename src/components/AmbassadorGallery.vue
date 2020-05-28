@@ -50,38 +50,50 @@
             hide-overlay
             transition="dialog-bottom-transition"
             dark
+            eager
           >
-            <v-card>
-              <v-window v-model="mediaId" vertical continuous>
-                <v-window-item
+            <div>
+              <transition-group
+                enter-active-class="transition ease-out duration-100 transform"
+                enter-class="opacity-0 scale-95"
+                enter-to-class="opacity-100 scale-100"
+                leave-active-class="transition ease-in duration-75 transform"
+                leave-class="opacity-100 scale-100"
+                leave-to-class="opacity-0 scale-95"
+              >
+                <div
                   v-for="media in getAmbassadorById.media"
                   :key="media.id"
+                  :class="{ hidden: mediaId != media.id }"
+                  v-touch="{
+                    left: () => swipe('Left'),
+                    right: () => swipe('Right'),
+                    down: () => closeMediaDialog(),
+                  }"
                 >
                   <video
-                    v-if="currentMediaInfo.isVideo"
+                    v-if="media.isVideo"
                     class="mediaBox"
                     :ref="'videoBox' + media.id"
                     @click.stop="videoClick()"
                     playsinline
                     loop
-                    autoplay
                   >
                     <source
-                      :src="getMediaUrl(currentMediaInfo.isVideo, media.id)"
+                      :src="getMediaUrl(media.isVideo, media.id)"
                       type="video/mp4"
                     />
                   </video>
                   <v-img
                     v-else
-                    :src="getMediaUrl(currentMediaInfo.isVideo, media.id)"
-                    :lazy-src="getLazySrc()"
+                    :src="getMediaUrl(media.isVideo, media.id)"
                     class="mediaBox"
                     aspect-ratio="1"
                     contain
                   >
                   </v-img>
-                </v-window-item>
-              </v-window>
+                </div>
+              </transition-group>
               <v-icon
                 id="playButton"
                 v-if="showPlayButton"
@@ -129,7 +141,7 @@
                 {{ currentMediaInfo.likes }}
                 <v-icon class="ml-2">mdi-heart</v-icon>
               </v-btn>
-            </v-card>
+            </div>
           </v-dialog>
         </v-container>
       </v-col>
@@ -141,7 +153,7 @@
 export default {
   name: 'AmbassadorGallery',
   props: {
-    id: Number
+    id: Number,
   },
   data: () => ({
     dialog: false,
@@ -151,8 +163,8 @@ export default {
     mediaLikes: 0,
     mediaText: '',
     mediaShowText: true,
-    mediaId: 0,
-    likesPut: []
+    mediaId: -1,
+    likesPut: [],
   }),
   methods: {
     openMediaDialog(mediaId) {
@@ -161,19 +173,47 @@ export default {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       this.mediaShowText = true;
+      // autoplay the video
+      if (this.currentMediaInfo.isVideo) {
+        this.playVideo();
+      }
     },
     closeMediaDialog() {
-      this.stopVideo();
       this.dialog = false;
+      this.stopVideo();
+    },
+    swipe(direction) {
+      //TODO animation
+      this.stopVideo();
+      if (direction == 'Right') {
+        this.mediaId = this.mediaId == 8 ? 0 : this.mediaId + 1;
+      } else {
+        this.mediaId = this.mediaId == 0 ? 8 : this.mediaId - 1;
+      }
     },
     videoClick() {
-      let video = this.$refs['videoBox' + this.mediaId][0];
       if (this.videoPlaying) {
-        this.videoPlaying = false;
-        video.pause();
+        this.stopVideo();
       } else {
-        this.videoPlaying = true;
-        video.play();
+        this.playVideo();
+      }
+    },
+    playVideo() {
+      let video = this.$refs['videoBox' + this.mediaId][0];
+      this.videoPlaying = true;
+      video.play();
+    },
+    stopVideo() {
+      if (this.currentMediaInfo.isVideo) {
+        try {
+          let video = this.$refs['videoBox' + this.mediaId][0];
+          video.pause();
+          this.videoPlaying = false;
+          video.currentTime = 0;
+        } catch (e) {
+          // eslint-disable-next-line no-console
+          console.log(e);
+        }
       }
     },
     getMediaUrl(isVideo, mediaId) {
@@ -212,42 +252,32 @@ export default {
       if (!this.likesPut.includes(this.mediaId)) {
         this.$store.commit('addLike', {
           ambId: this.id,
-          mediaId: this.mediaId
+          mediaId: this.mediaId,
         });
         this.likesPut.push(this.mediaId);
       }
     },
-    stopVideo() {
-      if (this.currentMediaInfo.isVideo) {
-        try {
-          let video = this.$refs['videoBox' + this.mediaId][0];
-          video.pause();
-          this.videoPlaying = false;
-          video.currentTime = 0;
-        } catch (e) {
-          // eslint-disable-next-line no-console
-          console.log(e);
-        }
-      }
-    }
   },
   computed: {
     getAmbassadorById() {
       let id = this.id;
+      console.log();
       return this.$store.getters.getAmbassadorById(parseInt(id));
     },
     currentMediaInfo() {
-      return this.getAmbassadorById.media[this.mediaId];
+      return this.mediaId > -1
+        ? this.getAmbassadorById.media[this.mediaId]
+        : {};
     },
     showPlayButton() {
       return this.currentMediaInfo.isVideo && !this.videoPlaying;
-    }
+    },
   },
-  watch: {
-    mediaId: function() {
-      this.videoPlaying = false;
-    }
-  }
+  // watch: {
+  //   mediaId: function() {
+  //     this.videoPlaying = false;
+  //   },
+  // },
 };
 </script>
 

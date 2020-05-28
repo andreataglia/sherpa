@@ -1,7 +1,7 @@
 <template>
   <v-container fluid style="max-width:460px">
     <v-row no-gutters class="fillHeight text-center mx-auto">
-      <div class="subtitle-2 mb-1 flexStatic">HOW IT WORKS</div>
+      <div class="subtitle-2 mb-1 flexStatic text-gray-800">HOW IT WORKS</div>
       <v-card class="mb-2" elevation="8" max-height="55">
         <v-card-actions>
           <v-item-group
@@ -40,7 +40,7 @@
             elevation="8"
           >
             <v-card-text
-              class="font-weight-small body-2 text-center cardText text-truncate"
+              class="text-center text-truncate text-sm leading-4 text-green-600"
               :title="pic.text"
               >{{ pic.text }}
             </v-card-text>

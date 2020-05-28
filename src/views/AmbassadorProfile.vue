@@ -8,7 +8,7 @@
       ></ambassador-card>
       <ambassador-gallery
         class="profileSection"
-        :id="parseInt(this.$route.params.id)"
+        :id="parseInt($route.params.id)"
       />
       <v-card class="text-left profileSection" elevation="8">
         <v-card-text>

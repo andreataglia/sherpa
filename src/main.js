@@ -18,7 +18,9 @@ Vue.mixin({
     }
   }
 })
- 
+
+import './assets/tailwind.css';
+
 new Vue({
   router,
   store,
