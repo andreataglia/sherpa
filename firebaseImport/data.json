@@ -505,15 +505,15 @@
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
-          "emoj": "🌊"
+          "text": "Amateur cook and scuba diver",
+          "emoj": ""
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
+      "from": "Syracuse",
+      "languages": "Italian, English",
+      "resptime": "1 Hour",
+      "longBio": "I'm a simple man, for me, there's nothing better than the peace of marine depths and the pleasure of eating some delicious Sicilian meal. I love snorkeling and scuba-diving, and I know some very good places where you can enjoy them. I also believe that cooking, and especially, eating it’s how I express myself: it means I cook quite well and I eat a lot.. So, if you want to try the best Sicilian food, I'm your guy :)",
       "media": [
         {
           "id": 0,
@@ -525,49 +525,49 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": "Yes, sea in Sicily rocks"
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": "About to cook some kgs of mussels with my grandma's receipt"
         },
         {
           "id": 3,
           "isVideo": false,
           "likes": 50,
-          "desc": "Pillirina beach"
+          "desc": "Pointing at \"scogghi ru frati\" or \"two brothers rocks\""
         },
         {
           "id": 4,
-          "isVideo": true,
+          "isVideo": false,
           "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
+          "desc": "Not believing to have broken another harpoon"
         },
         {
           "id": 5,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Walking by the narrow streets of Marzamemi by sunset"
         },
         {
           "id": 6,
           "isVideo": false,
           "likes": 50,
-          "desc": "Ortigia, summertime"
+          "desc": "Finding some crabs with the help of local fisherman Pinuzzo"
         },
         {
           "id": 7,
           "isVideo": false,
           "likes": 50,
-          "desc": "Lido di Avola, 24th February"
+          "desc": "The poetry of eating an arancino by the sea"
         },
         {
           "id": 8,
           "isVideo": false,
           "likes": 50,
-          "desc": "How about some canoeing?!"
+          "desc": "Me doing nothing useful on a boat"
         }
       ]
     },
