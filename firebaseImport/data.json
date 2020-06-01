@@ -506,7 +506,7 @@
       "shortBio": [
         {
           "text": "Amateur cook and scuba diver",
-          "emoj": ""
+          "emoj": "🍽"
         }
       ],
       "upvotes": 50,
@@ -578,15 +578,27 @@
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
-          "emoj": "🌊"
+          "text": "Sicilian Wine connoisseur",
+          "emoj": "🍷"
+        },
+        {
+          "text": "Sicilian Food addicted",
+          "emoj": "🍴"
+        },
+        {
+          "text": "Sea lover",
+          "emoj": "🐚"
+        },
+        {
+          "text": "Plan routes, accommodations, explore, adventures, beaches, food, wine and restaurants",
+          "emoj": ""
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
+      "from": "Syracuse",
+      "languages": "Italian, English, Spanish",
+      "resptime": "4 Hours",
+      "longBio": "Hey! Welcome to Sicily! My name is Damiano. I’m 32 and I come from Siracusa (Sicily), respectively one of the most spectacular city and island in the entire world. I love everything about this place, especially its warmth from both the sun and the people, the food, the wine, the beautiful sandy beaches, wild natural reserves, volcanos, traditions and festivals, history, Sicilian dialect and much much more!!! There is something for everyone in Sicily you just need to ask and you will find what’s right for an amazing stay!!! I am here for you, whenever you need any advice before or during your trip on the following: transportation, accommodation, tours, adventures, beaches, food, wine and restaurants. What can I say more: \"Mbare! Arricriati\" (Mate! Enjoy). Damiano",
       "media": [
         {
           "id": 0,
@@ -598,49 +610,49 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": ""
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": ""
         },
         {
           "id": 3,
           "isVideo": false,
           "likes": 50,
-          "desc": "Pillirina beach"
+          "desc": ""
         },
         {
           "id": 4,
-          "isVideo": true,
+          "isVideo": false,
           "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
+          "desc": ""
         },
         {
           "id": 5,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": ""
         },
         {
           "id": 6,
           "isVideo": false,
           "likes": 50,
-          "desc": "Ortigia, summertime"
+          "desc": ""
         },
         {
           "id": 7,
           "isVideo": false,
           "likes": 50,
-          "desc": "Lido di Avola, 24th February"
+          "desc": ""
         },
         {
           "id": 8,
           "isVideo": false,
           "likes": 50,
-          "desc": "How about some canoeing?!"
+          "desc": ""
         }
       ]
     },
