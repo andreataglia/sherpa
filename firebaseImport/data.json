@@ -752,15 +752,23 @@
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
-          "emoj": "🌊"
+          "text": "Dolphin Lover",
+          "emoj": "🐬"
+        },
+        {
+          "text": "Cooking Pro",
+          "emoj": "🍳"
+        },
+        {
+          "text": "Kitesurf Addicted",
+          "emoj": "🏂"
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
+      "from": "Avola, Noto",
+      "languages": "Italian, English",
+      "resptime": "1 Hour",
+      "longBio": "I've been studying and working all around the Europe (London, Milan, Berlin) and over time, I've realized that Sicily is one of the most beautiful places in the world. I’m here to sponsor food porn, great spots for kitesurfing, and excursions here and there:) plus, I can help you find dolphins. Just let me know if you're interested in any of that, and I’m the guy for you!",
       "media": [
         {
           "id": 0,
@@ -772,37 +780,37 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": "Chlling with oranges, tangerines and lemons!"
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": "Chilling with Dolphins - 1"
         },
         {
           "id": 3,
           "isVideo": false,
           "likes": 50,
-          "desc": "Pillirina beach"
+          "desc": "Hiking in Noto"
         },
         {
           "id": 4,
-          "isVideo": true,
+          "isVideo": false,
           "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
+          "desc": "The Sea is my Land"
         },
         {
           "id": 5,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Chilling with Dolphins - 2"
         },
         {
           "id": 6,
           "isVideo": false,
           "likes": 50,
-          "desc": "Ortigia, summertime"
+          "desc": "Chilling with Dolphins - 3"
         },
         {
           "id": 7,
@@ -902,14 +910,18 @@
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
+          "text": "Sea lover",
           "emoj": "🌊"
+        },
+        {
+          "text": "Football and gym addicted",
+          "emoj": "⚽️🏋"
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
+      "from": "Syracuse",
+      "languages": "Italian, English",
+      "resptime": "10 Minutes",
       "longBio": "???",
       "media": [
         {
@@ -922,49 +934,49 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": "January in Syracuse☀️🌊"
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": "Boat day⛵️"
         },
         {
           "id": 3,
           "isVideo": false,
           "likes": 50,
-          "desc": "Pillirina beach"
+          "desc": "Playing football with Siracusa futsal team"
         },
         {
           "id": 4,
-          "isVideo": true,
+          "isVideo": false,
           "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
+          "desc": "Normal routine in Syracuse😎"
         },
         {
           "id": 5,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "Pasta with ricci😍 (typical sicilian food) "
         },
         {
           "id": 6,
           "isVideo": false,
           "likes": 50,
-          "desc": "Ortigia, summertime"
+          "desc": "Around Ortigia, Syracuse"
         },
         {
           "id": 7,
           "isVideo": false,
           "likes": 50,
-          "desc": "Lido di Avola, 24th February"
+          "desc": "Photo of november, after training on the beach with my friend… only in Syracuse"
         },
         {
           "id": 8,
           "isVideo": false,
           "likes": 50,
-          "desc": "How about some canoeing?!"
+          "desc": "Sunset in Syracuse 🌅😍"
         }
       ]
     },
@@ -1056,15 +1068,27 @@
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
-          "emoj": "🌊"
+          "text": "Tennis player",
+          "emoj": "🎾"
+        },
+        {
+          "text": "Liverpool FC",
+          "emoj": "❤"
+        },
+        {
+          "text": "Food enthusiast",
+          "emoj": ""
+        },
+        {
+          "text": "Born in Scotland - raised in Sicily",
+          "emoj": ""
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
+      "from": "Noto",
+      "languages": "English, Italian",
+      "resptime": "1 Hour",
+      "longBio": "My parents brought me to Sicily for the first time on holiday when I was 6 years old. The beautiful crystal clear sea, the smell of the homemade sugo at mezzogiorno on a Sunday and that intense August heat which was the perfect excuse for a granita col brioche, are my first memories of Sicily. My family decided to move and build a house in the  Sicilian countryside when I was 8 years old. A decision which not only gave me the opportunity to learn a second language, but most importantly allowed me to experience the little things that make Sicily such a beautiful place to live on a daily basis. If you want to know the best restaurants, ice cream shops, beaches and Sicilian adventures give me a shout.",
       "media": [
         {
           "id": 0,
@@ -1076,49 +1100,49 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": "..."
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": "Cavagrande - one of the deepest gorges in Europe"
         },
         {
           "id": 3,
           "isVideo": false,
           "likes": 50,
-          "desc": "Pillirina beach"
+          "desc": "..."
         },
         {
           "id": 4,
-          "isVideo": true,
+          "isVideo": false,
           "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
+          "desc": "A beautiful Sicilian sunset"
         },
         {
           "id": 5,
           "isVideo": false,
           "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
+          "desc": "..."
         },
         {
           "id": 6,
           "isVideo": false,
           "likes": 50,
-          "desc": "Ortigia, summertime"
+          "desc": "..."
         },
         {
           "id": 7,
           "isVideo": false,
           "likes": 50,
-          "desc": "Lido di Avola, 24th February"
+          "desc": "One of my favorite Sicilian dishes - \"Salsiccia e Patate\""
         },
         {
           "id": 8,
           "isVideo": false,
           "likes": 50,
-          "desc": "How about some canoeing?!"
+          "desc": "..."
         }
       ]
     },
