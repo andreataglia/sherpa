@@ -10,15 +10,19 @@ const store = new Vuex.Store({
     userLead: {
       isTelegram: true,
       lead: '',
-      timestamp: ''
-    }
+      timestamp: '',
+    },
+    currentTeamSize: 2,
   },
   getters: {
-    currentTeam: state => {
-      return state.ambassadors.filter(el => el.inTeam);
+    currentTeam: (state) => {
+      return state.ambassadors.filter((el) => el.inTeam);
     },
-    getAmbassadorById: state => id => {
-      return state.ambassadors.find(amb => amb.id === id);
+    getAmbassadorById: (state) => (id) => {
+      return state.ambassadors.find((amb) => amb.id === id);
+    },
+    teamIsFull: (state) => (vm) => {
+      return state.currentTeamSize == vm.$maxTeamSize;
     }
   },
   mutations: {
@@ -26,48 +30,57 @@ const store = new Vuex.Store({
       state.ambassadors = val;
     },
     addToTeam(state, id) {
-      state.ambassadors.find(amb => amb.id === id).inTeam = true;
+      let amb = state.ambassadors.find((amb) => amb.id === id);
+      if (!amb.inTeam) {
+        amb.inTeam = true;
+        state.currentTeamSize++;
+      }
     },
     removeFromTeam(state, id) {
-      state.ambassadors.find(amb => amb.id === id).inTeam = false;
+      let amb = state.ambassadors.find((amb) => amb.id === id);
+      if (amb.inTeam) {
+        amb.inTeam = false;
+        state.currentTeamSize--;
+      }
     },
     addLike(state, payload) {
-      let medias = state.ambassadors.find(amb => amb.id === payload.ambId).media;
-      medias.find(media => media.id === payload.mediaId).likes+=1;
+      let medias = state.ambassadors.find((amb) => amb.id === payload.ambId)
+        .media;
+      medias.find((media) => media.id === payload.mediaId).likes += 1;
       fb.ambassadorsCollection
         .doc(payload.ambId + '')
         .set({ media: medias }, { merge: true });
     },
     setUserLead(state, payload) {
-      let userLead = ({
+      let userLead = {
         isTelegram: payload.isTelegram,
         lead: payload.lead,
-        timestamp: new Date().getTime()
-      });
+        timestamp: new Date().getTime(),
+      };
       state.userLead = userLead;
-      fb.userLeadsCollection.add(userLead)
-    }
+      fb.userLeadsCollection.add(userLead);
+    },
   },
   actions: {
     fetchAmbassadors({ commit }) {
-      fb.ambassadorsCollection.get().then(querySnapshot => {
+      fb.ambassadorsCollection.get().then((querySnapshot) => {
         if (querySnapshot.empty) {
           //this.$router.push('/HelloWorld')
         } else {
           // this.loading = false;
           var ambCollection = [];
-          querySnapshot.forEach(doc => {
+          querySnapshot.forEach((doc) => {
             ambCollection.push(doc.data());
           });
           ambCollection.sort(function(a, b) {
             return a.id - b.id;
           });
-          commit("setAmbassadorsFromDB", ambCollection);
+          commit('setAmbassadorsFromDB', ambCollection);
         }
       });
-    }
+    },
   },
-  modules: {}
+  modules: {},
 });
 
 store.dispatch("fetchAmbassadors");

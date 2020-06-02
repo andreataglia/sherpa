@@ -6,7 +6,8 @@
           :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
           class="white--text align-end rounded-t-md"
           gradient="to bottom, rgba(0,0,0,0), 80%, rgba(0,0,0,0.9)"
-          max-height="300"
+          max-height="400"
+          position="top"
         >
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
@@ -30,7 +31,9 @@
         <v-icon size="x-large" class="mr-2" color="secondary"
           >mdi-thumb-up</v-icon
         >
-        <span class="subheading mr-2">{{ getAmbassadorById.upvotes }}</span>
+        <span class="subheading mr-2 text-gray-600">{{
+          getAmbassadorById.upvotes
+        }}</span>
         <v-spacer></v-spacer>
         <v-btn
           v-if="!getAmbassadorById.inTeam"
@@ -57,13 +60,13 @@
         </v-btn>
       </v-card-actions>
     </v-card>
-    <v-snackbar v-model="snackbar" :timeout="snackbarTimer">
-      {{
-        teamMemberJustAdded
-          ? 'Nice! One more team member added.'
-          : 'Uuch.. One less team member.'
-      }}
-      <v-btn color="blue" text @click="snackbar = false">
+    <v-snackbar
+      v-model="snackbar"
+      :color="snackbarTypes[snackbarType].color"
+      :timeout="snackbarTimer"
+    >
+      {{ snackbarTypes[snackbarType].text }}
+      <v-btn color="gray darken-3" text @click="snackbar = false">
         Close
       </v-btn>
     </v-snackbar>
@@ -86,23 +89,43 @@ export default {
     publicPath: process.env.BASE_URL,
     snackbar: false,
     snackbarTimer: 2000,
-    teamMemberJustAdded: true,
+    snackbarType: 0,
+    snackbarTypes: [
+      {
+        text: 'Nice! Team member added',
+        color: 'green lighten-1',
+      },
+      {
+        text: 'Uuch.. One less team member',
+        color: 'green lighten-1',
+      },
+      {
+        text: 'Team is full! Remove someone first',
+        color: 'red lighten-1',
+      },
+    ],
     emoj: [],
   }),
 
   methods: {
     addToTeam() {
-      this.teamMemberJustAdded = true;
-      this.$store.commit('addToTeam', this.id);
-      this.snackbar = true;
+      if (this.$store.getters.teamIsFull(this)) {
+        this.openSnackBar(2);
+      } else {
+        this.$store.commit('addToTeam', this.id);
+        this.openSnackBar(0);
+      }
     },
     removeFromTeam() {
-      this.teamMemberJustAdded = false;
       this.$store.commit('removeFromTeam', this.id);
-      this.snackbar = true;
+      this.openSnackBar(1);
     },
     getProfileUrl() {
       return this.noLink ? '' : 'team/' + this.id;
+    },
+    openSnackBar(type) {
+      this.snackbarType = type;
+      this.snackbar = true;
     },
   },
   computed: {
@@ -141,20 +164,17 @@ a {
   width: 400px;
 }
 @media only screen and (max-width: 414px) {
-  /* small phones */
   .ambCard {
     max-width: 400px;
   }
 }
 @media only screen and (max-width: 375px) {
-  /* small phones */
   .ambCard {
     max-width: 350px;
   }
 }
-@media only screen and (max-width: 320px) {
-  /* small phones */
-  .profileSection {
+@media only screen and (max-width: 321px) {
+  .ambCard {
     max-width: 300px;
   }
 }

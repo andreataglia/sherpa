@@ -1148,93 +1148,20 @@
     },
     {
       "id": 14,
-      "name": "Salvo Puzzo",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "????",
-          "emoj": "🌊"
-        }
-      ],
-      "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Panino by Borderi"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Pillirina beach"
-        },
-        {
-          "id": 4,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Ortigia, summertime"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Lido di Avola, 24th February"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "How about some canoeing?!"
-        }
-      ]
-    },
-    {
-      "id": 15,
       "name": "Lorenzo Sciuto",
       "inTeam": false,
       "admin": false,
       "shortBio": [
         {
-          "text": "????",
-          "emoj": "🌊"
+          "text": "Traveler, technologist, sports lover",
+          "emoj": ""
         }
       ],
       "upvotes": 50,
-      "from": "???",
-      "languages": "???",
-      "resptime": "???",
-      "longBio": "???",
+      "from": "Syracusa",
+      "languages": "Italian, English",
+      "resptime": "6 Hours",
+      "longBio": "I was born in this wonderful island full of sun and traditions 35 years ago, I grew up in the fascinating Siracusa, I studied in the vibrant city of Catania and I've been discovering the best places surrounding my cities since I was a child. I'm a travel lover, a culture enthusiast..and a food discoverer. Since I was young I've been using every free moment to explore new countries, new cultures and traditions. I spent one year living in Germany, I visited more than 20 different countries in Europe and outside. Now I’ve been living in Milan for 7 years but every opportunity is good to go back home and have a good Granita ca' brioscia as breakfast. You still don't know what am I talking about? Well, don't be shy, Sicily is waiting for you!",
       "media": [
         {
           "id": 0,
@@ -1246,13 +1173,13 @@
           "id": 1,
           "isVideo": false,
           "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
+          "desc": "..."
         },
         {
           "id": 2,
           "isVideo": false,
           "likes": 50,
-          "desc": "Panino by Borderi"
+          "desc": "..."
         },
         {
           "id": 3,

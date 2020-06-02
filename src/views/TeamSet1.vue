@@ -9,7 +9,7 @@
       </div>
       <v-row style="flex:0;">
         <v-col cols="6">
-          <v-card flat ripple class="subtitle mx-2"
+          <v-card flat ripple class="subtitle mx-2 cursor-pointer"
             ><v-img
               src="../assets/whatsapp.png"
               contain
@@ -26,7 +26,7 @@
           </v-card>
         </v-col>
         <v-col cols="6">
-          <v-card flat ripple class="subtitle mx-2"
+          <v-card flat ripple class="subtitle mx-2 cursor-pointer"
             ><v-img
               src="../assets/telegram.png"
               contain

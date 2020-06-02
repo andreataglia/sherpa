@@ -11,13 +11,14 @@
                 width="250"
                 height="50"
                 elevation="8"
-                :disabled="currentTeam.length < minTeamSize"
+                :disabled="currentTeam.length < $minTeamSize"
                 to="/teamisset"
                 >My Team Is Set
               </v-btn>
             </div>
           </template>
-          <span>Select at least {{ parseInt(minTeamSize) - currentTeam.length }} more ambassador to complete the team!</span>
+          <span v-if="parseInt($minTeamSize) - currentTeam.length > 0">Select at least {{ parseInt($minTeamSize) - currentTeam.length }} more ambassador to complete the team!</span>
+          <span v-else>Ready to go!</span>
         </v-tooltip>
       </v-col>
     </v-row>
@@ -45,7 +46,7 @@
         </div>
       </v-col>
     </v-row>
-    <div class="flex flex-wrap justify-around">
+    <div class="flex flex-wrap justify-around items-start">
       <ambassador-card
         v-for="amb of ambassadors"
         :key="amb.id"
@@ -66,7 +67,6 @@ export default {
     TeamAvatar
   },
   data: () => ({
-    minTeamSize: 3
   }),
   computed: {
     currentTeam() {

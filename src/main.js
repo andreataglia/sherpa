@@ -11,13 +11,8 @@ Vue.config.productionTip = true
 
 Vue.use(VuePageTransition)
 
-Vue.mixin({
-  methods: {
-    getLazySrc(){
-      return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8HxxQDwAF3gITvWeQQwAAAABJRU5ErkJggg==";
-    }
-  }
-})
+Vue.prototype.$minTeamSize = 3
+Vue.prototype.$maxTeamSize = 4
 
 import './assets/tailwind.css';
 

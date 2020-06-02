@@ -10,9 +10,9 @@
         contain
         class="mx-auto px-12 mt-2 fixHeight"
       />
-      <v-card-subtitle class="pb-1 pt-1 title">
+      <div class="pb-2 pt-4 font-normal text-md text-gray-600">
         Time to create a chat with your team on Telegram or Whatsapp
-      </v-card-subtitle>
+      </div>
       <div class="mx-auto ml-2 pb-4 text-center">
         <v-slide-group multiple show-arrows>
           <v-slide-item
