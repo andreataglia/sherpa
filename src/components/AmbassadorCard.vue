@@ -1,14 +1,21 @@
 <template>
   <span>
-    <v-card elevation="8" class="ambCard">
+    <v-card :elevation="elevation" class="bg-transparent ambCard mx-auto">
       <router-link :to="noView ? '#' : getProfileUrl()">
         <v-img
           :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
-          :lazy-src="getLazySrc()"
-          class="white--text align-end"
+          class="white--text align-end rounded-t-md"
           gradient="to bottom, rgba(0,0,0,0), 80%, rgba(0,0,0,0.9)"
           max-height="300"
         >
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
           <v-card-title v-text="getAmbassadorById.name"></v-card-title>
         </v-img>
       </router-link>
@@ -69,14 +76,18 @@ export default {
   name: 'AmbassadorCard',
   props: {
     id: Number,
-    noView: Boolean
+    noView: Boolean,
+    elevation: {
+      type: Number,
+      default: 8,
+    },
   },
   data: () => ({
     publicPath: process.env.BASE_URL,
     snackbar: false,
     snackbarTimer: 2000,
     teamMemberJustAdded: true,
-    emoj: []
+    emoj: [],
   }),
 
   methods: {
@@ -92,12 +103,12 @@ export default {
     },
     getProfileUrl() {
       return this.noLink ? '' : 'team/' + this.id;
-    }
+    },
   },
   computed: {
     getAmbassadorById() {
       return this.$store.getters.getAmbassadorById(this.id);
-    }
+    },
   },
   created: function() {
     let ambassadors = this.$store.getters.getAmbassadorById(this.id);
@@ -105,11 +116,11 @@ export default {
       this.emoj.push(
         Twemoji.parse(ambassadors.shortBio[i].emoj, {
           ext: '.svg',
-          folder: 'svg'
+          folder: 'svg',
         })
       );
     }
-  }
+  },
 };
 </script>
 
@@ -126,10 +137,8 @@ a {
   margin-left: 4px;
 }
 
-
 .ambCard {
-  max-width: 400px;
-  min-width: 300px;
+  width: 400px;
 }
 @media only screen and (max-width: 414px) {
   /* small phones */
@@ -145,7 +154,7 @@ a {
 }
 @media only screen and (max-width: 320px) {
   /* small phones */
-  .ambCard {
+  .profileSection {
     max-width: 300px;
   }
 }

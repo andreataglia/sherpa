@@ -46,11 +46,19 @@
             </v-card-text>
             <v-img
               :src="getGifName(pic.id)"
-              :lazy-src="getLazySrc()"
               eager
               class="mx-auto capHeightImage"
               contain
-            ></v-img>
+            >
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="grey lighten-5"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
           </v-card>
         </v-window-item>
       </v-window>
@@ -92,19 +100,19 @@ export default {
       {
         id: 0,
         text: `Browse through the local ambassadors`,
-        icon: 'mdi-magnify'
+        icon: 'mdi-magnify',
       },
       {
         id: 1,
         text: `Create your team by adding the ones you wish`,
-        icon: 'mdi-plus'
+        icon: 'mdi-plus',
       },
       {
         id: 2,
         text: `We'll create a Whatsapp/Telegram group with them`,
-        icon: 'mdi-message-text-outline'
-      }
-    ]
+        icon: 'mdi-message-text-outline',
+      },
+    ],
   }),
   methods: {
     next() {
@@ -121,8 +129,8 @@ export default {
     getLazyImg(id) {
       let str = this.getGifName(id);
       return str.substr(0, str.length - 4) + `_lazy.jpg`;
-    }
-  }
+    },
+  },
 };
 </script>
 

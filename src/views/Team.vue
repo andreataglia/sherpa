@@ -45,14 +45,14 @@
         </div>
       </v-col>
     </v-row>
-    <v-row class="d-flex flex-raw flex-wrap">
+    <div class="flex flex-wrap justify-around">
       <ambassador-card
         v-for="amb of ambassadors"
         :key="amb.id"
-        class="mx-auto my-2"
+        class="mx-2 my-2"
         :id="amb.id"
       ></ambassador-card>
-    </v-row>
+    </div>
   </v-container>
 </template>
 
