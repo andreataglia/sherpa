@@ -1,36 +1,12 @@
 <template>
-  <v-container fluid style="max-width:600px">
-    <v-row no-gutters class="fillHeight">
-      <v-img
-        src="@/assets/welcome.png"
-        contain
-        class="flexItem mb-4"
-      />
-      <v-btn
-        color="primary"
-        elevation="8"
-        width="100%"
-        height="50"
-        dark
-        to="/howitworks"
-        class="myButton"
+  <div class="h-full w-full">
+    <img class="mx-auto max-h-70-screen" src="@/assets/welcome.png" />
+    <router-link to="/howitworks">
+      <button
+        class="btn btn-dark w-full h-10 flex justify-around uppercase mt-4 mx-auto max-w-md"
       >
         Let's Go
-      </v-btn>
-    </v-row>
-  </v-container>
+      </button>
+    </router-link>
+  </div>
 </template>
-
-<script>
-
-export default {
-  
-};
-</script>
-
-<style lang="scss" scoped>
-  .flexItem{
-    flex: 1;
-    max-height: calc(100vh - 130px);
-  }
-</style>

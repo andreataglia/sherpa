@@ -64,8 +64,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import '@/assets/_variables.scss';
+<style scoped>
 
 .profileSection {
   width: 400px;
@@ -92,7 +91,7 @@ export default {
 }
 
 .aboutMe {
-  color: $primary;
+  /* color: $primary; */
   font-weight: bolder;
 }
 </style>

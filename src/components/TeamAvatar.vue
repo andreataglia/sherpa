@@ -40,12 +40,11 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "@/assets/_variables.scss";
+<style scoped>
 .myTeamAvatar {
   border-style: solid;
   border-width: 2px;
-  border-color: $secondary;
+  /* // border-color: $secondary; */
   cursor: pointer;
 }
 </style>

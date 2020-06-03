@@ -1,3 +1,34 @@
-@tailwind css;
+@tailwind base;
+
 @tailwind components;
+
+.btn {
+  @apply inline-flex items-center shadow-md px-3 py-2 border border-transparent text-sm leading-4 font-semibold rounded-sm transition ease-in-out duration-150;
+}
+.btn:focus {
+  @apply outline-none shadow-outline;
+}
+.btn:hover {
+  @apply bg-red-300;
+}
+.btn:active {
+  @apply bg-red-300;
+}
+
+.btn-light {
+  @apply bg-white text-orange-500;
+}
+.btn-dark {
+  @apply bg-red-500 text-gray-800;
+}
+.btn-disabled {
+  @apply bg-gray-100 border-gray-400 text-gray-400;
+}
+.btn-disabled:hover {
+  @apply bg-gray-100;
+}
+.btn-disabled:active {
+  @apply bg-gray-100;
+}
+
 @tailwind utilities;
