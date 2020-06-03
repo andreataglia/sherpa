@@ -1,5 +1,7 @@
 module.exports = {
-  purge: [],
+  // prefix: 'tw-',
+  // important: true,
+  purge: ['./public/**/*.html', './src/**/*.vue'],
   theme: {
     extend: {
       spacing: {

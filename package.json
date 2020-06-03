@@ -1,5 +1,5 @@
 {
-  "name": "sherpa",
+  "name": "welcome_to_sicily",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
-    "@algoz098/vue-player": "^0.4.3",
+    "@fullhuman/postcss-purgecss": "^2.2.0",
     "autoprefixer": "^9.8.0",
     "core-js": "^3.4.4",
     "firestore-export-import": "^0.3.2",
@@ -26,7 +26,6 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.2.0",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-pwa": "^4.1.0",
     "@vue/cli-plugin-router": "^4.1.0",

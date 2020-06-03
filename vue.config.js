@@ -1,8 +1,10 @@
 module.exports = {
-  "transpileDependencies": [
-    "vuetify"
-  ],
+  // "transpileDependencies": [
+  //   "vuetify"
+  // ],
   pwa: {
-    themeColor: '#ef5350'  
+    name: 'Welcome To Sicily',
+    themeColor: '#ef5350',
+    appleMobileWebAppCapable: 'yes',
   },
 }

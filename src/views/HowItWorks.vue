@@ -6,7 +6,7 @@
         <v-card-actions>
           <v-item-group
             v-model="onboarding"
-            class="text-center d-flex justify-space-between"
+            class="text-center tw-flex tw-justify-between"
             style="width:100%;"
             mandatory
           >
@@ -40,7 +40,7 @@
             elevation="8"
           >
             <v-card-text
-              class="text-center text-truncate text-sm leading-4 text-green-600"
+              class="text-center text-truncate text-sm leading-4"
               :title="pic.text"
               >{{ pic.text }}
             </v-card-text>
