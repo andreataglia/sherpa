@@ -1,9 +1,49 @@
 <template>
-  <span>
+  <div class="relative max-w-sm rounded overflow-hidden shadow-lg">
+    <router-link :to="noView ? '#' : getProfileUrl()">
+      <img
+        class="w-full rounded-br-large object-cover max-h-64 w-full object-top cursor-pointer"
+        :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
+      />
+    </router-link>
+    <button
+      class="btn btn-dark absolute right-0 -mt-16 mr-2 rounded-full w-11 h-11"
+    >
+      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          d="M2 6H0v2h2v2h2V8h2V6H4V4H2v2zm7 0a3 3 0 0 1 6 0v2a3 3 0 0 1-6 0V6zm11 9.14A15.93 15.93 0 0 0 12 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"
+        />
+      </svg>
+    </button>
+    <button
+      class="btn btn-light bg-yellow-200 text-gray-700 hover:bg-yellow-100 absolute right-0 -mt-3 mr-2 flex flex-col items-center rounded-full w-11 h-11"
+    >
+      <svg class="h-4 w-4 -mt-1" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"
+        />
+      </svg>
+      <span class="text-xs">540</span>
+    </button>
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">{{ getAmbassadorById.name }}</div>
+      <p class="text-gray-600 text-sm">
+        <span
+          v-for="(bio, index) in getAmbassadorById.shortBio"
+          :key="index"
+          class="mr-2"
+        >
+          <span v-html="emoj[index]"></span>
+          {{ bio.text }}
+        </span>
+      </p>
+    </div>
+  </div>
+  <!-- <span>
     <v-card :elevation="elevation" class="bg-transparent ambCard mx-auto">
       <router-link :to="noView ? '#' : getProfileUrl()">
         <v-img
-          :src="`${publicPath}img/ambassadorPics/amb-${this.id}.jpg`"
+          :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
           class="white--text align-end rounded-t-md"
           gradient="to bottom, rgba(0,0,0,0), 80%, rgba(0,0,0,0.9)"
           max-height="400"
@@ -70,7 +110,7 @@
         Close
       </v-btn>
     </v-snackbar>
-  </span>
+  </span> -->
 </template>
 
 <script>
@@ -78,7 +118,7 @@ import Twemoji from 'twemoji';
 export default {
   name: 'AmbassadorCard',
   props: {
-    id: Number,
+    ambId: Number,
     noView: Boolean,
     elevation: {
       type: Number,
@@ -112,16 +152,16 @@ export default {
       if (this.$store.getters.teamIsFull(this)) {
         this.openSnackBar(2);
       } else {
-        this.$store.commit('addToTeam', this.id);
+        this.$store.commit('addToTeam', this.ambId);
         this.openSnackBar(0);
       }
     },
     removeFromTeam() {
-      this.$store.commit('removeFromTeam', this.id);
+      this.$store.commit('removeFromTeam', this.ambId);
       this.openSnackBar(1);
     },
     getProfileUrl() {
-      return this.noLink ? '' : 'team/' + this.id;
+      return this.noLink ? '' : 'team/' + this.ambId;
     },
     openSnackBar(type) {
       this.snackbarType = type;
@@ -130,11 +170,11 @@ export default {
   },
   computed: {
     getAmbassadorById() {
-      return this.$store.getters.getAmbassadorById(this.id);
+      return this.$store.getters.getAmbassadorById(this.ambId);
     },
   },
   created: function() {
-    let ambassadors = this.$store.getters.getAmbassadorById(this.id);
+    let ambassadors = this.$store.getters.getAmbassadorById(this.ambId);
     for (let i = 0; i < ambassadors.shortBio.length; i++) {
       this.emoj.push(
         Twemoji.parse(ambassadors.shortBio[i].emoj, {
@@ -147,35 +187,12 @@ export default {
 };
 </script>
 
-<style scoped>
-a {
-  text-decoration: none;
-}
-
-.shortBio >>> .emoji {
+<style>
+img.emoji {
+  display: inline;
   height: 1em;
   width: 1em;
   margin: 0 0.05em 0 0.1em;
   vertical-align: -0.1em;
-  margin-left: 4px;
-}
-
-.ambCard {
-  width: 400px;
-}
-@media only screen and (max-width: 414px) {
-  .ambCard {
-    max-width: 400px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .ambCard {
-    max-width: 350px;
-  }
-}
-@media only screen and (max-width: 321px) {
-  .ambCard {
-    max-width: 300px;
-  }
 }
 </style>

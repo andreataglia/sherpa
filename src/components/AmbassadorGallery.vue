@@ -1,5 +1,184 @@
 <template>
-  <div class="block">
+  <!-- <span> -->
+  <div
+    class="w-full bg-white rounded shadow-lg p-1 flex flex-wrap justify-evenly"
+  >
+    <div
+      class="relative pb-1/3 w-1/3 rounded cursor-pointer hover:opacity-75"
+      v-for="(media, index) in getAmbassadorById.media"
+      :key="index"
+      @click.stop="openMediaDialog(media.id)"
+    >
+      <img
+        :src="getMediaThumbUrl(media.id)"
+        class="absolute w-full h-full object-cover object-center rounded-lg p-0.5"
+      />
+      <div
+        class="absolute bottom-0 left-0 ml-2 text-gray-100 font-normal flex items-center"
+      >
+        <svg
+          v-if="media.isVideo"
+          class="h-4 w-4 mr-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M16 7l4-4v14l-4-4v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v3zm-8 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
+          />
+        </svg>
+        50
+      </div>
+    </div>
+
+    <div
+      v-show="dialog"
+      class="z-40 overflow-hidden fixed bottom-0 inset-x-0 px-4 pb-6 inset-0 p-0 flex items-center justify-center"
+    >
+      <transition
+        enter-active-class="transition ease-out duration-100 transform"
+        enter-class="opacity-0 scale-95"
+        enter-to-class="opacity-100 scale-100"
+        leave-active-class="transition ease-in duration-75 transform"
+        leave-class="opacity-100 scale-100"
+        leave-to-class="opacity-0 scale-95"
+      >
+        <div class="fixed inset-0 transition-opacity">
+          <div class="absolute inset-0 bg-gray-900 opacity-85"></div>
+        </div>
+      </transition>
+
+      <!-- <v-banner
+        two-line
+        @click:icon="mediaShowText = false"
+        id="chip-desc"
+        v-model="mediaShowText"
+        class="absolute top-0 left-0 ml-2 mt-2 z-50 max-w-xs sm:max-w-xl rounded-lg sm:rounded-full opacity-75 bg-red-700 sm:py-0"
+        transition="slide-y-transition"
+      >
+        <v-icon slot="icon" size="30">
+          mdi-close-circle
+        </v-icon>
+        <span class="pr-3 text-sm">
+          {{ currentMediaInfo.desc }}
+        </span>
+      </v-banner> -->
+
+      <div>
+        <transition-group
+          enter-active-class="transition ease-out duration-100 transform"
+          enter-class="opacity-0 scale-95"
+          enter-to-class="opacity-100 scale-100"
+          leave-active-class="transition ease-in duration-75 transform"
+          leave-class="opacity-100 scale-100"
+          leave-to-class="opacity-0 scale-95"
+        >
+          <div
+            v-for="media in getAmbassadorById.media"
+            :key="media.id"
+            :class="{ hidden: mediaId != media.id }"
+          >
+            <!-- v-touch="{
+              left: () => swipe('Left'),
+              right: () => swipe('Right'),
+              down: () => closeMediaDialog(),
+            }" -->
+            <video
+              v-if="media.isVideo"
+              class="w-full h-full absolute top-0 mx-auto"
+              :ref="'videoBox' + media.id"
+              @click.stop="videoClick()"
+              playsinline
+              loop
+            >
+              <source
+                :src="getMediaUrl(media.isVideo, media.id)"
+                type="video/mp4"
+              />
+            </video>
+            <img
+              v-else
+              :src="getMediaUrl(media.isVideo, media.id)"
+              class="object-contain w-full h-full absolute top-0 left-0"
+            />
+          </div>
+        </transition-group>
+        <button
+          v-if="showPlayButton"
+          @click.stop="videoClick()"
+          class="absolute top-auto left-auto -mt-2 -ml-5 opacity-75 hover:text-gray-500 text-white items-center"
+        >
+          <svg
+            fill="currentColor"
+            class="w-10 h-10"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM7 6l8 4-8 4V6z"
+            />
+          </svg>
+        </button>
+        <button
+          @click.stop="swipe('Left')"
+          class="hidden sm:inline-flex absolute top-auto left-0 ml-5 opacity-75 hover:text-gray-500 text-white items-center"
+        >
+          <svg
+            fill="currentColor"
+            class="w-8 h-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M3.828 9l6.071-6.071-1.414-1.414L0 10l.707.707 7.778 7.778 1.414-1.414L3.828 11H20V9H3.828z"
+            />
+          </svg>
+        </button>
+        <button
+          @click.stop="swipe('Right')"
+          class="hidden sm:inline-flex absolute top-auto right-0 mr-5 opacity-75 hover:text-gray-500 text-white items-center"
+        >
+          <svg
+            fill="currentColor"
+            class="w-8 h-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M16.172 9l-6.071-6.071 1.414-1.414L20 10l-.707.707-7.778 7.778-1.414-1.414L16.172 11H0V9z"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- <v-btn
+        bottom
+        color="primary"
+        elevation="8"
+        fixed
+        height="50"
+        left
+        @click.stop="closeMediaDialog()"
+      >
+        <v-icon>mdi-arrow-left-bold</v-icon>
+        Back
+      </v-btn>
+      <v-btn
+        rounded
+        bottom
+        color="primary"
+        elevation="8"
+        fixed
+        height="50"
+        right
+        @click.stop="putLike()"
+        light
+      >
+        {{ currentMediaInfo.likes }}
+        <v-icon class="ml-2">mdi-heart</v-icon>
+      </v-btn> -->
+    </div>
+  </div>
+
+  <!-- <div class="block">
     <v-row>
       <v-col cols="12">
         <v-card class="pa-1">
@@ -209,14 +388,14 @@
         </v-card>
       </v-col>
     </v-row>
-  </div>
+  </div> -->
 </template>
 
 <script>
 export default {
   name: 'AmbassadorGallery',
   props: {
-    id: Number,
+    ambId: Number,
   },
   data: () => ({
     dialog: false,
@@ -286,7 +465,7 @@ export default {
         return (
           this.publicPath +
           'ambassadorGallery/amb' +
-          this.id +
+          this.ambId +
           '-' +
           mediaId +
           '.mp4'
@@ -295,7 +474,7 @@ export default {
         return (
           this.publicPath +
           'ambassadorGallery/amb' +
-          this.id +
+          this.ambId +
           '-' +
           mediaId +
           '.jpg'
@@ -306,7 +485,7 @@ export default {
       return (
         this.publicPath +
         'ambassadorGallery/amb' +
-        this.id +
+        this.ambId +
         '-' +
         mediaId +
         // '-thumb.jpg'
@@ -316,7 +495,7 @@ export default {
     putLike() {
       if (!this.likesPut.includes(this.mediaId)) {
         this.$store.commit('addLike', {
-          ambId: this.id,
+          ambId: this.ambId,
           mediaId: this.mediaId,
         });
         this.likesPut.push(this.mediaId);
@@ -325,7 +504,7 @@ export default {
   },
   computed: {
     getAmbassadorById() {
-      let id = this.id;
+      let id = this.ambId;
       console.log();
       return this.$store.getters.getAmbassadorById(parseInt(id));
     },
@@ -343,20 +522,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.mediaBox {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-.mediaCard {
-  padding: 1px;
-}
-.v-banner__wrapper {
-  padding: 3px !important;
-  border: 0 !important;
-}
-</style>

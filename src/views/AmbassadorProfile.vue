@@ -1,46 +1,37 @@
 <template>
-  <v-container fluid>
-    <v-row class="pb-16 d-flex flex-column">
-      <ambassador-card class="profileSection" :id="getAmbassadorById.id" :elevation="2" no-view></ambassador-card>
+  <div class="h-full mx-auto max-w-sm flex flex-wrap justify-around">
+    <ambassador-card :amb-id="getAmbassadorById.id" no-view></ambassador-card>
 
-      <ambassador-gallery class="profileSection" :id="parseInt($route.params.id)" />
-
-      <v-card class="text-left profileSection">
-        <div class="flex justify-between pa-4 text-gray-600 font-normal">
-          <div>
-            <div class="font-bold text-gray-800">From</div>
-            {{ getAmbassadorById.from }}
-          </div>
-          <div>
-            <div class="font-bold text-gray-800">Languages</div>
-            {{ getAmbassadorById.languages }}
-          </div>
-          <div>
-            <div class="font-bold text-gray-800">
-              <v-tooltip top open-on-hover>
-                <template v-slot:activator="{ on }">
-                  <span v-on="on">Avg. Resp. Time</span>
-                </template>
-                <span>Average Response Time</span>
-              </v-tooltip>
-            </div>
-            {{ getAmbassadorById.resptime }}
-          </div>
+    <ambassador-gallery
+      class="mt-3"
+      :amb-id="parseInt($route.params.id)"
+    />
+    <div
+      class="bg-white w-full rounded overflow-hidden shadow-lg flex justify-between p-4 text-gray-500 text-sm mt-3"
+    >
+      <div class="mr-1">
+        <div class="font-bold text-gray-800">From</div>
+        {{ getAmbassadorById.from }}
+      </div>
+      <div class="mr-1">
+        <div class="font-bold text-gray-800">Languages</div>
+        {{ getAmbassadorById.languages }}
+      </div>
+      <div>
+        <div class="font-bold text-gray-800">
+          Avg. Resp. Time
         </div>
-      </v-card>
+        {{ getAmbassadorById.resptime }}
+      </div>
+    </div>
 
-      <v-card class="profileSection pa-4 mt-2">
-        <div class="text-justify text-gray-600 font-normal">
-          <span class="aboutMe">About me: </span>{{ getAmbassadorById.longBio }}
-        </div>
-      </v-card>
-    </v-row>
-
-    <v-btn bottom color="red" dark fixed height="50" left to="/team">
-      <v-icon>mdi-arrow-left-bold</v-icon>
-      Back
-    </v-btn>
-  </v-container>
+    <div
+      class="bg-white w-full rounded overflow-hidden shadow-lg text-left p-4 mt-3 text-justify leading-5 text-gray-500 text-sm"
+    >
+      <div class="text-red-500 font-bold leading-6">About Me</div>
+      {{ getAmbassadorById.longBio }}
+    </div>
+  </div>
 </template>
 
 <script>
@@ -63,35 +54,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-.profileSection {
-  width: 400px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-@media only screen and (max-width: 414px) {
-  /* small phones */
-  .profileSection {
-    max-width: 400px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  /* small phones */
-  .profileSection {
-    max-width: 350px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  /* small phones */
-  .profileSection {
-    max-width: 300px;
-  }
-}
-
-.aboutMe {
-  /* color: $primary; */
-  font-weight: bolder;
-}
-</style>

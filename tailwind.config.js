@@ -13,6 +13,10 @@ module.exports = {
         '80-screen': '80vh',
         '70-screen': '70vh',
         '50-screen': '50vh',
+        '1/3': '33.333%'
+      },
+      borderRadius: {
+        'large': '12rem'
       },
       // colors: {
       //   primary: {

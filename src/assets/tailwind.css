@@ -6,7 +6,7 @@
   @apply inline-flex items-center shadow-md px-3 py-2 border border-transparent text-sm leading-4 font-semibold rounded-sm transition ease-in-out duration-150;
 }
 .btn:focus {
-  @apply outline-none shadow-outline;
+  @apply outline-none;
 }
 .btn:hover {
   @apply bg-red-300;
@@ -16,8 +16,15 @@
 }
 
 .btn-light {
-  @apply bg-white text-orange-500;
+  @apply bg-yellow-200 text-gray-800;
 }
+.btn-light:hover {
+  @apply bg-yellow-100;
+}
+.btn-light:active {
+  @apply bg-yellow-100;
+}
+
 .btn-dark {
   @apply bg-red-500 text-gray-800;
 }
