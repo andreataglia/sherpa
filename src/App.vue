@@ -50,7 +50,7 @@
             </div>
             <div class="flex-shrink-0 flex items-center px-4">
               <img class="h-8 w-auto" src="./assets/sicily.svg" />
-              <span class="ml-2 text-gray-900 font-semibold"
+              <span class="ml-2 text-gray-900 font-semibold text-lg"
                 >Welcome To Sicily</span
               >
             </div>
@@ -60,43 +60,26 @@
                   v-for="(link, index) in links"
                   :key="index"
                   :to="link.to"
-                  :class="{ 'mt-1': index > 0 }"
                   class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white hover:bg-yellow-700 focus:outline-none transition ease-in-out duration-150"
+                  :class="{
+                    'mt-1': index > 0,
+                    'bg-yellow-700': link.routeName === currentRoute,
+                  }"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-gray-200 group-hover:text-yellow-300 transition ease-in-out duration-150"
-                    stroke="currentColor"
-                    fill="none"
+                    class="mr-4 h-6 w-6 transition ease-in-out duration-150"
+                    :class="
+                      link.routeName === currentRoute
+                        ? ['group-hover:text-yellow-100 text-yellow-300']
+                        : ['text-gray-200 group-hover:text-yellow-300']
+                    "
+                    fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"
-                    />
+                    <path :d="link.icon" />
                   </svg>
                   {{ link.text }}
                 </router-link>
-                <a
-                  href="#"
-                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-100 bg-yellow-700 focus:outline-none focus:bg-indigo-700 transition ease-in-out duration-150"
-                >
-                  <svg
-                    class="mr-4 h-6 w-6 text-yellow-300 group-hover:text-yellow-100 transition ease-in-out duration-150"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
-                  Team
-                </a>
               </nav>
             </div>
           </div>
@@ -107,59 +90,42 @@
       </div>
     </div>
 
-    <!-- Static sidebar for desktop -->
+    <!-- Static sidebar for DESKTOP -->
     <div class="hidden md:flex md:flex-shrink-0">
       <div class="flex flex-col w-64 bg-red-500 pt-5 pb-4">
         <div class="flex items-center flex-shrink-0 px-4">
           <img class="h-8 w-auto" src="./assets/sicily.svg" />
-          <span class="ml-2 text-gray-900 font-semibold"
+          <span class="ml-2 text-gray-900 font-semibold text-lg"
             >Welcome To Sicily</span
           >
         </div>
         <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
-          <!-- Sidebar component, swap this element with another sidebar if you like -->
+          <!-- Sidebar component -->
           <nav class="flex-1 px-2">
             <router-link
               v-for="(link, index) in links"
               :key="index"
               :to="link.to"
-              :class="{ 'mt-1': index > 0 }"
               class="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:bg-yellow-700 focus:outline-none transition ease-in-out duration-150"
+              :class="{
+                'mt-1': index > 0,
+                'bg-yellow-700': link.routeName === currentRoute,
+              }"
             >
               <svg
-                class="mr-3 h-6 w-6 text-gray-200 group-hover:text-yellow-300 transition ease-in-out duration-150"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
+                class="mr-3 h-6 w-6  transition ease-in-out duration-150"
+                :class="
+                  link.routeName === currentRoute
+                    ? ['group-hover:text-yellow-100 text-yellow-300']
+                    : ['text-gray-200 group-hover:text-yellow-300']
+                "
+                fill="currentColor"
+                viewBox="0 0 20 20"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"
-                />
+                <path :d="link.icon" />
               </svg>
               {{ link.text }}
             </router-link>
-            <a
-              href="#"
-              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md bg-yellow-700 focus:outline-none transition ease-in-out duration-150"
-            >
-              <svg
-                class="mr-3 h-6 w-6 text-yellow-300 group-hover:text-yellow-100 transition ease-in-out duration-150"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              Team
-            </a>
           </nav>
         </div>
       </div>
@@ -233,12 +199,47 @@ export default {
   data: () => ({
     drawer: null,
     links: [
-      { icon: 'mdi-home', text: 'Home', to: '/' },
-      { icon: 'mdi-help-circle', text: 'How It Works', to: '/howitworks' },
-      { icon: 'mdi-account-multiple', text: 'Team', to: '/team' },
-      { icon: 'mdi-message-processing', text: 'FAQ & Contacts', to: '/faq' },
-      { icon: 'mdi-city', text: 'Terms of Service', to: '/tos' },
+      {
+        icon: 'M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z',
+        text: 'Home',
+        to: '/',
+        routeName: 'home',
+      },
+      {
+        icon:
+          'M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z',
+        text: 'How It Works',
+        to: '/howitworks',
+        routeName: 'howitworks',
+      },
+      {
+        icon:
+          'M7 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1c2.15 0 4.2.4 6.1 1.09L12 16h-1.25L10 20H4l-.75-4H2L.9 10.09A17.93 17.93 0 0 1 7 9zm8.31.17c1.32.18 2.59.48 3.8.92L18 16h-1.25L16 20h-3.96l.37-2h1.25l1.65-8.83zM13 0a4 4 0 1 1-1.33 7.76 5.96 5.96 0 0 0 0-7.52C12.1.1 12.53 0 13 0z',
+        text: 'Team',
+        to: '/team',
+        routeName: 'team',
+      },
+      {
+        icon:
+          'M13.6 13.47A4.99 4.99 0 0 1 5 10a5 5 0 0 1 8-4V5h2v6.5a1.5 1.5 0 0 0 3 0V10a8 8 0 1 0-4.42 7.16l.9 1.79A10 10 0 1 1 20 10h-.18.17v1.5a3.5 3.5 0 0 1-6.4 1.97zM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
+        text: 'FAQ & Contacts',
+        to: '/faq',
+        routeName: 'faq',
+      },
+      {
+        icon:
+          'M16 2h4v15a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V0h16v2zm0 2v13a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4h-2zM2 2v15a1 1 0 0 0 1 1h11.17a2.98 2.98 0 0 1-.17-1V2H2zm2 8h8v2H4v-2zm0 4h8v2H4v-2zM4 4h8v4H4V4z',
+        text: 'Terms of Service',
+        to: '/tos',
+        routeName: 'tos',
+      },
     ],
   }),
+  computed: {
+    currentRoute() {
+      console.log(this.$route.name);
+      return this.$route.name;
+    },
+  },
 };
 </script>
