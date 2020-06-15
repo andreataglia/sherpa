@@ -1,6 +1,6 @@
 <template>
   <div class="h-full w-full">
-    <div class="w-full relative bg-white mt-6 p-4 pb-3 shadow-md rounded-sm">
+    <div class="w-full relative bg-white mt-6 p-4 pb-3 shadow-md rounded-sm sm:rounded-md">
       <div
         class="-mt-7 bg-gray-100 w-24 text-sm text-center rounded-full text-gray-700 font-bold"
       >
