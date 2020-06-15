@@ -29,7 +29,7 @@
   @apply bg-red-500 text-gray-800;
 }
 .btn-disabled {
-  @apply bg-gray-100 border-gray-400 text-gray-400;
+  @apply bg-gray-100 text-gray-400;
 }
 .btn-disabled:hover {
   @apply bg-gray-100;

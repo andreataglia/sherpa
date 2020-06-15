@@ -62,7 +62,7 @@
             :class="{ hidden: mediaId != media.id }"
           >
             <v-touch v-on:swiperight="swipe('Right')">
-              <v-touch v-on:swipeleft="swipe('Right')">
+              <v-touch v-on:swipeleft="swipe('Left')">
                 <v-touch v-on:swipeup="closeMediaDialog()">
                   <video
                     v-if="media.isVideo"

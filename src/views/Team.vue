@@ -1,18 +1,21 @@
 <template>
   <div class="h-full w-full">
-    <div class="w-full relative bg-white mt-6 p-4 shadow-md rounded-md">
+    <div class="w-full relative bg-white mt-6 p-4 pb-3 shadow-md rounded-sm">
       <div
         class="-mt-7 bg-gray-100 w-24 text-sm text-center rounded-full text-gray-700 font-bold"
       >
         Your Team
       </div>
-      <div class="flex overflow-hidden mt-2">
-        <img
-          class="inline-block h-16 w-16 rounded-full text-white border-4 border-yellow-100"
-          src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-          alt=""
-        />
-        <img
+      <div class="flex overflow-hidden mt-2 pl-4">
+        <transition-group name="list" tag="p">
+          <team-avatar
+            v-for="(amb, index) of currentTeam"
+            :key="index"
+            :amb-id="amb.id"
+          />
+        </transition-group>
+
+        <!-- <img
           class="-ml-2 inline-block h-16 w-16 rounded-full text-white border-4 border-yellow-100"
           src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
           alt=""
@@ -26,33 +29,43 @@
           class="-ml-2 inline-block h-16 w-16 rounded-full text-white border-4 border-yellow-100"
           src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
           alt=""
-        />
+        /> -->
 
-        <span class="inline-flex rounded-md">
-          <router-link to="/team">
-            <button
-              to="/howitworks"
-              class="inline-flex btn btn-dark absolute right-0 h-10 flex justify-around uppercase rounded-md -mr-5 mt-3"
+        <span class="inline-flex rounded-md hidden sm:inline-flex">
+          <button
+            class="inline-flex btn btn-dark absolute right-0 h-10 flex justify-around uppercase rounded-md mr-3 sm:-mr-5 mt-3"
+            :class="{ 'btn-disabled': !minSizeReached }"
+            @click="teamIsSet()"
+          >
+            Let's go
+            <svg
+              class="ml-2 -mr-1 h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
             >
-              Let's go
-              <svg
-                class="ml-2 -mr-1 h-5 w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M10 7H2v6h8v5l8-8-8-8v5z" />
-              </svg>
-            </button>
-          </router-link>
+              <path d="M10 7H2v6h8v5l8-8-8-8v5z" />
+            </svg>
+          </button>
         </span>
       </div>
     </div>
+
+    <button
+      class="btn btn-dark w-full h-10 flex justify-center mt-1 uppercase mx-auto max-w-md mb-2 sm:hidden"
+      :class="{ 'btn-disabled': !minSizeReached }"
+      @click="teamIsSet()"
+    >
+      My team is set, let's go
+      <svg class="ml-2 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 7H2v6h8v5l8-8-8-8v5z" />
+      </svg>
+    </button>
 
     <div class="flex flex-wrap justify-around mt-4">
       <ambassador-card
         v-for="amb of ambassadors"
         :key="amb.id"
-        class="mx-2 my-2 min-w-min-content"
+        class="sm:mx-2 my-2 min-w-min-content"
         :amb-id="amb.id"
       ></ambassador-card>
       <!-- <div class="relative max-w-sm rounded overflow-hidden shadow-lg">
@@ -149,20 +162,36 @@
 
 <script>
 import AmbassadorCard from '@/components/AmbassadorCard.vue';
-// import TeamAvatar from '@/components/TeamAvatar.vue';
+import TeamAvatar from '@/components/TeamAvatar.vue';
 
 export default {
   components: {
     AmbassadorCard,
-    // TeamAvatar,
+    TeamAvatar,
   },
   data: () => ({}),
+  methods: {
+    teamIsSet() {
+      let min = this.$minTeamSize;
+      if (this.minSizeReached) {
+        this.$router.push('/teamisset');
+      } else {
+        this.$toast('Not completed yet!', {
+          body: `your team needs at least ${min} ambassadors`,
+          type: 'err',
+        });
+      }
+    },
+  },
   computed: {
     currentTeam() {
       return this.$store.getters.currentTeam;
     },
     ambassadors() {
       return this.$store.state.ambassadors;
+    },
+    minSizeReached() {
+      return this.currentTeam.length >= this.$minTeamSize ? true : false;
     },
   },
 };
