@@ -9,16 +9,19 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    meta: { readableName: 'Home' },
     component: Home
   },
   {
     path: '/howitworks',
     name: 'howitworks',
+    meta: { readableName: 'How It Works' },
     component: HowItWorks
   },
   {
     path: '/team',
     name: 'team',
+    meta: { readableName: 'Team' },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -27,17 +30,20 @@ const routes = [
   {
     path: '/team/:id',
     name: 'teamid',
+    meta: { readableName: 'Team' },
     component: () =>
       import(/* webpackChunkName: "teamid" */ '../views/AmbassadorProfile.vue')
   },
   {
     path: '/faq',
     name: 'faq',
+    meta: { readableName: 'FAQ' },
     component: () => import(/* webpackChunkName: "faq" */ '../views/FAQ.vue')
   },
   {
     path: '/tos',
     name: 'tos',
+    meta: { readableName: 'Terms of Service' },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -46,6 +52,7 @@ const routes = [
   },
   {
     path: '/teamisset',
+    meta: { readableName: 'Final Steps' },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.

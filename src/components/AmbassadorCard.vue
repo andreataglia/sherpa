@@ -2,7 +2,7 @@
   <div class="relative max-w-sm rounded overflow-hidden shadow-lg">
     <router-link :to="noView ? '#' : getProfileUrl()">
       <img
-        class="w-full rounded-br-large object-cover max-h-64 w-full object-top cursor-pointer"
+        class="w-full rounded-br-large object-cover max-h-64 w-full object-top cursor-pointer focus:outline-none"
         :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
       />
     </router-link>

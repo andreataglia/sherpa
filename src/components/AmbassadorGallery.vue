@@ -47,22 +47,6 @@
         </div>
       </transition>
 
-      <!-- <v-banner
-        two-line
-        @click:icon="mediaShowText = false"
-        id="chip-desc"
-        v-model="mediaShowText"
-        class="absolute top-0 left-0 ml-2 mt-2 z-50 max-w-xs sm:max-w-xl rounded-lg sm:rounded-full opacity-75 bg-red-700 sm:py-0"
-        transition="slide-y-transition"
-      >
-        <v-icon slot="icon" size="30">
-          mdi-close-circle
-        </v-icon>
-        <span class="pr-3 text-sm">
-          {{ currentMediaInfo.desc }}
-        </span>
-      </v-banner> -->
-
       <div>
         <transition-group
           enter-active-class="transition ease-out duration-100 transform"
@@ -77,39 +61,40 @@
             :key="media.id"
             :class="{ hidden: mediaId != media.id }"
           >
-            <!-- v-touch="{
-              left: () => swipe('Left'),
-              right: () => swipe('Right'),
-              down: () => closeMediaDialog(),
-            }" -->
-            <video
-              v-if="media.isVideo"
-              class="w-full h-full absolute top-0 mx-auto"
-              :ref="'videoBox' + media.id"
-              @click.stop="videoClick()"
-              playsinline
-              loop
-            >
-              <source
-                :src="getMediaUrl(media.isVideo, media.id)"
-                type="video/mp4"
-              />
-            </video>
-            <img
-              v-else
-              :src="getMediaUrl(media.isVideo, media.id)"
-              class="object-contain w-full h-full absolute top-0 left-0"
-            />
+            <v-touch v-on:swiperight="swipe('Right')">
+              <v-touch v-on:swipeleft="swipe('Right')">
+                <v-touch v-on:swipeup="closeMediaDialog()">
+                  <video
+                    v-if="media.isVideo"
+                    class="w-full h-full absolute top-0 left-0 mx-auto"
+                    :ref="'videoBox' + media.id"
+                    @click.stop="videoClick()"
+                    playsinline
+                    loop
+                  >
+                    <source
+                      :src="getMediaUrl(media.isVideo, media.id)"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <img
+                    v-else
+                    :src="getMediaUrl(media.isVideo, media.id)"
+                    class="object-contain w-full h-full absolute top-0 left-0"
+                  />
+                </v-touch>
+              </v-touch>
+            </v-touch>
           </div>
         </transition-group>
         <button
           v-if="showPlayButton"
           @click.stop="videoClick()"
-          class="absolute top-auto left-auto -mt-2 -ml-5 opacity-75 hover:text-gray-500 text-white items-center"
+          class="absolute top-auto left-auto -mt-2 -ml-10 opacity-75 hover:text-gray-500 text-white items-center focus:outline-none"
         >
           <svg
             fill="currentColor"
-            class="w-10 h-10"
+            class="w-20 h-20"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -120,7 +105,7 @@
         </button>
         <button
           @click.stop="swipe('Left')"
-          class="hidden sm:inline-flex absolute top-auto left-0 ml-5 opacity-75 hover:text-gray-500 text-white items-center"
+          class="hidden sm:inline-flex absolute top-auto left-0 ml-5 opacity-75 hover:text-gray-500 text-white items-center focus:outline-none"
         >
           <svg
             fill="currentColor"
@@ -135,7 +120,7 @@
         </button>
         <button
           @click.stop="swipe('Right')"
-          class="hidden sm:inline-flex absolute top-auto right-0 mr-5 opacity-75 hover:text-gray-500 text-white items-center"
+          class="hidden sm:inline-flex absolute top-auto right-0 mr-5 opacity-75 hover:text-gray-500 text-white items-center focus:outline-none"
         >
           <svg
             fill="currentColor"
@@ -148,33 +133,65 @@
             />
           </svg>
         </button>
+
+        <div
+          class="absolute bottom-0 left-0 pb-3 px-3 w-full flex justify-between items-center"
+        >
+          <span
+            class="inline-flex items-center px-3 py-1 rounded-lg opacity-75 text-xs max-w-sm font-medium leading-4 bg-gray-100 text-gray-800"
+            v-show="mediaShowText"
+          >
+            <button
+              type="button"
+              @click.stop="mediaShowText = false"
+              class="flex-shrink-0 mr-1.5 inline-flex text-red-500 focus:outline-none hover:text-red-300"
+              aria-label="Close description"
+            >
+              <svg
+                class="h-3 w-3"
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 8 8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-width="1.5"
+                  d="M1 1l6 6m0-6L1 7"
+                />
+              </svg>
+            </button>
+            {{ currentMediaInfo.desc }}
+          </span>
+          <div class="inline-flex">
+            <button
+              @click.stop="putLike()"
+              class="btn btn-light ml-3 bg-yellow-200 text-gray-700 hover:bg-yellow-100 flex flex-col items-center rounded-full w-11 h-11"
+            >
+              <svg
+                class="h-4 w-4 -mt-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"
+                />
+              </svg>
+              <span class="text-xs">{{ currentMediaInfo.likes }}</span>
+            </button>
+            <button
+              @click.stop="closeMediaDialog()"
+              class="btn btn-dark p-1 ml-3 flex items-center justify-evenly rounded-full focus:outline-none w-11 h-11"
+              aria-label="Back Button"
+            >
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <!-- <v-btn
-        bottom
-        color="primary"
-        elevation="8"
-        fixed
-        height="50"
-        left
-        @click.stop="closeMediaDialog()"
-      >
-        <v-icon>mdi-arrow-left-bold</v-icon>
-        Back
-      </v-btn>
-      <v-btn
-        rounded
-        bottom
-        color="primary"
-        elevation="8"
-        fixed
-        height="50"
-        right
-        @click.stop="putLike()"
-        light
-      >
-        {{ currentMediaInfo.likes }}
-        <v-icon class="ml-2">mdi-heart</v-icon>
-      </v-btn> -->
     </div>
   </div>
 
@@ -410,7 +427,7 @@ export default {
   }),
   methods: {
     openMediaDialog(mediaId) {
-      document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+      // document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
       this.mediaId = mediaId;
       this.dialog = true;
       document.body.scrollTop = 0; // For Safari
@@ -422,7 +439,7 @@ export default {
       }
     },
     closeMediaDialog() {
-      document.getElementsByTagName('html')[0].style.overflowY = 'scroll';
+      // document.getElementsByTagName('html')[0].style.overflowY = 'scroll';
       this.dialog = false;
       this.stopVideo();
     },

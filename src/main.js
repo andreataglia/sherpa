@@ -4,12 +4,14 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import VuePageTransition from 'vue-page-transition'
+import VueTouch from 'vue-touch'
 
 import './assets/tailwind.css';
 
 Vue.config.productionTip = true
 
 Vue.use(VuePageTransition)
+Vue.use(VueTouch, {name: 'v-touch'});
 
 Vue.prototype.$minTeamSize = 3
 Vue.prototype.$maxTeamSize = 4

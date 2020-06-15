@@ -2,7 +2,7 @@
   <div class="h-screen flex overflow-hidden bg-gray-100">
     <!-- Off-canvas menu for mobile -->
     <div class="md:hidden">
-      <div v-show="drawer" class="fixed inset-0 flex z-40">
+      <div v-show="drawer" class="fixed inset-0 flex z-30">
         <transition
           enter-active-class="transition-opacity ease-linear duration-300"
           enter-class="opacity-0"
@@ -63,13 +63,13 @@
                   class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white hover:bg-yellow-700 focus:outline-none transition ease-in-out duration-150"
                   :class="{
                     'mt-1': index > 0,
-                    'bg-yellow-700': link.routeName === currentRoute,
+                    'bg-yellow-700': link.routeName === currentRoute.name,
                   }"
                 >
                   <svg
                     class="mr-4 h-6 w-6 transition ease-in-out duration-150"
                     :class="
-                      link.routeName === currentRoute
+                      link.routeName === currentRoute.name
                         ? ['group-hover:text-yellow-100 text-yellow-300']
                         : ['text-gray-200 group-hover:text-yellow-300']
                     "
@@ -109,13 +109,13 @@
               class="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md hover:bg-yellow-700 focus:outline-none transition ease-in-out duration-150"
               :class="{
                 'mt-1': index > 0,
-                'bg-yellow-700': link.routeName === currentRoute,
+                'bg-yellow-700': link.routeName === currentRoute.name,
               }"
             >
               <svg
                 class="mr-3 h-6 w-6  transition ease-in-out duration-150"
                 :class="
-                  link.routeName === currentRoute
+                  link.routeName === currentRoute.name
                     ? ['group-hover:text-yellow-100 text-yellow-300']
                     : ['text-gray-200 group-hover:text-yellow-300']
                 "
@@ -131,7 +131,7 @@
       </div>
     </div>
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
-      <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+      <div class="relative flex-shrink-0 flex h-16 bg-white shadow">
         <button
           @click="drawer = true"
           class="cursor-pointer px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-600 md:hidden"
@@ -154,7 +154,7 @@
         <div class="flex-1 px-4 flex justify-between">
           <div class="flex-1 flex">
             <div class="w-full flex items-center">
-              <h1 class="text-2xl font-semibold text-gray-900">How It Works</h1>
+              <h1 class="text-2xl font-semibold text-gray-900">{{currentRoute.meta.readableName}}</h1>
             </div>
           </div>
           <div class="flex items-center">
@@ -203,7 +203,7 @@ export default {
         icon: 'M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z',
         text: 'Home',
         to: '/',
-        routeName: 'home',
+        meta: { readableName: 'Home' }
       },
       {
         icon:
@@ -217,7 +217,7 @@ export default {
           'M7 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1c2.15 0 4.2.4 6.1 1.09L12 16h-1.25L10 20H4l-.75-4H2L.9 10.09A17.93 17.93 0 0 1 7 9zm8.31.17c1.32.18 2.59.48 3.8.92L18 16h-1.25L16 20h-3.96l.37-2h1.25l1.65-8.83zM13 0a4 4 0 1 1-1.33 7.76 5.96 5.96 0 0 0 0-7.52C12.1.1 12.53 0 13 0z',
         text: 'Team',
         to: '/team',
-        routeName: 'team',
+        meta: { readableName: 'Home' }
       },
       {
         icon:
@@ -237,8 +237,7 @@ export default {
   }),
   computed: {
     currentRoute() {
-      console.log(this.$route.name);
-      return this.$route.name;
+      return this.$route;
     },
   },
 };
