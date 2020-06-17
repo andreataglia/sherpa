@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex overflow-hidden bg-gray-100">
+  <div class="flex overflow-hidden bg-gray-100">
     <!-- Off-canvas menu for mobile -->
 
     <transition leave-active-class="transition ease-in-out duration-300">
@@ -96,7 +96,7 @@
 
     <!-- Static sidebar for DESKTOP -->
     <div class="hidden md:flex md:flex-shrink-0">
-      <div class="flex flex-col w-64 bg-red-500 pt-5 pb-4">
+      <div class="flex flex-col w-64 bg-red-500 pt-5 pb-4 rounded-br-large">
         <div class="flex items-center flex-shrink-0 px-4">
           <img class="h-8 w-auto" src="./assets/sicily.svg" />
           <span class="ml-2 text-gray-900 font-semibold text-lg"
@@ -134,6 +134,7 @@
         </div>
       </div>
     </div>
+    
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
       <div class="relative flex-shrink-0 flex h-16 bg-white shadow">
         <button
@@ -211,6 +212,7 @@ export default {
         icon: 'M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z',
         text: 'Home',
         to: '/',
+        routeName: 'home',
         meta: { readableName: 'Home' },
       },
       {
@@ -225,6 +227,7 @@ export default {
           'M7 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1c2.15 0 4.2.4 6.1 1.09L12 16h-1.25L10 20H4l-.75-4H2L.9 10.09A17.93 17.93 0 0 1 7 9zm8.31.17c1.32.18 2.59.48 3.8.92L18 16h-1.25L16 20h-3.96l.37-2h1.25l1.65-8.83zM13 0a4 4 0 1 1-1.33 7.76 5.96 5.96 0 0 0 0-7.52C12.1.1 12.53 0 13 0z',
         text: 'Team',
         to: '/team',
+        routeName: 'team',
         meta: { readableName: 'Home' },
       },
       {

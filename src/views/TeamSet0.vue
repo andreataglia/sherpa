@@ -1,58 +1,72 @@
 <template>
-  <v-row class="pb-10 d-flex flex-column px-4 text-center">
-    <v-card class="mx-0 text-center" elevation="8">
-      <div class="pb-0 pt-2 title red--text font-italic">
-        Awesome!
+  <div class="bg-white shadow rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+      <div class="sm:flex sm:items-start sm:justify-between">
+        <div>
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Confirm Team?
+          </h3>
+          <div class="mt-2 max-w-xl text-sm leading-5 text-gray-500">
+            <p>
+              Your team looks awesome! Either confirm it and go straight to
+              create the chat with them or make some last minute changes if you
+              wish.
+            </p>
+          </div>
+        </div>
+        <div
+          class="mt-5 mt-0 sm:ml-6 flex-shrink-0 flex items-center"
+        >
+          <span class="inline-flex rounded-md shadow-sm">
+            <router-link to="/teamisset/msg">
+            <button type="button" class="btn btn-dark rounded-md">
+              Let's Go
+            </button>
+            </router-link>
+          </span>
+        </div>
       </div>
-      <v-img
-        laz-src="../assets/people.png"
-        src="../assets/people.png"
-        contain
-        class="mx-auto px-12 mt-2 fixHeight"
-      />
-      <div class="pb-2 pt-4 font-normal text-md text-gray-600">
-        Time to create a chat with your team on Telegram or Whatsapp
+
+      <div class="mt-5">
+        <div
+          class="rounded-md bg-gray-50 px-6 py-5 sm:flex sm:justify-between items-center"
+        >
+          <div class="flex overflow-hidden mt-2 pl-4">
+            <transition-group name="list" tag="p">
+              <team-avatar
+                v-for="(amb, index) of currentTeam"
+                :key="index + 100"
+                :amb-id="amb.id"
+              />
+            </transition-group>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
+            <span class="inline-flex rounded-md shadow-sm">
+              <router-link to="/team">
+                <button
+                  type="button"
+                  class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                >
+                  Edit Team
+                </button>
+              </router-link>
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="mx-auto ml-2 pb-4 text-center">
-        <v-slide-group multiple show-arrows>
-          <v-slide-item
-            v-for="amb of currentTeam"
-            :key="amb.id"
-            v-slot:default="{ active, toggle }"
-          >
-            <team-avatar :id="amb.id" :size="60" class="px-1"></team-avatar>
-          </v-slide-item>
-        </v-slide-group>
-      </div>
-    </v-card>
-    <v-btn
-      color="primary"
-      height="50"
-      width="100%"
-      class="mx-0 mt-4"
-      to="/teamisset/msg"
-    >
-      Next
-    </v-btn>
-    <v-btn
-      color="secondary"
-      height="50"
-      width="100%"
-      class="mx-0 mt-2"
-      to="/team"
-    >
-      I want to edit my team
-    </v-btn>
-  </v-row>
+    </div>
+  </div>
 </template>
 
 <script>
 import TeamAvatar from '@/components/TeamAvatar.vue';
+import VueLoadImage from 'vue-load-image';
 
 export default {
   name: 'TeamSet',
   components: {
     TeamAvatar,
+    'vue-load-image': VueLoadImage,
   },
   computed: {
     currentTeam() {
@@ -61,18 +75,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.fixHeight {
-  max-height: calc(100vh - 380px);
-}
-.v-slide-group__content {
-  justify-content: center;
-}
-.v-slide-group__next {
-  min-width: 20px !important;
-}
-.v-slide-group__prev {
-  min-width: 20px !important;
-}
-</style>

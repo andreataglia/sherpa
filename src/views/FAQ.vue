@@ -1,6 +1,52 @@
 <template>
-  <div class="max-w-screen-xl mx-auto pb-12 px-4 sm:pb-16 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
+  <div class="mx-auto pb-12 px-4 sm:pb-16">
+    <div class="bg-white shadow rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="sm:flex sm:items-start sm:justify-between">
+          <div>
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              Reach us out!
+            </h3>
+            <div class="mt-2 max-w-xl text-sm leading-5 text-gray-500">
+              <p>
+                It's us, Andrea and Paolo. You can reach
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <div
+            class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense"
+          >
+            <span class="flex w-full sm:col-start-2">
+              <button
+                type="button"
+                class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-blue-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                @click="chosenApp = 'wa'"
+              >
+                <img src="@/assets/telegram.png" class="w-8 mr-2" />
+                Reach Paolo on Telegram
+              </button>
+            </span>
+            <span
+              class="mt-3 flex w-full sm:mt-0 sm:col-start-1"
+            >
+              <button
+                type="button"
+                class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-blue-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                @click="chosenApp = 'te'"
+              >
+                <img src="@/assets/telegram.png" class="w-8 mr-2" />
+                Reach Andrea on Telegram
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded-lg px-4 py-5 max-w-3xl mx-auto mt-5">
       <div class="mt-5">
         <dl>
           <div

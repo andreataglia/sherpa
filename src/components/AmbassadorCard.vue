@@ -1,10 +1,20 @@
 <template>
   <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
     <router-link :to="noView ? '#' : getProfileUrl()">
-      <img
-        class="w-full rounded-br-large object-cover max-h-64 w-full object-top cursor-pointer focus:outline-none"
-        :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
-      />
+      <vue-load-image>
+        <img
+          slot="image"
+          class="w-full rounded-br-large object-cover max-h-64 w-full object-top cursor-pointer focus:outline-none"
+          :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
+        />
+        <img
+          slot="preloader"
+          src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif"
+        />
+        <div slot="error" class="w-full h-full text-center flex justify-center">
+          no image :(
+        </div>
+      </vue-load-image>
     </router-link>
     <button
       class="text-gray-700 font-semibold absolute right-0 -mt-14 mr-2 flex flex-col items-center rounded-full w-11 h-11 focus:outline-none"
@@ -21,14 +31,14 @@
       <span class="text-xs">540</span>
     </button>
     <button
-      class="btn btn-light absolute right-0 mt-4 mr-2 rounded-md flex uppercase text-xs"
+      class="btn btn-light absolute right-0 mt-2 sm:mt-4 mr-2 rounded-md flex uppercase text-xs"
       @click="addToTeam()"
       v-if="!getAmbassadorById.inTeam"
     >
       Add to team
     </button>
     <button
-      class="btn btn-dark absolute right-0 mt-4 mr-2 rounded-md flex uppercase text-xs"
+      class="btn btn-dark absolute right-0 mt-2 sm:mt-4 mr-2 rounded-md flex uppercase text-xs"
       :class="{ 'btn-disabled': getAmbassadorById.admin }"
       @click="removeFromTeam(getAmbassadorById.admin)"
       v-else
@@ -40,8 +50,8 @@
         />
       </svg> -->
     </button>
-    <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">{{ getAmbassadorById.name }}</div>
+    <div class="px-2 sm:px-6 py-3 sm:py-4">
+      <div class="font-bold text-xl mb-2 w-3/5">{{ getAmbassadorById.name }}</div>
       <p class="text-gray-600 text-sm">
         <span
           v-for="(bio, index) in getAmbassadorById.shortBio"
@@ -54,84 +64,17 @@
       </p>
     </div>
   </div>
-  <!-- <span>
-    <v-card :elevation="elevation" class="bg-transparent ambCard mx-auto">
-      <router-link :to="noView ? '#' : getProfileUrl()">
-        <v-img
-          :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
-          class="white--text align-end rounded-t-md"
-          gradient="to bottom, rgba(0,0,0,0), 80%, rgba(0,0,0,0.9)"
-          max-height="400"
-          position="top"
-        >
-          <template v-slot:placeholder>
-            <v-row class="fill-height ma-0" align="center" justify="center">
-              <v-progress-circular
-                indeterminate
-                color="grey lighten-5"
-              ></v-progress-circular>
-            </v-row>
-          </template>
-          <v-card-title v-text="getAmbassadorById.name"></v-card-title>
-        </v-img>
-      </router-link>
-      <v-card-text class="shortBio">
-        <span v-for="(bio, index) in getAmbassadorById.shortBio" :key="index">
-          <span v-html="emoj[index]"></span>
-          {{ bio.text }}
-        </span>
-      </v-card-text>
-      <v-divider></v-divider>
-      <v-card-actions>
-        <v-icon size="x-large" class="mr-2" color="secondary"
-          >mdi-thumb-up</v-icon
-        >
-        <span class="subheading mr-2 text-gray-600">{{
-          getAmbassadorById.upvotes
-        }}</span>
-        <v-spacer></v-spacer>
-        <v-btn
-          v-if="!getAmbassadorById.inTeam"
-          color="primary"
-          v-on:click="addToTeam()"
-        >
-          Add
-        </v-btn>
-        <v-tooltip v-else-if="getAmbassadorById.admin" top open-on-hover>
-          <template v-slot:activator="{ on }">
-            <v-sheet v-on="on">
-              <v-btn disabled width="120" class="mr-2" text>
-                Moderator
-              </v-btn>
-            </v-sheet>
-          </template>
-          <span>Moderators cannot be removed from team</span>
-        </v-tooltip>
-        <v-btn v-else color="primary" v-on:click="removeFromTeam()" outlined>
-          Remove
-        </v-btn>
-        <v-btn v-if="!noView" color="secondary" :to="getProfileUrl()">
-          View
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-    <v-snackbar
-      v-model="snackbar"
-      :color="snackbarTypes[snackbarType].color"
-      :timeout="snackbarTimer"
-    >
-      {{ snackbarTypes[snackbarType].text }}
-      <v-btn color="gray darken-3" text @click="snackbar = false">
-        Close
-      </v-btn>
-    </v-snackbar>
-  </span> -->
 </template>
 
 <script>
 import Twemoji from 'twemoji';
+import VueLoadImage from 'vue-load-image';
+
 export default {
   name: 'AmbassadorCard',
+  components: {
+    'vue-load-image': VueLoadImage,
+  },
   props: {
     ambId: Number,
     noView: Boolean,
@@ -142,20 +85,6 @@ export default {
   },
   data: () => ({
     publicPath: process.env.BASE_URL,
-    snackbarTypes: [
-      {
-        text: 'Nice! Team member added',
-        color: 'green lighten-1',
-      },
-      {
-        text: 'Uuch.. One less team member',
-        color: 'green lighten-1',
-      },
-      {
-        text: 'Team is full! Remove someone first',
-        color: 'red lighten-1',
-      },
-    ],
     emoj: [],
   }),
 
@@ -170,7 +99,7 @@ export default {
       } else {
         this.$store.commit('addToTeam', this.ambId);
         let max = this.$maxTeamSize;
-        let current = this.$store.getters.currentTeam;
+        let current = this.$store.getters.currentTeam.length;
         let text =
           max - current > 0
             ? `You can still add up to ${max -

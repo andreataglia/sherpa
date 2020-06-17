@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       spacing: {
         '104': '26rem',
-        '0.5': '0.12rem',
+        '05': '0.12rem',
         '90-screen': '90vh',
         '80-screen': '80vh',
         '70-screen': '70vh',

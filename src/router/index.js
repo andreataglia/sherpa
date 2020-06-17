@@ -30,14 +30,14 @@ const routes = [
   {
     path: '/team/:id',
     name: 'teamid',
-    meta: { readableName: 'Team' },
+    meta: { readableName: 'Ambassador Profile' },
     component: () =>
       import(/* webpackChunkName: "teamid" */ '../views/AmbassadorProfile.vue')
   },
   {
     path: '/faq',
     name: 'faq',
-    meta: { readableName: 'FAQ' },
+    meta: { readableName: 'FAQ & Contacts' },
     component: () => import(/* webpackChunkName: "faq" */ '../views/FAQ.vue')
   },
   {
@@ -60,19 +60,19 @@ const routes = [
       import(/* webpackChunkName: "teamisset" */ '../views/TeamSet.vue'),
     children: [
       {
-        // when /user/:id/profile is matched
         path: '',
         name: 'teamisset',
+        meta: { readableName: '(1/3) Final Steps' },
         component: () => import(/* webpackChunkName: "teamisset0" */ '../views/TeamSet0.vue')
       },
       {
-        // when /user/:id/profile is matched
         path: 'msg',
+        meta: { readableName: '(2/3) Final Steps' },
         component: () => import(/* webpackChunkName: "teamisset1" */ '../views/TeamSet1.vue')
       },
       {
-        // when /user/:id/posts is matched
         path: 'final',
+        meta: { readableName: '(3/3) Final Steps' },
         component: () => import(/* webpackChunkName: "teamisse2" */ '../views/TeamSet2.vue')
       }
     ]

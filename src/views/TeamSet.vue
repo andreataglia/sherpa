@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid style="max-width:600px">
+  <div>
     <router-view></router-view>
-  </v-container>
+  </div>
 </template>
 
 <script>

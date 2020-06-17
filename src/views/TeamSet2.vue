@@ -1,28 +1,43 @@
 <template>
-   <v-row class="pb-10 d-flex flex-column px-4 text-center">
-    <v-card class="mx-0 text-center" elevation="8">
-      <div class="pb-0 pt-2 title font-italic red--text">
-        It's all set :)
+  <div class="bg-white rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+    <div>
+      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+        <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
       </div>
-      <v-img
-        laz-src="../assets/people.png"
-        src="../assets/people.png"
-        contain
-        class="mx-auto px-2 mt-2 fixHeight"
-      />
-      <v-card-subtitle class="pb-1 pt-1 title">
-        You will be invited to a chat named "Welcome to Sicily" within the next 24 hours. 
-        <br><br>
-        See you very soon!
-      </v-card-subtitle>
-    </v-card>
-  </v-row>
+      <div class="mt-3 text-center sm:mt-5">
+        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+          All good!
+        </h3>
+        <div class="mt-2">
+          <p class="text-sm leading-5 text-gray-500">
+            You will be invited in a chat named "Welcome To Sicily" within the next 24 hours. We can't wait to meet you on chat :)
+          </p>
+          <p class="mt-6 text-sm leading-5 text-gray-500">
+            If you really can't wait, you can contact us for anything that comes to your mind. Or tell us what you think about Welcome To Sicily by clicking the yellow button.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+      <span class="flex w-full rounded-md shadow-sm sm:col-start-2">
+        <button type="button" class="inline-flex btn btn-light justify-center w-full rounded-md ">
+          Give Feedback
+        </button>
+      </span>
+      <span class="mt-3 flex w-full rounded-md shadow-sm sm:mt-0 sm:col-start-1">
+        <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+          Contact Us
+        </button>
+      </span>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   // data: () => ({
-    
   // })
 };
 </script>

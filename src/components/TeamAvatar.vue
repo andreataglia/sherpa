@@ -16,7 +16,7 @@
     >
       <div
         v-if="dialog"
-        class="z-10 fixed bottom-0 inset-x-0 px-4 pb-6 inset-0 p-0 flex items-center justify-center"
+        class="z-10 fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center"
       >
         <!--
     Background overlay, show/hide based on modal state.
@@ -52,7 +52,7 @@
           leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         >
           <ambassador-card
-            class="z-20"
+            class="z-20 max-w-sm"
             v-if="dialog"
             v-click-outside="hideDialog"
             :amb-id="getAmbassadorById.id"

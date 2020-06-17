@@ -19,25 +19,35 @@
           </svg>
         </button>
       </div>
-      <div class="border-red-500 pb-1" :class="{ 'border-b-4': onboarding == 1 }">
+      <div
+        class="border-red-500 pb-1"
+        :class="{ 'border-b-4': onboarding == 1 }"
+      >
         <button
           @click="onboarding = 1"
           class="rounded-full text-yellow-900 bg-yellow-200 border-2 border-red-500 hover:bg-yellow-100 focus:outline-none"
           aria-label="Back Button"
         >
           <svg class="h-10 w-10 p-3" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 6H0v2h2v2h2V8h2V6H4V4H2v2zm7 0a3 3 0 0 1 6 0v2a3 3 0 0 1-6 0V6zm11 9.14A15.93 15.93 0 0 0 12 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"/>
+            <path
+              d="M2 6H0v2h2v2h2V8h2V6H4V4H2v2zm7 0a3 3 0 0 1 6 0v2a3 3 0 0 1-6 0V6zm11 9.14A15.93 15.93 0 0 0 12 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"
+            />
           </svg>
         </button>
       </div>
-      <div class="border-red-500 pb-1" :class="{ 'border-b-4': onboarding == 2 }">
+      <div
+        class="border-red-500 pb-1"
+        :class="{ 'border-b-4': onboarding == 2 }"
+      >
         <button
           @click="onboarding = 2"
           class="rounded-full text-yellow-900 bg-yellow-200 border-2 border-red-500 hover:text-gray-800 focus:outline-none"
           aria-label="Back Button"
         >
           <svg class="h-10 w-10 p-3" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17 11v3l-3-3H8a2 2 0 0 1-2-2V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-1zm-3 2v2a2 2 0 0 1-2 2H6l-3 3v-3H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h2v3a4 4 0 0 0 4 4h6z"/>
+            <path
+              d="M17 11v3l-3-3H8a2 2 0 0 1-2-2V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-1zm-3 2v2a2 2 0 0 1-2 2H6l-3 3v-3H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h2v3a4 4 0 0 0 4 4h6z"
+            />
           </svg>
         </button>
       </div>
@@ -46,21 +56,56 @@
       <div class="text-sm text-gray-500 text-center">
         {{ text[onboarding] }}
       </div>
-      <img
-        v-show="onboarding == 0"
-        class="mx-auto max-h-50-screen mt-3"
-        src="@/assets/img/sherpa_howitworks_0.gif"
-      />
-      <img
-        v-show="onboarding == 1"
-        class="mx-auto max-h-50-screen mt-3"
-        src="@/assets/img/sherpa_howitworks_1.gif"
-      />
-      <img
-        v-show="onboarding == 2"
-        class="mx-auto max-h-50-screen mt-3"
-        src="@/assets/img/sherpa_howitworks_2.gif"
-      />
+      <vue-load-image>
+        <img
+          slot="image"
+          v-show="onboarding == 0"
+          class="mx-auto max-h-50-screen mt-3"
+          src="@/assets/img/sherpa_howitworks_0.gif"
+        />
+        <img
+          slot="preloader"
+          class="mx-auto"
+          src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif"
+        />
+        <div slot="error" class="w-full h-full text-center flex justify-center">
+          something went wrong :(
+        </div>
+      </vue-load-image>
+
+      <vue-load-image>
+        <img
+          slot="image"
+          v-show="onboarding == 1"
+          class="mx-auto max-h-50-screen mt-3"
+          src="@/assets/img/sherpa_howitworks_1.gif"
+        />
+        <img
+          slot="preloader"
+          class="mx-auto"
+          src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif"
+        />
+        <div slot="error" class="w-full h-full text-center flex justify-center">
+          something went wrong :(
+        </div>
+      </vue-load-image>
+
+      <vue-load-image>
+        <img
+          slot="image"
+          v-show="onboarding == 2"
+          class="mx-auto max-h-50-screen mt-3"
+          src="@/assets/img/sherpa_howitworks_2.gif"
+        />
+        <img
+          slot="preloader"
+          class="mx-auto"
+          src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif"
+        />
+        <div slot="error" class="w-full h-full text-center flex justify-center">
+          something went wrong :(
+        </div>
+      </vue-load-image>
     </div>
     <button
       v-if="onboarding < 2"
@@ -81,7 +126,12 @@
 </template>
 
 <script>
+import VueLoadImage from 'vue-load-image';
+
 export default {
+  components: {
+    'vue-load-image': VueLoadImage,
+  },
   data: () => ({
     onboarding: 0,
     text: [

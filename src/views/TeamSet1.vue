@@ -1,125 +1,145 @@
 <template>
-  <v-row class="pb-10 d-flex flex-column px-4 text-center">
-    <v-card
-      class="mx-0 pb-6 text-center fixHeight d-flex flex-column justify-space-between"
-      elevation="8"
-    >
-      <div class="pa-3 subtitle-1 text-uppercase">
-        Pick the messaging app you prefer
+  <div class="bg-white shadow rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+      <div class="sm:flex sm:items-start sm:justify-between">
+        <div>
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            WhatsApp or Telegram?
+          </h3>
+          <div class="mt-2 max-w-xl text-sm leading-5 text-gray-500">
+            <p>
+              Now let's create the group with the ambassadors of your team
+              either on WhatsApp or Telegram. <br />
+              Click on the button of your favorite app, then input your mobile
+              number for Whatsapp or the username for Telegram.
+            </p>
+          </div>
+        </div>
       </div>
-      <v-row style="flex:0;">
-        <v-col cols="6">
-          <v-card flat ripple class="subtitle mx-2 cursor-pointer"
-            ><v-img
-              src="../assets/whatsapp.png"
-              contain
-              height="80"
-              @click="isTelegram = false"
-            ></v-img>
-            <span
-              :class="{
-                'font-weight-black': !isTelegram,
-                'primary-color': !isTelegram
-              }"
-              >WhatsApp</span
+
+      <div class="mt-8">
+        <div class="flex justify-evenly w-full overflow-hidden mt-2">
+          <span class="inline-flex rounded-md shadow-sm">
+            <button
+              type="button"
+              class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-green-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+              @click="chosenApp = 'wa'"
             >
-          </v-card>
-        </v-col>
-        <v-col cols="6">
-          <v-card flat ripple class="subtitle mx-2 cursor-pointer"
-            ><v-img
-              src="../assets/telegram.png"
-              contain
-              height="80"
-              @click="isTelegram = true"
-            ></v-img>
-            <span
-              :class="{
-                'font-weight-black': isTelegram,
-                'primary-color': isTelegram
-              }"
-              >Telegram</span
+              <img src="@/assets/whatsapp.png" class="w-10 sm:mr-2" />
+              <span class="hidden sm:inline-block">I want to use Whatsapp</span>
+            </button>
+          </span>
+          <span class="inline-flex rounded-md shadow-sm">
+            <button
+              type="button"
+              class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-blue-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+              @click="chosenApp = 'te'"
             >
-          </v-card>
-        </v-col>
-      </v-row>
-      <div>
-        <v-form v-if="!isTelegram" ref="form" class="mx-5" v-model="form1Valid">
-          <v-row>
-            <v-col cols="6">
-              <v-autocomplete
-                color="secondary"
-                v-model="mobilePrefix"
-                :items="prefix"
-                item-text="name"
-                label="Country"
-                prepend-icon="mdi-phone"
-              ></v-autocomplete>
-            </v-col>
-            <v-col cols="6">
-              <v-text-field
-                color="secondary"
-                v-model="mobileNumber"
-                :rules="mobileNumberRule"
-                label="Mobile Number"
-                type="number"
-                required
-              ></v-text-field>
-            </v-col>
-          </v-row>
-        </v-form>
-        <v-form v-else ref="form" class="mx-5" v-model="form2Valid">
-          <v-row>
-            <v-col cols="12">
-              <v-text-field
-                color="secondary"
-                v-model="telegramName"
-                :rules="telegramRule"
-                label="Telegram Username"
-                prepend-icon="mdi-telegram"
-                required
-              ></v-text-field>
-            </v-col>
-          </v-row>
-        </v-form>
+              <img src="@/assets/telegram.png" class="w-10 sm:mr-2" />
+              <span class="hidden sm:inline-block">I want to use Telegram</span>
+            </button>
+          </span>
+        </div>
+
+        <div
+          class="mt-5 rounded-md bg-green-50 px-4 py-3 sm:flex sm:justify-between items-center"
+          v-show="chosenApp == 'wa'"
+        >
+          <div class="flex justify-between w-full overflow-hidden mt-2">
+            <div>
+              <label
+                for="phone_number"
+                class="block text-sm font-medium leading-5 text-gray-700"
+                >WhatsApp Phone Number
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 flex items-center">
+                  <select
+                    v-model="mobilePrefix"
+                    aria-label="Country"
+                    class="form-select h-full py-0 pl-3 pr-7 w-20 sm:w-40 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5"
+                  >
+                    <option v-for="(pre, index) in prefix" :key="index">{{
+                      pre
+                    }}</option>
+                    <option>CA </option>
+                    <option>EU </option>
+                  </select>
+                </div>
+                <input
+                  id="phone_number"
+                  class="form-input block w-full pl-20 sm:pl-40 sm:text-sm sm:leading-5"
+                  placeholder="+39 123 456 789"
+                  v-model="mobileNumber"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
+            <span class="inline-flex rounded-md shadow-sm">
+              <button type="button" @click="done()" class="btn btn-dark rounded-md">
+                  Let's Go
+                </button>
+            </span>
+          </div>
+        </div>
+        <div
+          class="mt-5 rounded-md bg-blue-50 px-4 py-3 sm:flex sm:justify-between items-center"
+          v-show="chosenApp == 'te'"
+        >
+          <div class="flex justify-between w-full overflow-hidden mt-2">
+            <div>
+              <label
+                for="username"
+                class="block text-sm font-medium leading-5 text-gray-700"
+                >Telegram Username
+              </label>
+              <div class="mt-1 flex rounded-md shadow-sm">
+                <span
+                  class="hidden sm:inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm"
+                >
+                  https://t.me/
+                </span>
+                <input
+                  id="username"
+                  class="form-input flex-1 block w-full px-3 py-2 rounded-md sm:rounded-none sm:rounded-r-md sm:text-sm sm:leading-5"
+                  placeholder="my_username_here"
+                  v-model="telegramName"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
+            <span class="inline-flex rounded-md shadow-sm">
+              <button type="button" @click="done()" class="btn btn-dark rounded-md">
+                  Let's Go
+                </button>
+            </span>
+          </div>
+        </div>
       </div>
-    </v-card>
-    <v-btn
-      color="primary"
-      height="50"
-      width="100%"
-      class="mx-0 mt-4"
-      to="/teamisset/final"
-      :disabled="!form1Valid && !form2Valid"
-    >
-      Next
-    </v-btn>
-    <v-btn
-      color="secondary"
-      height="50"
-      width="100%"
-      class="mx-0 mt-2"
-      to="/faq"
-    >
-      I need help
-    </v-btn>
-  </v-row>
+      <div class="mt-5">
+        <span class="inline-flex rounded-md shadow-sm">
+          <button
+            type="button"
+            class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+          >
+            I need help
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'TeamSet',
   data: () => ({
+    chosenApp: '',
     mobileNumber: '',
     mobilePrefix: '',
     telegramName: '',
-    mobileNumberRule: [
-      v => !!v || 'We need your mobile number to add you to the WhatsApp group'
-    ],
-    telegramRule: [
-      v => !!v || 'We need your Telegram username to add you to the group',
-      v => v.length > 2 || 'Username must be at least 3 characters'
-    ],
     prefix: [
       'Afghanistan',
       'Albania',
@@ -369,38 +389,51 @@ export default {
       'Yemen',
       'Zambia',
       'Zimbabwe',
-      'Åland Islands'
+      'Åland Islands',
     ],
-    isTelegram: false,
-    form1Valid: false,
-    form2Valid: false
   }),
   methods: {
+    validateForm() {
+      if (this.chosenApp == 'wa') {
+        if (this.mobilePrefix == '') {
+          this.$toast('Insert a valid mobile prefix first', {
+            type: 'err',
+          });
+          return false;
+        }
+        if (this.mobileNumber.length < 8) {
+          this.$toast('Insert a valid mobile number first', {
+            type: 'err',
+          });
+          return false;
+        }
+        return true;
+      } else if (this.chosenApp == 'te') {
+        if (this.telegramName.length > 2) return true;
+        this.$toast('Insert a valid Telegram usernamename first', {
+          body: 'the username needs at least 3 characters',
+          type: 'err',
+        });
+      }
+      return false;
+    },
     done() {
-      if (this.$refs.form.validate()) {
+      if (this.validateForm()) {
         this.$store.commit('setUserLead', {
-          isTelegram: this.isTelegram,
+          isTelegram: this.chosenApp == 'te',
           lead: this.isTelegram
             ? this.telegramName
-            : this.mobilePrefix + ' ' + this.mobileNumber
+            : this.mobilePrefix + ' ' + this.mobileNumber,
         });
-        window.location.href = window.location.href.substr(-4) + '/final';
+        this.$router.push('/teamisset/final');
+        // window.location.href = window.location.href.substr(-4) + '/final';
       }
-    }
+    },
   },
   computed: {
-    currentTeam() {
-      return this.$store.getters.currentTeam;
-    },
     currentUserLead() {
       return this.$store.state.userLead;
-    }
-  }
+    },
+  },
 };
 </script>
-
-<style scoped>
-.fixHeight {
-  height: calc(100vh - 190px);
-}
-</style>
