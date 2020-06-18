@@ -96,7 +96,7 @@
 
     <!-- Static sidebar for DESKTOP -->
     <div class="hidden md:flex md:flex-shrink-0">
-      <div class="flex flex-col w-64 bg-red-500 pt-5 pb-4 rounded-br-large">
+      <div class="flex flex-col w-64 bg-red-500 pt-5 pb-0 rounded-br-large">
         <div class="flex items-center flex-shrink-0 px-4">
           <img class="h-8 w-auto" src="./assets/sicily.svg" />
           <span class="ml-2 text-gray-900 font-semibold text-lg"
@@ -130,11 +130,16 @@
               </svg>
               {{ link.text }}
             </router-link>
+            <div
+              class="px-2 py-2 text-sm leading-5 font-medium text-gray-800 focus:outline-none transition ease-in-out duration-150"
+            >
+              <div class="border-t border-gray-800 pt-2"><locale-switcher /></div>
+            </div>
           </nav>
         </div>
       </div>
     </div>
-    
+
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
       <div class="relative flex-shrink-0 flex h-16 bg-white shadow">
         <button
@@ -199,11 +204,16 @@
 </template>
 
 <script>
+import LocaleSwitcher from '@/components/LocaleSwitcher';
 import ClickOutside from 'vue-click-outside';
+
 export default {
   name: 'App',
   directives: {
     ClickOutside,
+  },
+  components: {
+    LocaleSwitcher,
   },
   data: () => ({
     drawer: null,

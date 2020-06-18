@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Home",
+    "howitworks": "Come Funziona",
+    "team": "Costruisci Team",
+    "faq": "Domande Frequenti e Contatti",
+    "tos": "Condizioni del Servizio"
+  },
+  "home": {
+    "routeName" : "Home",
+    "btn": "Iniziamo" 
+  },
+  "howitworks": {
+    "routeName" : "Come Funziona",
+    "btn" : {
+      "next" : "Prossimo",
+      "final" : "Iniziamo"
+    },
+    "helpText" : {
+      "0" : "Esplora gli ambasciatori del posto",
+      "1" : "Crea la tua squadra con quelli che preferisci",
+      "2" : "Creeremo un gruppo su Whatsapp o Telgram con loro"
+    }
+  },
+  "team" : {
+    "routeName" : "Crea Squadra",
+    "yourTeam" : "La Tua Squadra",
+    "btn" : {
+      "text" : "Prosegui",
+      "disabledMsg": {
+        "title": "Squadra incompleta!",
+        "body" : "Ti servono un minimo di {n} ambasciatori per poter proseguire"
+      } 
+    },
+    "ambassadorCard" : {
+      "btn" : {
+        "add" : "Aggiungi",
+        "remove" : "Rimuovi"
+      },
+      "snackBar" : {
+        "add" : {
+          "title" : "Ottimo! Ambasciatore aggiunto in squadra",
+          "body" : {
+            "full" : "La squadra è al completo",
+            "room" : "Puoi aggiungere massimo altri {n} ambasciatori in squadra"
+          } 
+        },
+        "remove" : "Ok... Ambasciatore rimosso dalla squadra",
+        "admin" : "Questo ambasciatore è un admin e non può essere rimosso",
+        "full" : {
+          "title" : "Squadra al completo! Rimuovi qualcuno prima",
+          "body" : "La squadra può avere un massimo di {n} ambasciatori"
+        }
+      }
+    }
+  }
+}

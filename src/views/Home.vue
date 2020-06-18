@@ -1,7 +1,11 @@
 <template>
   <div class="h-full w-full">
     <vue-load-image>
-      <img slot="image" class="mx-auto max-h-70-screen" src="@/assets/welcome.png" />
+      <img
+        slot="image"
+        class="mx-auto max-h-70-screen"
+        src="@/assets/welcome.png"
+      />
       <img
         slot="preloader"
         class="mx-auto"
@@ -15,7 +19,7 @@
       <button
         class="btn btn-dark w-full h-10 flex justify-around uppercase mt-4 mx-auto max-w-md"
       >
-        Let's Go
+        {{ $t("message") }}
       </button>
     </router-link>
   </div>
@@ -27,6 +31,12 @@ import VueLoadImage from 'vue-load-image';
 export default {
   components: {
     'vue-load-image': VueLoadImage,
+  },
+  i18n: {
+    messages: {
+      en: { txt: "Let's Go" },
+      it: { txt: 'Iniziamo' },
+    },
   },
 };
 </script>

@@ -4,4 +4,13 @@ module.exports = {
     themeColor: '#ef5350',
     appleMobileWebAppCapable: 'yes',
   },
+
+  pluginOptions: {
+    i18n: {
+      locale: 'it',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
+      enableInSFC: true
+    }
+  }
 }

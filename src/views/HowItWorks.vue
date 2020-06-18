@@ -56,10 +56,9 @@
       <div class="text-sm text-gray-500 text-center">
         {{ text[onboarding] }}
       </div>
-      <vue-load-image>
+      <vue-load-image v-show="onboarding == 0">
         <img
           slot="image"
-          v-show="onboarding == 0"
           class="mx-auto max-h-50-screen mt-3"
           src="@/assets/img/sherpa_howitworks_0.gif"
         />
@@ -73,10 +72,9 @@
         </div>
       </vue-load-image>
 
-      <vue-load-image>
+      <vue-load-image v-show="onboarding == 1">
         <img
           slot="image"
-          v-show="onboarding == 1"
           class="mx-auto max-h-50-screen mt-3"
           src="@/assets/img/sherpa_howitworks_1.gif"
         />
@@ -90,10 +88,9 @@
         </div>
       </vue-load-image>
 
-      <vue-load-image>
+      <vue-load-image v-show="onboarding == 2">
         <img
           slot="image"
-          v-show="onboarding == 2"
           class="mx-auto max-h-50-screen mt-3"
           src="@/assets/img/sherpa_howitworks_2.gif"
         />
