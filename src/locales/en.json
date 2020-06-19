@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "howitworks": "How It Works",
-    "team": "Create Team",
+    "team": "Team",
     "faq": "FAQ & Contacts",
     "tos": "Terms of Service",
     "teamisset": "1/3 Final Steps",
@@ -18,11 +18,11 @@
       "next" : "Next",
       "final" : "Let's Go"
     },
-    "helpText" : {
-      "0" : "Browse through the local ambassadors",
-      "1" : "Create your team by adding the ones you wish",
-      "2" : "We'll create a Whatsapp/Telegram group with them"
-    }
+    "helpText" : [
+      "Browse through the local ambassadors",
+      "Create your team by adding the ones you wish",
+      "We'll create a Whatsapp/Telegram group with them"
+    ]
   },
   "team" : {
     "yourTeam" : "Your Team",

@@ -19,7 +19,7 @@
       <button
         class="btn btn-dark w-full h-10 flex justify-around uppercase mt-4 mx-auto max-w-md"
       >
-        {{ $t("message") }}
+        {{ $t("home.btn") }}
       </button>
     </router-link>
   </div>

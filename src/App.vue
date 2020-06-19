@@ -81,7 +81,7 @@
                     >
                       <path :d="link.icon" />
                     </svg>
-                    {{ link.text }}
+                    {{ $t('nav.' + link.routeName) }}
                   </a>
                 </nav>
               </div>

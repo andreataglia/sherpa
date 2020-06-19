@@ -54,7 +54,7 @@
     </div>
     <div class="bg-white rounded-sm shadow-md p-3 max-w-md mx-auto mt-3">
       <div class="text-sm text-gray-500 text-center">
-        {{ text[onboarding] }}
+        {{ $t(`howitworks.helpText[${onboarding}]`) }}
       </div>
       <vue-load-image v-show="onboarding == 0">
         <img
@@ -109,14 +109,14 @@
       @click="onboarding++"
       class="btn btn-dark w-full h-10 flex justify-around uppercase mt-4 mx-auto max-w-md"
     >
-      Next
+      {{ $t('howitworks.btn.next') }}
     </button>
     <router-link v-else to="/team">
       <button
         to="/howitworks"
         class="btn btn-dark w-full h-10 flex justify-around uppercase mt-4 mx-auto max-w-md"
       >
-        Let's Go
+        {{ $t('howitworks.btn.final') }}
       </button>
     </router-link>
   </div>
@@ -131,11 +131,6 @@ export default {
   },
   data: () => ({
     onboarding: 0,
-    text: [
-      `Browse through the local ambassadors`,
-      `Create your team by adding the ones you wish`,
-      `We'll create a Whatsapp/Telegram group with them`,
-    ],
   }),
   methods: {
     next() {

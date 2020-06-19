@@ -18,11 +18,11 @@
       "next" : "Prossimo",
       "final" : "Iniziamo"
     },
-    "helpText" : {
-      "0" : "Esplora gli ambasciatori del posto",
-      "1" : "Crea la tua squadra con quelli che preferisci",
-      "2" : "Creeremo un gruppo su Whatsapp o Telgram con loro"
-    }
+    "helpText" : [
+      "Esplora gli ambasciatori del posto",
+      "Crea la tua squadra con quelli che preferisci",
+      "Creeremo un gruppo su Whatsapp o Telgram con loro"
+    ]
   },
   "team" : {
     "yourTeam" : "La Tua Squadra",
