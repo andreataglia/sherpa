@@ -2,8 +2,58 @@
   "nav": {
     "home": "Home",
     "howitworks": "How It Works",
-    "team": "Build Team",
+    "team": "Create Team",
     "faq": "FAQ & Contacts",
-    "tos": "Terms of Service"
+    "tos": "Terms of Service",
+    "teamisset": "1/3 Final Steps",
+    "msg": "2/3 Final Steps",
+    "final": "3/3 Final Steps",
+    "teamid" : "Ambassador Profile"
+  },
+  "home": {
+    "btn": "Let's Go" 
+  },
+  "howitworks": {
+    "btn" : {
+      "next" : "Next",
+      "final" : "Let's Go"
+    },
+    "helpText" : {
+      "0" : "Browse through the local ambassadors",
+      "1" : "Create your team by adding the ones you wish",
+      "2" : "We'll create a Whatsapp/Telegram group with them"
+    }
+  },
+  "team" : {
+    "yourTeam" : "Your Team",
+    "helpText" : "Create your team of {nMin} to {nMax} ambassadors, the click \"@:team.btn.text\"",
+    "btn" : {
+      "text" : "Let's Go",
+      "disabledMsg": {
+        "title": "Team is not ready yet!",
+        "body" : "You need at least {n} more ambassadors to go"
+      } 
+    },
+    "ambassadorCard" : {
+      "btn" : {
+        "add" : "Add To Team",
+        "remove" : "Remove"
+      },
+      "snackBar" : {
+        "add" : {
+          "title" : "Great! Ambassador added to team",
+          "body" : {
+            "full" : "Team is ready to go",
+            "room" : "You may add up to {n} more ambassadors"
+          } 
+        },
+        "remove" : "Removed from team",
+        "admin" : "This guy is an admin and cannot be removed",
+        "full" : {
+          "title" : "Team is full! Remove someone first",
+          "body" : "Your team can have {n} ambassadors at most"
+        }
+      }
+    }
   }
 }

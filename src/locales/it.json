@@ -2,16 +2,18 @@
   "nav": {
     "home": "Home",
     "howitworks": "Come Funziona",
-    "team": "Costruisci Team",
-    "faq": "Domande Frequenti e Contatti",
-    "tos": "Condizioni del Servizio"
+    "team": "Squadra",
+    "faq": "Domande Frequenti & Contatti",
+    "tos": "Condizioni del Servizio",
+    "teamisset": "1/3 Finalizzazione",
+    "msg": "2/3 Finalizzazione",
+    "final": "3/3 Finalizzazione",
+    "teamid" : "Profilo Ambasciatore"
   },
   "home": {
-    "routeName" : "Home",
     "btn": "Iniziamo" 
   },
   "howitworks": {
-    "routeName" : "Come Funziona",
     "btn" : {
       "next" : "Prossimo",
       "final" : "Iniziamo"
@@ -23,8 +25,8 @@
     }
   },
   "team" : {
-    "routeName" : "Crea Squadra",
     "yourTeam" : "La Tua Squadra",
+    "helpText" : "Crea la tua squadra di minimo {nMin} e massimo {nMax} ambasciatori, poi clicca \"@:team.btn.text\"",
     "btn" : {
       "text" : "Prosegui",
       "disabledMsg": {

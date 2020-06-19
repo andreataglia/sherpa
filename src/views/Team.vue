@@ -1,11 +1,16 @@
 <template>
   <div class="h-full w-full">
-    <div class="w-full relative bg-white mt-6 p-4 pb-3 shadow-md rounded-sm sm:rounded-md">
+    <div
+      class="w-full relative bg-white mt-6 p-4 pb-3 shadow-md rounded-sm sm:rounded-md"
+    >
       <div
-        class="-mt-7 bg-gray-100 w-24 text-sm text-center rounded-full text-gray-700 font-bold"
+        class="-mt-7 bg-gray-100 w-32 text-sm text-center rounded-full text-gray-700 font-bold"
       >
-        Your Team
+        {{ $t('team.yourTeam') }}
       </div>
+      <p class="text-sm text-gray-500 ml-1 my-3">
+        {{ $t('team.helpText', { nMin: $minTeamSize, nMax: $maxTeamSize }) }}
+      </p>
       <div class="flex overflow-hidden mt-2 pl-4">
         <transition-group name="list" tag="p">
           <team-avatar
@@ -21,7 +26,7 @@
             :class="{ 'btn-disabled': !minSizeReached }"
             @click="teamIsSet()"
           >
-            Let's go
+            {{ $t('team.btn.text') }}
             <svg
               class="ml-2 -mr-1 h-5 w-5"
               fill="currentColor"
@@ -85,63 +90,6 @@
       </div> -->
     </div>
   </div>
-
-  <!-- <v-container fluid style="max-width:900px;">
-    <v-row class="px-4">
-      <v-col cols="12" class="text-center">
-        <v-tooltip top open-on-hover>
-          <template v-slot:activator="{ on }">
-            <div v-on="on">
-              <v-btn
-                class="md-12"
-                color="primary"
-                width="250"
-                height="50"
-                elevation="8"
-                :disabled="currentTeam.length < $minTeamSize"
-                to="/teamisset"
-                >My Team Is Set
-              </v-btn>
-            </div>
-          </template>
-          <span v-if="parseInt($minTeamSize) - currentTeam.length > 0">Select at least {{ parseInt($minTeamSize) - currentTeam.length }} more ambassador to complete the team!</span>
-          <span v-else>Ready to go!</span>
-        </v-tooltip>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12">
-        <div class="body-2 font-weight-medium">My Team</div>
-        <v-divider
-          inset
-          style="margin-top:-10px;"
-          class="pb-3"
-        ></v-divider>
-        <div class="mx-auto" max-width="700">
-          <v-slide-group multiple show-arrows class="bgColor">
-            <transition-group name="list" tag="p" class="mb-1">
-              <v-slide-item
-                v-for="amb of currentTeam"
-                :key="amb.id"
-                v-slot:default="{ active, toggle }"
-              >
-                <team-avatar :id="amb.id" />
-              </v-slide-item>
-            </transition-group>
-          </v-slide-group>
-          <v-divider></v-divider>
-        </div>
-      </v-col>
-    </v-row>
-    <div class="flex flex-wrap justify-around items-start">
-      <ambassador-card
-        v-for="amb of ambassadors"
-        :key="amb.id"
-        class="mx-2 my-2"
-        :id="amb.id"
-      ></ambassador-card>
-    </div>
-  </v-container> -->
 </template>
 
 <script>
@@ -160,8 +108,8 @@ export default {
       if (this.minSizeReached) {
         this.$router.push('/teamisset');
       } else {
-        this.$toast('Not completed yet!', {
-          body: `your team needs at least ${min} ambassadors`,
+        this.$toast(this.$t('team.btn.disabledMsg.title'), {
+          body: this.$t('team.btn.disabledMsg.body', { n: min }),
           type: 'err',
         });
       }

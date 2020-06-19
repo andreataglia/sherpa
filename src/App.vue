@@ -128,12 +128,14 @@
               >
                 <path :d="link.icon" />
               </svg>
-              {{ link.text }}
+              {{ $t('nav.' + link.routeName) }}
             </router-link>
             <div
               class="px-2 py-2 text-sm leading-5 font-medium text-gray-800 focus:outline-none transition ease-in-out duration-150"
             >
-              <div class="border-t border-gray-800 pt-2"><locale-switcher /></div>
+              <!-- <div class="border-t border-gray-800 pt-2">
+                <locale-switcher />
+              </div> -->
             </div>
           </nav>
         </div>
@@ -165,8 +167,11 @@
         <div class="flex-1 px-4 flex justify-between">
           <div class="flex-1 flex">
             <div class="w-full flex items-center">
-              <h1 class="text-2xl font-semibold text-gray-900">
-                {{ currentRoute.meta.readableName }}
+              <h1 class="text-2xl font-semibold text-gray-900 flex items-center">
+                {{ $t('nav.' + currentRoute.name) }}
+                <span class="text-gray-500 font-thin mx-2">|</span>
+                <img class="w-6 h-6 mr-3 cursor-pointer" @click="setLocale('it')" src="@/assets/img/it.png" />
+                <img class="w-6 h-6 cursor-pointer" @click="setLocale('en')" src="@/assets/img/en.png" />
               </h1>
             </div>
           </div>
@@ -190,9 +195,6 @@
         class="flex-1 relative z-0 overflow-y-auto pb-6 pt-3 focus:outline-none"
         tabindex="0"
       >
-        <!-- <div class="max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
-          <h1 class="text-2xl font-semibold text-gray-900">How It Works</h1>
-        </div> -->
         <div class="max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
           <vue-page-transition name="fade">
             <router-view></router-view>
@@ -204,7 +206,6 @@
 </template>
 
 <script>
-import LocaleSwitcher from '@/components/LocaleSwitcher';
 import ClickOutside from 'vue-click-outside';
 
 export default {
@@ -212,18 +213,13 @@ export default {
   directives: {
     ClickOutside,
   },
-  components: {
-    LocaleSwitcher,
-  },
   data: () => ({
     drawer: null,
     links: [
       {
         icon: 'M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z',
-        text: 'Home',
         to: '/',
         routeName: 'home',
-        meta: { readableName: 'Home' },
       },
       {
         icon:
@@ -238,7 +234,6 @@ export default {
         text: 'Team',
         to: '/team',
         routeName: 'team',
-        meta: { readableName: 'Home' },
       },
       {
         icon:
@@ -264,6 +259,9 @@ export default {
     hideDrawer() {
       this.drawer = false;
     },
+    setLocale(locale) {
+      this.$i18n.locale = locale
+    }
   },
   computed: {
     currentRoute() {
