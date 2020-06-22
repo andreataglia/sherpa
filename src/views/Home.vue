@@ -9,7 +9,7 @@
       <img
         slot="preloader"
         class="mx-auto"
-        src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif"
+        src="https://i.gifer.com/4V0b.gif"
       />
       <div slot="error" class="w-full h-full text-center flex justify-center">
         something went wrong :(

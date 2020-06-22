@@ -3,6 +3,9 @@ module.exports = {
     name: 'Welcome To Sicily',
     themeColor: '#ef5350',
     appleMobileWebAppCapable: 'yes',
+    workboxOptions: {
+      skipWaiting: true,
+    },
   },
 
   pluginOptions: {
@@ -10,7 +13,7 @@ module.exports = {
       locale: 'it',
       fallbackLocale: 'en',
       localeDir: 'locales',
-      enableInSFC: true
-    }
-  }
-}
+      enableInSFC: true,
+    },
+  },
+};

@@ -7,16 +7,20 @@
       class="bg-white w-full rounded overflow-hidden shadow-lg flex flex-col sm:flex-row flex-wrap justify-between p-4 text-gray-500 text-sm mt-3"
     >
       <div class="mr-2">
-        <div class="font-bold text-gray-800 mr-2 inline-flex sm:mr-0 sm:block">From</div>
+        <div class="font-bold text-gray-800 mr-2 inline-flex sm:mr-0 sm:block">
+          {{ $t('team.ambassadorProfile.location') }}
+        </div>
         {{ getAmbassadorById.from }}
       </div>
       <div class="mr-2 mt-2 sm:mt-0">
-        <div class="font-bold text-gray-800 mr-2 inline-flex sm:mr-0 sm:block">Languages</div>
+        <div class="font-bold text-gray-800 mr-2 inline-flex sm:mr-0 sm:block">
+          {{ $t('team.ambassadorProfile.lang') }}
+        </div>
         {{ getAmbassadorById.languages }}
       </div>
       <div class="mt-2 sm:mt-0">
         <div class="font-bold text-gray-800 inline-flex mr-2 sm:mr-0 sm:block">
-          Avg. Resp. Time
+          {{ $t('team.ambassadorProfile.avgRespTime') }}
         </div>
         {{ getAmbassadorById.resptime }}
       </div>
@@ -26,7 +30,7 @@
       class="bg-white w-full rounded overflow-hidden shadow-lg text-left p-4 mt-3 text-justify leading-5 text-gray-500 text-sm"
     >
       <div class="text-red-500 font-bold leading-6">
-        About Me
+        {{ $t('team.ambassadorProfile.about') }}
       </div>
       {{ getAmbassadorById.longBio }}
     </div>

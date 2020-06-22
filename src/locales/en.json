@@ -8,52 +8,95 @@
     "teamisset": "1/3 Final Steps",
     "msg": "2/3 Final Steps",
     "final": "3/3 Final Steps",
-    "teamid" : "Ambassador Profile"
+    "teamid": "Ambassador Profile"
   },
   "home": {
-    "btn": "Let's Go" 
+    "btn": "Let's Go"
   },
   "howitworks": {
-    "btn" : {
-      "next" : "Next",
-      "final" : "Let's Go"
+    "btn": {
+      "next": "Next",
+      "final": "Let's Go"
     },
-    "helpText" : [
+    "helpText": [
       "Browse through the local ambassadors",
       "Create your team by adding the ones you wish",
       "We'll create a Whatsapp/Telegram group with them"
     ]
   },
-  "team" : {
-    "yourTeam" : "Your Team",
-    "helpText" : "Create your team of {nMin} to {nMax} ambassadors, the click \"@:team.btn.text\"",
-    "btn" : {
-      "text" : "Let's Go",
+  "team": {
+    "yourTeam": "Your Team",
+    "helpText": "Create your team of {nMin} to {nMax} ambassadors, the click \"@:team.btn.text\"",
+    "btn": {
+      "text": "Let's Go",
       "disabledMsg": {
         "title": "Team is not ready yet!",
-        "body" : "You need at least {n} more ambassadors to go"
-      } 
+        "body": "You need at least {n} more ambassadors to go"
+      }
     },
-    "ambassadorCard" : {
-      "btn" : {
-        "add" : "Add To Team",
-        "remove" : "Remove"
+    "ambassadorCard": {
+      "btn": {
+        "add": "Add To Team",
+        "remove": "Remove"
       },
-      "snackBar" : {
-        "add" : {
-          "title" : "Great! Ambassador added to team",
-          "body" : {
-            "full" : "Team is ready to go",
-            "room" : "You may add up to {n} more ambassadors"
-          } 
+      "snackBar": {
+        "add": {
+          "title": "Great! Ambassador added to team",
+          "body": {
+            "full": "Team is ready to go",
+            "room": "You may add up to {n} more ambassadors"
+          }
         },
-        "remove" : "Removed from team",
-        "admin" : "This guy is an admin and cannot be removed",
-        "full" : {
-          "title" : "Team is full! Remove someone first",
-          "body" : "Your team can have {n} ambassadors at most"
+        "remove": "Removed from team",
+        "admin": "This guy is an admin and cannot be removed",
+        "full": {
+          "title": "Team is full! Remove someone first",
+          "body": "Your team can have {n} ambassadors at most"
         }
       }
+    },
+    "ambassadorProfile": {
+      "location": "Location",
+      "lang": "Languages",
+      "avgRespTime": "Avg. Resp. Time",
+      "about": "About Me"
     }
+  },
+  "teamisset": {
+    "0": {
+      "title": "Confirm Team?",
+      "text": "Your team looks awesome! Either confirm it and go straight to create the chat with them or make some last minute changes if you wish.",
+      "btnNext": "Let's Go",
+      "btnEditTeam": "Edit Team"
+    },
+    "1": {
+      "title": "WhatsApp or Telegram?",
+      "text": "Now let's create the group with the ambassadors of your team either on WhatsApp or Telegram. Click on the button of your favorite app, then input your mobile number for Whatsapp or the username for Telegram.",
+      "wa": {
+        "btn": "I want to use WhatsApp",
+        "text": "WhatsApp Phone Number",
+        "errorPrefix": "Choose a mobile prefix",
+        "errorNumber": "Insert your mobile number so we can contact you on WhatsApp"
+      },
+      "te": {
+        "btn": "I want to use Telegram",
+        "text": "Telegram Username",
+        "error": "Insert your Telegram username"
+      },
+      "btnNext": "Let's Go"
+    },
+    "2": {
+      "title": "All good!",
+      "text1": "You will be invited in a chat named \"Welcome To Sicily\" within the next 24 hours. We can't wait to meet you on chat :)",
+      "text2": "If you are experiencing any issues or simply want to get in touch with us either Contact Us from the button below or ping us in the live chat.",
+      "btn": "Contact Us"
+    }
+  },
+  "faq" : {
+    "title" : "Reach us out",
+    "text" : "It's Andrea and Paolo here, two friends who are trying to create an awesome service to welcome people in this amazing land. Please feel free to reach us out on Telegram or by email for whataver reason!",
+    "andrea": "Reach Andrea on Telegram",
+    "paolo": "Reach Paolo on Telegram",
+    "mail" : "Reach us at: hello@welcometosicily.app"
   }
 }

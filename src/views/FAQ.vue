@@ -5,42 +5,56 @@
         <div class="sm:flex sm:items-start sm:justify-between">
           <div>
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-              Reach us out!
+              {{ $t('faq.title') }}
             </h3>
             <div class="mt-2 max-w-xl text-sm leading-5 text-gray-500">
               <p>
-                It's us, Andrea and Paolo. You can reach
+                {{ $t('faq.text') }}
               </p>
             </div>
           </div>
         </div>
 
         <div class="mt-8">
-          <div
-            class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense"
-          >
-            <span class="flex w-full sm:col-start-2">
+          <div class="flex flex-col sm:flex-row justify-between">
+            <a href="https://t.me/andrea_andy_0" target="_blank">
               <button
                 type="button"
-                class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-blue-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
-                @click="chosenApp = 'wa'"
+                class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-blue-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 mx-2"
               >
                 <img src="@/assets/telegram.png" class="w-8 mr-2" />
-                Reach Paolo on Telegram
+                {{ $t('faq.andrea') }}
               </button>
-            </span>
-            <span
-              class="mt-3 flex w-full sm:mt-0 sm:col-start-1"
-            >
+            </a>
+
+            <a href="https://t.me/paolo_debellini" target="_blank">
               <button
                 type="button"
-                class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-blue-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
-                @click="chosenApp = 'te'"
+                class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-blue-50 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 mx-2 mt-2 sm:mt-0"
               >
                 <img src="@/assets/telegram.png" class="w-8 mr-2" />
-                Reach Andrea on Telegram
+                {{ $t('faq.paolo') }}
               </button>
-            </span>
+            </a>
+          </div>
+          <div class="px-2 mt-2 sm:mt-4">
+            <a href="mailto:hello@welcometosicily.app" target="_blank">
+              <button
+                type="button"
+                class="inline-flex items-center px-4 py-2 border border-gray-200 text-sm leading-5 font-medium rounded-md text-gray-700 bg-red-200 hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 w-full"
+              >
+                <svg
+                  class="h-6 w-6 mr-2 text-red-700"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M18 2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2h16zm-4.37 9.1L20 16v-2l-5.12-3.9L20 6V4l-10 8L0 4v2l5.12 4.1L0 14v2l6.37-4.9L10 14l3.63-2.9z"
+                  />
+                </svg>
+                {{ $t('faq.mail') }}
+              </button>
+            </a>
           </div>
         </div>
       </div>

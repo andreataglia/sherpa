@@ -8,52 +8,96 @@
     "teamisset": "1/3 Finalizzazione",
     "msg": "2/3 Finalizzazione",
     "final": "3/3 Finalizzazione",
-    "teamid" : "Profilo Ambasciatore"
+    "teamid": "Profilo Ambasciatore"
   },
   "home": {
-    "btn": "Iniziamo" 
+    "btn": "Iniziamo"
   },
   "howitworks": {
-    "btn" : {
-      "next" : "Prossimo",
-      "final" : "Iniziamo"
+    "btn": {
+      "next": "Prossimo",
+      "final": "Iniziamo"
     },
-    "helpText" : [
+    "helpText": [
       "Esplora gli ambasciatori del posto",
       "Crea la tua squadra con quelli che preferisci",
       "Creeremo un gruppo su Whatsapp o Telgram con loro"
     ]
   },
-  "team" : {
-    "yourTeam" : "La Tua Squadra",
-    "helpText" : "Crea la tua squadra di minimo {nMin} e massimo {nMax} ambasciatori, poi clicca \"@:team.btn.text\"",
-    "btn" : {
-      "text" : "Prosegui",
+  "team": {
+    "yourTeam": "La Tua Squadra",
+    "helpText": "Crea la tua squadra di minimo {nMin} e massimo {nMax} ambasciatori, poi clicca \"@:team.btn.text\"",
+    "btn": {
+      "text": "Prosegui",
       "disabledMsg": {
         "title": "Squadra incompleta!",
-        "body" : "Ti servono un minimo di {n} ambasciatori per poter proseguire"
-      } 
+        "body": "Ti servono un minimo di {n} ambasciatori per poter proseguire"
+      }
     },
-    "ambassadorCard" : {
-      "btn" : {
-        "add" : "Aggiungi",
-        "remove" : "Rimuovi"
+    "ambassadorCard": {
+      "btn": {
+        "add": "Aggiungi",
+        "remove": "Rimuovi"
       },
-      "snackBar" : {
-        "add" : {
-          "title" : "Ottimo! Ambasciatore aggiunto in squadra",
-          "body" : {
-            "full" : "La squadra è al completo",
-            "room" : "Puoi aggiungere massimo altri {n} ambasciatori in squadra"
-          } 
+      "snackBar": {
+        "add": {
+          "title": "Ambasciatore aggiunto in squadra!",
+          "body": {
+            "full": "La squadra è al completo",
+            "room": "Puoi aggiungere massimo altri {n} ambasciatori in squadra"
+          }
         },
-        "remove" : "Ok... Ambasciatore rimosso dalla squadra",
-        "admin" : "Questo ambasciatore è un admin e non può essere rimosso",
-        "full" : {
-          "title" : "Squadra al completo! Rimuovi qualcuno prima",
-          "body" : "La squadra può avere un massimo di {n} ambasciatori"
+        "remove": "Ok... Ambasciatore rimosso dalla squadra",
+        "admin": "Questo ambasciatore è un admin e non può essere rimosso",
+        "full": {
+          "title": "Squadra al completo! Rimuovi qualcuno prima",
+          "body": "La squadra può avere un massimo di {n} ambasciatori"
         }
       }
+    },
+    "ambassadorProfile": {
+      "location": "Posizione",
+      "lang": "Lingue",
+      "avgRespTime": "Tempo Medio Risp.",
+      "about": "Su Di Me"
     }
+  },
+  "teamisset": {
+    "0": {
+      "title": "Confermi la Squadra?",
+      "text": "La tua squadra sembra ottima! Adesso puoi confermarla e procedere alla creazione della chat con loro, oppure puoi fare ancora qualche modifica prima di confermare",
+      "btnNext": "Prosegui",
+      "btnEditTeam": "Modifica Squadra"
+    },
+    "1": {
+      "title": "WhatsApp o Telegram?",
+      "text": "Adesso creiamo il gruppo con gli ambasciatori su WhatsApp o su Telegram. Scegli l'applicazione che intendi usare, poi inserisci l'informazione di contatto.",
+      "wa": {
+        "btn": "Voglio usare WhatsApp",
+        "text": "Numero di Telefono di WhatsApp",
+        "errorPrefix": "Scegli un prefisso",
+        "errorNumber": "Inserisci il tuo numero di telefono cosi che possiamo creare il gruppo WhatsApp"
+      },
+      "te": {
+        "btn": "Voglio usare Telegram",
+        "text": "Username Telegram",
+        "error": "Inserisci il tuo username Telegram"
+      },
+      "btnNext": "Procedi"
+    },
+    "2": {
+      "title": "Tutto fatto!",
+      "text1": "Ti inviteremo in una chat con nome \"Welcome To Sicily\" entro le prossime 24 ore. Non vediamo l'ora di conoscerti in chat :)",
+      "text2": "Se hai avuto qualche problema o se vuoi semplicemente contattarci clicca sul pulsante in basso oppure apri la live chat.",
+      "btn": "Contattaci"
+    }
+  },
+  
+  "faq" : {
+    "title" : "Contattaci",
+    "text" : "Siamo Andrea and Paolo, due amici che stanno creando un fantastico servizio per accogliere le persone in questa terra meravigliosa. Sentiti liberissimo di contattarci per qualsiasi cosa su Telegram o per mail!",
+    "andrea": "Contatta Andrea su Telegram",
+    "paolo": "Contatta Paolo su Telegram",
+    "mail" : "Contattaci su: hello@welcometosicily.app"
   }
 }

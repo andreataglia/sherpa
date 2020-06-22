@@ -27,7 +27,7 @@
           >
             <div
               v-show="drawer"
-              class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-red-500"
+              class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-red-500 "
             >
               <div class="absolute top-0 right-0 -mr-14 p-1">
                 <button
@@ -84,6 +84,20 @@
                     {{ $t('nav.' + link.routeName) }}
                   </a>
                 </nav>
+                <div
+                  class="border-t border-yellow-100 mt-5 pt-3 px-2 flex justify-center"
+                >
+                  <img
+                    class="w-6 h-6 mx-3 cursor-pointer"
+                    @click="setLocale('it')"
+                    src="@/assets/img/it.png"
+                  />
+                  <img
+                    class="w-6 h-6 mx-3 cursor-pointer"
+                    @click="setLocale('en')"
+                    src="@/assets/img/en.png"
+                  />
+                </div>
               </div>
             </div>
           </transition>
@@ -95,7 +109,7 @@
     </transition>
 
     <!-- Static sidebar for DESKTOP -->
-    <div class="hidden md:flex md:flex-shrink-0">
+    <div class="hidden md:flex md:flex-shrink-0 h-screen">
       <div class="flex flex-col w-64 bg-red-500 pt-5 pb-0 rounded-br-large">
         <div class="flex items-center flex-shrink-0 px-4">
           <img class="h-8 w-auto" src="./assets/sicily.svg" />
@@ -131,11 +145,18 @@
               {{ $t('nav.' + link.routeName) }}
             </router-link>
             <div
-              class="px-2 py-2 text-sm leading-5 font-medium text-gray-800 focus:outline-none transition ease-in-out duration-150"
+              class="border-t border-yellow-100 mt-5 pt-3 px-2 flex justify-center"
             >
-              <!-- <div class="border-t border-gray-800 pt-2">
-                <locale-switcher />
-              </div> -->
+              <img
+                class="w-6 h-6 mx-3 cursor-pointer"
+                @click="setLocale('it')"
+                src="@/assets/img/it.png"
+              />
+              <img
+                class="w-6 h-6 mx-3 cursor-pointer"
+                @click="setLocale('en')"
+                src="@/assets/img/en.png"
+              />
             </div>
           </nav>
         </div>
@@ -167,11 +188,23 @@
         <div class="flex-1 px-4 flex justify-between">
           <div class="flex-1 flex">
             <div class="w-full flex items-center">
-              <h1 class="text-2xl font-semibold text-gray-900 flex items-center">
+              <h1
+                class="text-2xl font-semibold text-gray-900 flex items-center"
+              >
                 {{ $t('nav.' + currentRoute.name) }}
-                <span class="text-gray-500 font-thin mx-2">|</span>
-                <img class="w-6 h-6 mr-3 cursor-pointer" @click="setLocale('it')" src="@/assets/img/it.png" />
-                <img class="w-6 h-6 cursor-pointer" @click="setLocale('en')" src="@/assets/img/en.png" />
+                <!-- <span class="hidden sm:inline-flex flex items-center">
+                  <span class="text-gray-500 font-thin mx-2">|</span>
+                  <img
+                    class="w-6 h-6 mr-3 cursor-pointer"
+                    @click="setLocale('it')"
+                    src="@/assets/img/it.png"
+                  />
+                  <img
+                    class="w-6 h-6 cursor-pointer"
+                    @click="setLocale('en')"
+                    src="@/assets/img/en.png"
+                  />
+                </span> -->
               </h1>
             </div>
           </div>
@@ -260,8 +293,8 @@ export default {
       this.drawer = false;
     },
     setLocale(locale) {
-      this.$i18n.locale = locale
-    }
+      this.$i18n.locale = locale;
+    },
   },
   computed: {
     currentRoute() {

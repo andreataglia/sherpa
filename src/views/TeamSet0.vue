@@ -4,24 +4,20 @@
       <div class="sm:flex sm:items-start sm:justify-between">
         <div>
           <h3 class="text-lg leading-6 font-medium text-gray-900">
-            Confirm Team?
+            {{ $t('teamisset.0.title') }}
           </h3>
           <div class="mt-2 max-w-xl text-sm leading-5 text-gray-500">
             <p>
-              Your team looks awesome! Either confirm it and go straight to
-              create the chat with them or make some last minute changes if you
-              wish.
+              {{ $t('teamisset.0.text') }}
             </p>
           </div>
         </div>
-        <div
-          class="mt-5 mt-0 sm:ml-6 flex-shrink-0 flex items-center"
-        >
+        <div class="mt-5 mt-0 sm:ml-6 flex-shrink-0 flex items-center">
           <span class="inline-flex rounded-md shadow-sm">
             <router-link to="/teamisset/msg">
-            <button type="button" class="btn btn-dark rounded-md">
-              Let's Go
-            </button>
+              <button type="button" class="btn btn-dark rounded-md">
+                {{ $t('teamisset.0.btnNext') }}
+              </button>
             </router-link>
           </span>
         </div>
@@ -47,7 +43,7 @@
                   type="button"
                   class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
                 >
-                  Edit Team
+                  {{ $t('teamisset.0.btnEditTeam') }}
                 </button>
               </router-link>
             </span>

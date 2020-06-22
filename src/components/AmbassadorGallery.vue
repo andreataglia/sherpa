@@ -15,7 +15,7 @@
           :src="getMediaThumbUrl(media.id)"
           class="absolute w-full h-full object-cover object-center rounded-lg p-05"
         />
-        <img slot="preloader" src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif" />
+        <img slot="preloader" src="https://i.gifer.com/4V0b.gif" />
         <div slot="error" class="w-full h-full text-center flex justify-center">no image :(</div>
       </vue-load-image>
       <div

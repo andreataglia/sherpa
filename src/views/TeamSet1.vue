@@ -4,14 +4,11 @@
       <div class="sm:flex sm:items-start sm:justify-between">
         <div>
           <h3 class="text-lg leading-6 font-medium text-gray-900">
-            WhatsApp or Telegram?
+            {{ $t('teamisset.1.title') }}
           </h3>
           <div class="mt-2 max-w-xl text-sm leading-5 text-gray-500">
             <p>
-              Now let's create the group with the ambassadors of your team
-              either on WhatsApp or Telegram. <br />
-              Click on the button of your favorite app, then input your mobile
-              number for Whatsapp or the username for Telegram.
+              {{ $t('teamisset.1.text') }}
             </p>
           </div>
         </div>
@@ -26,7 +23,9 @@
               @click="chosenApp = 'wa'"
             >
               <img src="@/assets/whatsapp.png" class="w-10 sm:mr-2" />
-              <span class="hidden sm:inline-block">I want to use Whatsapp</span>
+              <span class="hidden sm:inline-block">{{
+                $t('teamisset.1.wa.btn')
+              }}</span>
             </button>
           </span>
           <span class="inline-flex rounded-md shadow-sm">
@@ -36,7 +35,9 @@
               @click="chosenApp = 'te'"
             >
               <img src="@/assets/telegram.png" class="w-10 sm:mr-2" />
-              <span class="hidden sm:inline-block">I want to use Telegram</span>
+              <span class="hidden sm:inline-block">{{
+                $t('teamisset.1.te.btn')
+              }}</span>
             </button>
           </span>
         </div>
@@ -50,7 +51,7 @@
               <label
                 for="phone_number"
                 class="block text-sm font-medium leading-5 text-gray-700"
-                >WhatsApp Phone Number
+                >{{ $t('teamisset.1.wa.text') }}
               </label>
               <div class="mt-1 relative rounded-md shadow-sm">
                 <div class="absolute inset-y-0 left-0 flex items-center">
@@ -62,8 +63,6 @@
                     <option v-for="(pre, index) in prefix" :key="index">{{
                       pre
                     }}</option>
-                    <option>CA </option>
-                    <option>EU </option>
                   </select>
                 </div>
                 <input
@@ -77,9 +76,13 @@
           </div>
           <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
             <span class="inline-flex rounded-md shadow-sm">
-              <button type="button" @click="done()" class="btn btn-dark rounded-md">
-                  Let's Go
-                </button>
+              <button
+                type="button"
+                @click="done()"
+                class="btn btn-dark rounded-md"
+              >
+                {{ $t('teamisset.1.btnNext') }}
+              </button>
             </span>
           </div>
         </div>
@@ -92,7 +95,7 @@
               <label
                 for="username"
                 class="block text-sm font-medium leading-5 text-gray-700"
-                >Telegram Username
+                >{{ $t('teamisset.1.te.text') }}
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
                 <span
@@ -103,7 +106,7 @@
                 <input
                   id="username"
                   class="form-input flex-1 block w-full px-3 py-2 rounded-md sm:rounded-none sm:rounded-r-md sm:text-sm sm:leading-5"
-                  placeholder="my_username_here"
+                  :placeholder="$t('teamisset.1.te.text')"
                   v-model="telegramName"
                 />
               </div>
@@ -111,23 +114,27 @@
           </div>
           <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
             <span class="inline-flex rounded-md shadow-sm">
-              <button type="button" @click="done()" class="btn btn-dark rounded-md">
-                  Let's Go
-                </button>
+              <button
+                type="button"
+                @click="done()"
+                class="btn btn-dark rounded-md"
+              >
+                {{ $t('teamisset.1.btnNext') }}
+              </button>
             </span>
           </div>
         </div>
       </div>
-      <div class="mt-5">
+      <!-- <div class="mt-5">
         <span class="inline-flex rounded-md shadow-sm">
           <button
             type="button"
             class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
           >
-            I need help
+            {{ $t('teamisset.1.btnhelp') }}
           </button>
         </span>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -396,13 +403,13 @@ export default {
     validateForm() {
       if (this.chosenApp == 'wa') {
         if (this.mobilePrefix == '') {
-          this.$toast('Insert a valid mobile prefix first', {
+          this.$toast(this.$t('teamisset.1.wa.errorPrefix'), {
             type: 'err',
           });
           return false;
         }
         if (this.mobileNumber.length < 8) {
-          this.$toast('Insert a valid mobile number first', {
+          this.$toast(this.$t('teamisset.1.wa.errorNumber'), {
             type: 'err',
           });
           return false;
@@ -410,8 +417,7 @@ export default {
         return true;
       } else if (this.chosenApp == 'te') {
         if (this.telegramName.length > 2) return true;
-        this.$toast('Insert a valid Telegram usernamename first', {
-          body: 'the username needs at least 3 characters',
+        this.$toast(this.$t('teamisset.1.te.error'), {
           type: 'err',
         });
       }
@@ -426,7 +432,6 @@ export default {
             : this.mobilePrefix + ' ' + this.mobileNumber,
         });
         this.$router.push('/teamisset/final');
-        // window.location.href = window.location.href.substr(-4) + '/final';
       }
     },
   },

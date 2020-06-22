@@ -7,10 +7,7 @@
           class="w-full rounded-br-large object-cover max-h-64 w-full object-top cursor-pointer focus:outline-none"
           :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
         />
-        <img
-          slot="preloader"
-          src="https://media.giphy.com/media/s4KqhlPU9Ypnq/giphy.gif"
-        />
+        <img slot="preloader" src="https://i.gifer.com/4V0b.gif" />
         <div slot="error" class="w-full h-full text-center flex justify-center">
           no image :(
         </div>
@@ -28,14 +25,14 @@
           d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"
         />
       </svg>
-      <span class="text-xs">540</span>
+      <span class="text-xs">{{ getAmbassadorById.upvotes }}</span>
     </button>
     <button
       class="btn btn-light absolute right-0 mt-2 sm:mt-4 mr-2 rounded-md flex uppercase text-xs"
       @click="addToTeam()"
       v-if="!getAmbassadorById.inTeam"
     >
-      Add to team
+      {{ $t('team.ambassadorCard.btn.add') }}
     </button>
     <button
       class="btn btn-dark absolute right-0 mt-2 sm:mt-4 mr-2 rounded-md flex uppercase text-xs"
@@ -43,7 +40,7 @@
       @click="removeFromTeam(getAmbassadorById.admin)"
       v-else
     >
-      Remove
+      {{ $t('team.ambassadorCard.btn.remove') }}
       <!-- <svg class="h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
         <path
           d="M2 6H0v2h2v2h2V8h2V6H4V4H2v2zm7 0a3 3 0 0 1 6 0v2a3 3 0 0 1-6 0V6zm11 9.14A15.93 15.93 0 0 0 12 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"
@@ -51,7 +48,9 @@
       </svg> -->
     </button>
     <div class="px-2 sm:px-6 py-3 sm:py-4">
-      <div class="font-bold text-xl mb-2 w-3/5">{{ getAmbassadorById.name }}</div>
+      <div class="font-bold text-xl mb-2 w-3/5">
+        {{ getAmbassadorById.name }}
+      </div>
       <p class="text-gray-600 text-sm">
         <span
           v-for="(bio, index) in getAmbassadorById.shortBio"
@@ -92,8 +91,8 @@ export default {
     addToTeam(admin) {
       if (this.$store.getters.teamIsFull(this)) {
         let max = this.$maxTeamSize;
-        this.$toast('Team is full! Remove someone first', {
-          body: `the team can have max ${max} ambassadors`,
+        this.$toast(this.$t('team.ambassadorCard.snackBar.full.title'), {
+          body: this.$t('team.ambassadorCard.snackBar.full.body', { n: max }),
           type: 'err',
         });
       } else {
@@ -102,18 +101,21 @@ export default {
         let current = this.$store.getters.currentTeam.length;
         let text =
           max - current > 0
-            ? `You can still add up to ${max -
-                current} ambassadors to your team`
-            : 'Your team is now full and ready to go!';
-        this.$toast('Nice! Team member added', { body: text });
+            ? this.$t('team.ambassadorCard.snackBar.add.body.room', {
+                n: max - current,
+              })
+            : this.$t('team.ambassadorCard.snackBar.add.body.full');
+        this.$toast(this.$t('team.ambassadorCard.snackBar.add.title'), {
+          body: text,
+        });
       }
     },
     removeFromTeam(admin) {
       if (!admin) {
         this.$store.commit('removeFromTeam', this.ambId);
-        this.$toast('Uuch.. One less team member');
+        this.$toast(this.$t('team.ambassadorCard.snackBar.remove'));
       } else {
-        this.$toast('This guy is an admin and cannot be removed', {
+        this.$toast(this.$t('team.ambassadorCard.snackBar.admin'), {
           type: 'err',
         });
       }
