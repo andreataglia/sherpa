@@ -8,7 +8,8 @@
     "teamisset": "1/3 Finalizzazione",
     "msg": "2/3 Finalizzazione",
     "final": "3/3 Finalizzazione",
-    "teamid": "Profilo Ambasciatore"
+    "teamid": "Profilo Ambasciatore",
+    "lang" : "Switch Language:"
   },
   "home": {
     "btn": "Iniziamo"

@@ -85,20 +85,32 @@
                   </a>
                 </nav>
                 <div
-                  class="border-t border-yellow-100 mt-5 pt-3 px-2 flex justify-center"
+                  class="border-t border-yellow-100 text-sm leading-5 font-medium text-white mt-5 pt-3 px-2 flex justify-center"
                 >
+                  {{ $t('nav.lang') }}
                   <img
-                    class="w-6 h-6 mx-3 cursor-pointer"
+                    class="w-6 h-6 mx-2 ml-4 cursor-pointer"
                     @click="setLocale('it')"
                     src="@/assets/img/it.png"
                   />
                   <img
-                    class="w-6 h-6 mx-3 cursor-pointer"
+                    class="w-6 h-6 mx-2 cursor-pointer"
                     @click="setLocale('en')"
                     src="@/assets/img/en.png"
                   />
                 </div>
               </div>
+                <div
+                  class="text-sm leading-5 font-medium text-white ml-2 px-2"
+                >
+                  In partnership with
+                  <a href="https://www.befactory.it/master" target="_blank">
+                    <img
+                      class="w-16 h-16 ml-5 cursor-pointer"
+                      src="@/assets/img/BeAcademy.png"
+                    />
+                  </a>
+                </div>
             </div>
           </transition>
           <div class="flex-shrink-0 w-14">
@@ -145,20 +157,30 @@
               {{ $t('nav.' + link.routeName) }}
             </router-link>
             <div
-              class="border-t border-yellow-100 mt-5 pt-3 px-2 flex justify-center"
+              class="border-t border-yellow-100 text-sm leading-5 font-medium text-white mt-5 pt-3 px-2 flex justify-center items-center"
             >
+              {{ $t('nav.lang') }}
               <img
-                class="w-6 h-6 mx-3 cursor-pointer"
+                class="w-6 h-6 mx-2 ml-4 cursor-pointer"
                 @click="setLocale('it')"
                 src="@/assets/img/it.png"
               />
               <img
-                class="w-6 h-6 mx-3 cursor-pointer"
+                class="w-6 h-6 mx-2 cursor-pointer"
                 @click="setLocale('en')"
                 src="@/assets/img/en.png"
               />
             </div>
           </nav>
+          <div class="text-sm leading-5 font-medium text-white mb-4 pt-3 px-2">
+            In partnership with
+            <a href="https://www.befactory.it/master" target="_blank">
+              <img
+                class="w-16 h-16 ml-5 cursor-pointer"
+                src="@/assets/img/BeAcademy.png"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

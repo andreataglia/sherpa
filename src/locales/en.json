@@ -8,7 +8,8 @@
     "teamisset": "1/3 Final Steps",
     "msg": "2/3 Final Steps",
     "final": "3/3 Final Steps",
-    "teamid": "Ambassador Profile"
+    "teamid": "Ambassador Profile",
+    "lang" : "Cambia Lingua:"
   },
   "home": {
     "btn": "Let's Go"
