@@ -140,6 +140,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'TeamSet',
   data: () => ({
@@ -426,11 +428,23 @@ export default {
     done() {
       if (this.validateForm()) {
         this.$store.commit('setUserLead', {
-          isTelegram: this.chosenApp == 'te',
-          lead: this.isTelegram
-            ? this.telegramName
-            : this.mobilePrefix + ' ' + this.mobileNumber,
+          chosenApp: this.chosenApp,
+          lead:
+            this.chosenApp === 'te'
+              ? this.telegramName
+              : this.mobilePrefix + ' ' + this.mobileNumber,
         });
+        let params = this.$store.state.userLead;
+        axios
+          .get(
+            `.netlify/functions/send-email?team=${params.team}&chosenApp=${params.chosenApp}&lead=${params.lead}&ref=${params.ref}`
+          )
+          .then((response) => {
+            console.log(response);
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
         this.$router.push('/teamisset/final');
       }
     },

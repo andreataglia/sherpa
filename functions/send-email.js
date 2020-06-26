@@ -1,43 +1,42 @@
-// const nodemailer = require('nodemailer');
+// using Twilio SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
+const sgMail = require('@sendgrid/mail');
 
-// exports.handler = function(event, context, callback) {
-//     let transporter = nodemailer.createTransport({
-//         host: 'smtp.gmail.com',
-//         port: 465,
-//         secure: true,
-//         auth: {
-//             type: 'OAuth2',
-//             user: process.env.MAIL_LOGIN,
-//             clientId: process.env.CLIENT_ID,
-//             clientSecret: process.env.CLIENT_SECRET,
-//             refreshToken: process.env.REFRESH_TOKEN,
-//             accessToken: process.env.ACCESS_TOKEN
-//         }
-//     });
-//     console.log(event.body);
+exports.handler = function(event, context, callback) {
+  sgMail.setApiKey(
+    process.env.TWILIO_API_KEY
+  );
+  let date = new Date().toDateString;
+  const msg = {
+    to: 'hello@welcometosicily.app',
+    from: 'shop@ilbuongustoitaliano.com',
+    subject: 'WelcomeToSicily - New Team',
+    html: `Ha creato team alle ${date} 
+    <br>su <strong>${event.queryStringParameters.chosenApp}</strong> 
+    <br>con numero/user: <strong>${event.queryStringParameters.lead}</strong>
+    <br>con team: <strong>${event.queryStringParameters.team}</strong>
+    <br>proveniente da <strong>${event.queryStringParameters.ref}</strong>`,
+  };
 
-//     transporter.sendMail({
-//         from: process.env.MAIL_LOGIN,
-//         to: process.env.MAIL_TO,
-//         subject: process.env.SUBJECT + new Date().toLocaleString(),
-//         text: event.body
-//     }, function(error, info) {
-//         if (error) {
-//             callback(error);
-//         } else {
-//             callback(null, {
-//                 statusCode: 200,
-//                 body: "Ok"
-//             });
-//         }
-//     });
-// }
-// 
+//   callback(null, {
+//     statusCode: 200,
+//     body: 'sent',
+//   });
 
-exports.handler = async event => {
-    const subject = event.queryStringParameters.name || 'World'
-    return {
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log('Message sent');
+      callback(null, {
         statusCode: 200,
-        body: `Hello ${subject}!`,
-    }
-}
+        body: 'sent',
+      });
+    })
+    .catch((error) => {
+      console.log(error.response.body);
+      callback(null, {
+        statusCode: 500,
+        body: error,
+      });
+    });
+};

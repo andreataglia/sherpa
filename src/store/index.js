@@ -53,9 +53,11 @@ const store = new Vuex.Store({
     },
     setUserLead(state, payload) {
       let userLead = {
-        isTelegram: payload.isTelegram,
+        chosenApp: payload.chosenApp,
         lead: payload.lead,
         timestamp: new Date().getTime(),
+        ref: 'no-ref',
+        team: state.ambassadors.filter((el) => el.inTeam).map(amb => amb.name)
       };
       state.userLead = userLead;
       fb.userLeadsCollection.add(userLead);
