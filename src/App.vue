@@ -100,17 +100,15 @@
                   />
                 </div>
               </div>
-                <div
-                  class="text-sm leading-5 font-medium text-white ml-2 px-2"
-                >
-                  In partnership with
-                  <a href="https://www.befactory.it/master" target="_blank">
-                    <img
-                      class="w-16 h-16 ml-5 cursor-pointer"
-                      src="@/assets/img/BeAcademy.png"
-                    />
-                  </a>
-                </div>
+              <div class="text-sm leading-5 font-medium text-white ml-2 px-2">
+                In partnership with
+                <a href="https://www.befactory.it/master" target="_blank">
+                  <img
+                    class="w-16 h-16 ml-5 cursor-pointer"
+                    src="@/assets/img/BeAcademy.png"
+                  />
+                </a>
+              </div>
             </div>
           </transition>
           <div class="flex-shrink-0 w-14">
@@ -322,6 +320,16 @@ export default {
     currentRoute() {
       return this.$route;
     },
+  },
+  mounted() {
+    let url = window.location.href;
+    let name = 'ref';
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    let val = decodeURIComponent(results[2].replace(/\+/g, ' '));
+    if (val) this.$store.commit('changeRef', val);
   },
 };
 </script>

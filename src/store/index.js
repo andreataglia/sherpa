@@ -13,6 +13,7 @@ const store = new Vuex.Store({
       timestamp: '',
     },
     currentTeamSize: 2,
+    ref: 'no-ref'
   },
   getters: {
     currentTeam: (state) => {
@@ -56,12 +57,15 @@ const store = new Vuex.Store({
         chosenApp: payload.chosenApp,
         lead: payload.lead,
         timestamp: new Date().getTime(),
-        ref: 'no-ref',
+        ref: state.ref,
         team: state.ambassadors.filter((el) => el.inTeam).map(amb => amb.name)
       };
       state.userLead = userLead;
       fb.userLeadsCollection.add(userLead);
     },
+    changeRef(state, newRef){
+      state.ref = newRef;
+    }
   },
   actions: {
     fetchAmbassadors({ commit }) {

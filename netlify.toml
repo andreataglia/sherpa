@@ -1,3 +1,4 @@
 [build]
-  command = "npm run netlify-build"
-  functions = ".netlify/functions/"
+  command = "yarn build"
+  functions = "lambda"
+  publish = "dist"
