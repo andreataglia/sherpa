@@ -9,14 +9,18 @@
       :key="index"
       @click.stop="openMediaDialog(media.id)"
     >
-      <vue-load-image class="absolute w-full h-full object-cover object-center rounded-lg p-05">
+      <vue-load-image
+        class="absolute w-full h-full object-cover object-center rounded-lg p-05"
+      >
         <img
           slot="image"
           :src="getMediaThumbUrl(media.id)"
           class="absolute w-full h-full object-cover object-center rounded-lg p-05"
         />
         <img slot="preloader" src="https://i.gifer.com/4V0b.gif" />
-        <div slot="error" class="w-full h-full text-center flex justify-center">no image :(</div>
+        <div slot="error" class="w-full h-full text-center flex justify-center">
+          no image :(
+        </div>
       </vue-load-image>
       <div
         class="absolute bottom-0 left-0 ml-2 text-white font-normal flex items-center"
@@ -31,7 +35,7 @@
             d="M16 7l4-4v14l-4-4v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v3zm-8 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
           />
         </svg>
-        {{ media.likes }}
+        {{ calcMediaLikes(media.id, media.likes) }}
       </div>
     </div>
 
@@ -184,7 +188,9 @@
                     d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"
                   />
                 </svg>
-                <span class="text-xs">{{ currentMediaInfo.likes }}</span>
+                <span class="text-xs">{{
+                  calcMediaLikes(currentMediaInfo.id, currentMediaInfo.likes)
+                }}</span>
               </button>
               <button
                 @click.stop="closeMediaDialog()"
@@ -206,17 +212,19 @@
 </template>
 
 <script>
-import VueLoadImage from 'vue-load-image'
+import VueLoadImage from 'vue-load-image';
+const LIKES_ARR = [15, 12, 16, 10, 20, 25, 8, 5, 10];
 
 export default {
   name: 'AmbassadorGallery',
   components: {
-    'vue-load-image': VueLoadImage
+    'vue-load-image': VueLoadImage,
   },
   props: {
     ambId: Number,
   },
   data: () => ({
+    LIKES_ARR,
     dialog: false,
     publicPath: process.env.BASE_URL,
     videoPlaying: false,
@@ -319,6 +327,9 @@ export default {
         });
         this.likesPut.push(this.mediaId);
       }
+    },
+    calcMediaLikes(mediaId, dbLikes) {
+      return this.LIKES_ARR[mediaId] + (this.ambId % 4) + dbLikes;
     },
   },
   computed: {

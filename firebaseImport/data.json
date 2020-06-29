@@ -1,1223 +1,1150 @@
 {
   "ambassadors": [
-    {
-      "id": 0,
-      "name": "Andrea Taglia",
-      "inTeam": true,
-      "admin": true,
-      "shortBio": [
-        {
-          "text": "Sea lover",
-          "emoj": "🌊"
-        },
-        {
-          "text": "Beach hunter",
-          "emoj": "🏖️"
-        },
-        {
-          "text": "Restless surfer",
-          "emoj": "🏄"
-        }
-      ],
-      "upvotes": 24,
-      "from": "Syracuse",
-      "languages": "Italian, English",
-      "resptime": "15 Minutes",
-      "longBio": "I have been out of Sicily for some years, from the UK to Singapore, but then it hit me: “A Sicilia è u megghiu postu ro munnu”. That is “Sicily is the best place in the world” in sicilian dialect. I love surfing as much as I love pretty much anything regarding the sea. If you need any tips about beaches or surfing spots, I’m the go-to-guy for you :)",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Yep... surfing in Sicily is awesome!"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Panino by Borderi"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Pillirina beach"
-        },
-        {
-          "id": 4,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Ortigia, summertime"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Lido di Avola, 24th February"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "How about some canoeing?!"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "name": "Paolo Debellini",
-      "inTeam": true,
-      "admin": true,
-      "shortBio": [
-        {
-          "text": "Outdoor sports enthusiast",
-          "emoj": "🏅"
-        },
-        {
-          "text": "Compulsive traveler",
-          "emoj": "🗺️"
-        }
-      ],
-      "upvotes": 25,
-      "from": "Catania",
-      "languages": "Italian, English",
-      "resptime": "10 Minutes",
-      "longBio": "I’m originally from the north of Italy, but every time I can, I don’t think twice and I visit my best friends from Sicily. I’m constantly overwhelmed by the astonishing mix of culture and natural beauty that only Sicily can offer, and the people.. The most generous and nice! Whenever you’re thinking of hiking or discovering the natural beauties of Sicily just ping me and I’d be happy to help",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Siciliy!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Sicilian Wedding"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Ortigia.. simply wonderful"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Etna Volcano, the best place for fresh air during summer"
-        },
-        {
-          "id": 4,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Weird marine life at Acitrezza (Catania)"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Looking for the pirate's treasure...!!"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Fish feast like no other.. In Catania"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Snow blanket on the Etna Volcano"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "The volcano is getting angry..."
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Bianca Lo Bello",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Travel addicted",
-          "emoj": "🌎"
-        },
-        {
-          "text": "Sea Lover",
-          "emoj": "🌊"
-        },
-        {
-          "text": "Restaurants and Pubs regular",
-          "emoj": "🍸💥"
-        },
-        {
-          "text": "Intrested in Fashion",
-          "emoj": "👠👗"
-        }
-      ],
-      "upvotes": 26,
-      "from": "Syracusa",
-      "languages": "Italian, English, Spanish",
-      "resptime": "1 Hour",
-      "longBio": "Even though one of my biggest passion is traveling and discovering new places, I feel Sicily is a magical island with beautiful landscapes and amazing food. So, I’m here to help you find what you want to do in the way you like✌ Since I’m a nightout person, I've tried many restaurants, clubs, pubs or just cool places where to grab something to eat while watching the sunset (from the local to the classier ones)🍹🍾 I love spending my days at the beach, breathing the sea air and enjoying breathtaking sunsets. I’m also passionate about fitness and healthy food🏋 And if you haven’t understood it yet, I’m a lover of the good life😃",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "I feel like a tourist walking through the ancient streets of my own city🏺"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "You cannot say goodbye to Sicily before eating cannoli👌"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "A peaceful place where to escape from the city📍"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "The typical Sicilian happy hour😋"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "I love spending my summer days in cool and comfortable beach club☀️"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "The capital of the baroque⚜️"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "In love with the colors of this little fishermen village🌸"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "What a magic sunset✨"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Emanuele Garsia",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Student of Ancient Literature and Ancient History",
-          "emoj": "🏛"
-        },
-        {
-          "text": "Seeker of Odysseus’s places of travel",
-          "emoj": "🧜"
-        },
-        {
-          "text": "Avid reader",
-          "emoj": "📚"
-        }
-      ],
-      "upvotes": 32,
-      "from": "Syracuse",
-      "languages": "Italian, English",
-      "resptime": "10 Minutes",
-      "longBio": "Goethe used to say: “Without Sicily, Italy creates no image in the soul: here is the key to everything”. Sicily is always my beloved native home. Sicily is where Italian and Greek culture mingle together. That’s why I consider myself half Greek. And that’s my passion. If you need any tips about Greek and Roman antiquities, museums, archeological sites or mythological stories about Sicily I’m here to help you!",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "View of the ancient Greek theatre in Syracuse"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "What's better than scacciata?"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Fountain of Diana in Syracuse"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
-        },
-        {
-          "id": 5,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Greek Tragedy represented nowadays"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Sunset in Ortygia"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Summer vibes"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Holding a cantaloup"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Martina Zito",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Born in Syracuse",
-          "emoj": "☀️"
-        },
-        {
-          "text": "Based in Catania",
-          "emoj": "🌋"
-        },
-        {
-          "text": "Engineer on the road with passion for art",
-          "emoj": "👷🏽‍♀️"
-        }
-      ],
-      "upvotes": 22,
-      "from": "Catania",
-      "languages": "Italian, English",
-      "resptime": "2 Hours",
-      "longBio": "To me Sicily means sun, sea, colors, art, good food and good people; this is why I've chosen to stay in Sicily after graduation. I'm an engineer and for work, I drive around the island by car like a \"tuppetto\" (the typical Sicilian spinning top) from the largest and most famous cities to the most remote and unknown villages. In these years I have discovered that even the tiniest village has always a secret treasure to be discovered, and best of all, there will always be a person willing to welcome and help you:)",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Motta d'affermo, Fiumara d'arte Piramide 38 parallelo"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Acicastello, Lunch break with a view"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Catania, the square of Liotru"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Bronte, Her majesty etna"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Marsala, Le saline"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Siracusa, A Pillirina"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Siracusa, Blu plemmirio"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Gibellina, Gretto di Burri"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Matteo Romano",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Actor and singer, theater is my job",
-          "emoj": "🎭🎶"
-        },
-        {
-          "text": "Nature lover: excursion and wild adventures",
-          "emoj": "🌳🌼"
-        },
-        {
-          "text": "Sea activities: boat trip, sailing tour, cliff diving, snorkeling, diving, surf and conoe trip",
-          "emoj": "🌊🐚"
-        },
-        {
-          "text": "Photographer, I know the best spots in town",
-          "emoj": "📷"
-        },
-        {
-          "text": "Food expert, I can suggest you the best places to eat",
-          "emoj": "🍝"
-        },
-        {
-          "text": "Archeological parks, I am very fascinated by the history, myths and culture of Sicily",
-          "emoj": "🏛️"
-        }
-      ],
-      "upvotes": 28,
-      "from": "Syracuse",
-      "languages": "Italian, English",
-      "resptime": "30 Min",
-      "longBio": "For work I travel a lot, I do theater tours all over Italy. I have seen and lived in many important cities and none of them have ever come close to Syracuse. The strength of this city is the amount of activities related to nature, sport, culture, food and relaxation you won't find anywhere else. With the right advice you can experience this land to its fullest potential, and discover its true soul. I love my land because it never ceases to surprise me and makes me discover new things, I guess sooner or later I will be able to discover them all",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Sunset"
-        },
-        {
-          "id": 2,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Canoe trip (by sea)"
-        },
-        {
-          "id": 3,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Canoe trip (by river)"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Wild adventure in Cavagrande"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Etna, snowboarding in front of the sea"
-        },
-        {
-          "id": 6,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Archeological Park of Agrigento (Valle dei templi)"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Street market Ortigia"
-        },
-        {
-          "id": 8,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "On the road"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Umberto Puzzo",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Amateur cook and scuba diver",
-          "emoj": "🍽"
-        }
-      ],
-      "upvotes": 31,
-      "from": "Syracuse",
-      "languages": "Italian, English",
-      "resptime": "1 Hour",
-      "longBio": "I'm a simple man, for me, there's nothing better than the peace of marine depths and the pleasure of eating some delicious Sicilian meal. I love snorkeling and scuba-diving, and I know some very good places where you can enjoy them. I also believe that cooking, and especially, eating it’s how I express myself: it means I cook quite well and I eat a lot.. So, if you want to try the best Sicilian food, I'm your guy :)",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Yes, sea in Sicily rocks"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "About to cook some kgs of mussels with my grandma's receipt"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Pointing at \"scogghi ru frati\" or \"two brothers rocks\""
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Not believing to have broken another harpoon"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Walking by the narrow streets of Marzamemi by sunset"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Finding some crabs with the help of local fisherman Pinuzzo"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "The poetry of eating an arancino by the sea"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Me doing nothing useful on a boat"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Damiano Sciuto",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Sicilian Wine connoisseur",
-          "emoj": "🍷"
-        },
-        {
-          "text": "Sicilian Food addicted",
-          "emoj": "🍴"
-        },
-        {
-          "text": "Sea lover",
-          "emoj": "🐚"
-        },
-        {
-          "text": "Plan routes, accommodations, explore, adventures, beaches, food, wine and restaurants",
-          "emoj": ""
-        }
-      ],
-      "upvotes": 23,
-      "from": "Syracuse",
-      "languages": "Italian, English, Spanish",
-      "resptime": "4 Hours",
-      "longBio": "Hey! Welcome to Sicily! My name is Damiano. I’m 32 and I come from Siracusa (Sicily), respectively one of the most spectacular city and island in the entire world. I love everything about this place, especially its warmth from both the sun and the people, the food, the wine, the beautiful sandy beaches, wild natural reserves, volcanos, traditions and festivals, history, Sicilian dialect and much much more!!! There is something for everyone in Sicily you just need to ask and you will find what’s right for an amazing stay!!! I am here for you, whenever you need any advice before or during your trip on the following: transportation, accommodation, tours, adventures, beaches, food, wine and restaurants. What can I say more: \"Mbare! Arricriati\" (Mate! Enjoy). Damiano",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": ""
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Anna Taglia",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Sicilian heart based in Milan",
-          "emoj": "🧡"
-        },
-        {
-          "text": "Designer",
-          "emoj": "🎨"
-        },
-        {
-          "text": "Photography lover",
-          "emoj": "📷"
-        },
-        {
-          "text": "Gourmet & traditional food lover",
-          "emoj": "🤤"
-        },
-        {
-          "text": "Outdoor & Natural Beauty hunter",
-          "emoj": "🌲"
-        }
-      ],
-      "upvotes": 24,
-      "from": "Syracuse",
-      "languages": "Italian, English, Spanish",
-      "resptime": "1 Hour",
-      "longBio": "Sicily is that place where you could easily get tanned by the warmth of people...but there is the sun as well! It is just stunning how strolling around each and every city you will notice how the same pattern keeps repeating Greek, Romans, Norman and other populations that have followed. I have grown up having a “granita ca brioscia” (a typical Sicilian breakfast) by the Athena temple in Siracusa and enjoying bonfires by the crystal clear sea in one of the amazing beaches along the coast. I've been living in the UK and in the north of Italy, but there is absolutely such no place as Sicily: the breeze is different!!! The seaside, the typical food, the trails with breathtaking landscapes, experiences that cannot be summoned up in any word… If you want to feel Sicily the way a Sicilian girl would, I am here to give you tips! ",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Granita ca brioscia in Siracusa"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Panino at the traditional market"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "U ficu pala"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Canoeing under the Volcano etna"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Some sport by the sea while getting tanned"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Arancino e norma by the sea"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Photography and good wine around Sicily"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Lost in paradise"
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "name": "Carlo Poidimani",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Dolphin Lover",
-          "emoj": "🐬"
-        },
-        {
-          "text": "Cooking Pro",
-          "emoj": "🍳"
-        },
-        {
-          "text": "Kitesurf Addicted",
-          "emoj": "🏂"
-        }
-      ],
-      "upvotes": 27,
-      "from": "Avola, Noto",
-      "languages": "Italian, English",
-      "resptime": "1 Hour",
-      "longBio": "I've been studying and working all around the Europe (London, Milan, Berlin) and over time, I've realized that Sicily is one of the most beautiful places in the world. I’m here to sponsor food porn, great spots for kitesurfing, and excursions here and there:) plus, I can help you find dolphins. Just let me know if you're interested in any of that, and I’m the guy for you!",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Chlling with oranges, tangerines and lemons!"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Chilling with Dolphins - 1"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Hiking in Noto"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "The Sea is my Land"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Chilling with Dolphins - 2"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Chilling with Dolphins - 3"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Lido di Avola, 24th February"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "How about some canoeing?!"
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "name": "Antonio Ferro",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Passionate about all sports in particular beach soccer & beach tennis",
-          "emoj": "⚽🎾"
-        },
-        {
-          "text": "Lover of the sea",
-          "emoj": "🌊"
-        }
-      ],
-      "upvotes": 29,
-      "from": "Syracuse",
-      "languages": "Italian, English, Spanish",
-      "resptime": "30 Minutes",
-      "longBio": "Sicily is the country of oranges, of the flowery soil whose air, in spring, is all a perfume ... But what makes it a land necessary to be seen and unique in the world, is the fact that from one end to the other , it can be defined as a strange and divine museum of architecture (Guy de Maupassant). I truly believe in those words, I'm proud to be Sicilian and to spread the culture of the land of Archimedes around the world. I'm a lover of culture and history, which is why being born in Sicily is the greatest gift that life has given me.",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "“A granita ca brioscia” the typical Sicilian breakfast: almond granita with croissant “A fine ro munnu” (“The end of the world”)"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Pasta with sea urchins is a first course of fish with a unique and unmistakable flavor. A simple first course that contains all the scent of the sea. Only in some months of the year it is possible to buy sea urchin eggs in a fish shop; you can only buy eggs or the entire fruit to be cleaned later at home."
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Nonna Nella cala u’ panaro (Customs: The grandmother unrolling the bread basket)"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Santuario della Madonna delle Lacrime (place of prayer)"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "I love playing football on the beach"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Noto : in the province of Syracuse, one of the most beautiful baroque cities in the world Episcopal seat, called the 'capital of the Baroque', in 2002 its historic center was declared a World Heritage Site by UNESCO, together with the other late Baroque cities of the Val di Noto."
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Vergin Mary enclosed in a display case"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "96100: a place where you can go hiking with a breathtaking view"
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "name": "Peppe Mastronardi",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Sea lover",
-          "emoj": "🌊"
-        },
-        {
-          "text": "Football and gym addicted",
-          "emoj": "⚽️🏋"
-        }
-      ],
-      "upvotes": 30,
-      "from": "Syracuse",
-      "languages": "Italian, English",
-      "resptime": "10 Minutes",
-      "longBio": "I am a 100% Sicilian boy. I love the fantastic sea that surrounds my city, I love food and cooking, especially fish dishes and I am completely crazy for sports especially for football. I think I live in the most beautiful and fascinating city of Sicily, maybe out of the whole world. If you want to be guided and advised, I’m here for you. I will try to help you as much as possible to discover this fantastic city in all its facets and maybe make you fall in love with it, as I am.",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "January in Syracuse☀️🌊"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Boat day⛵️"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Playing football with Siracusa futsal team"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Normal routine in Syracuse😎"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Pasta with ricci😍 (typical sicilian food) "
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Around Ortigia, Syracuse"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Photo of november, after training on the beach with my friend… only in Syracuse"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Sunset in Syracuse 🌅😍"
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "name": "Sara Cocozza",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Travel and adventure lover",
-          "emoj": "(🌋+🌊=😍)"
-        },
-        {
-          "text": "Scuba Diving addicted",
-          "emoj": "👌"
-        },
-        {
-          "text": "Passionate about Sicilian cuisine",
-          "emoj": "🍝🍽"
-        }
-      ],
-      "upvotes": 25,
-      "from": "Varese",
-      "languages": "Italian, English, Spanish",
-      "resptime": "1 Hour",
-      "longBio": "Sicily has conquered my heart in every way. From the top of its volcano, to the depths of its seas. The beauty, charm and riches of this land are a constant call to this land. I love nature in all its forms, I love jogging and I am a scuba diving addicted. Nevertheless I love cooking, in particular, Sicilian cuisine greatly stimulates my appetite and my interests. I feel the expression of the culinary art developed since ancient times is closely connected to the historical, cultural and religious events of the island.",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Scuba diving in Paradise"
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Ape Time"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Etna volcano with snow"
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "U cannolu siciliano"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Never do diving alone XD"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Sicilian colors"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "I ru' Frati - the two brothers"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Sunset at 'Monumento dei caduti' in Siracusa"
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "name": "Harry Sutherland",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Tennis player",
-          "emoj": "🎾"
-        },
-        {
-          "text": "Liverpool FC",
-          "emoj": "❤"
-        },
-        {
-          "text": "Food enthusiast",
-          "emoj": ""
-        },
-        {
-          "text": "Born in Scotland - raised in Sicily",
-          "emoj": ""
-        }
-      ],
-      "upvotes": 26,
-      "from": "Noto",
-      "languages": "English, Italian",
-      "resptime": "1 Hour",
-      "longBio": "My parents brought me to Sicily for the first time on holiday when I was 6 years old. The beautiful crystal clear sea, the smell of the homemade sugo at mezzogiorno on a Sunday and that intense August heat which was the perfect excuse for a granita col brioche, are my first memories of Sicily. My family decided to move and build a house in the  Sicilian countryside when I was 8 years old. A decision which not only gave me the opportunity to learn a second language, but most importantly allowed me to experience the little things that make Sicily such a beautiful place to live on a daily basis. If you want to know the best restaurants, ice cream shops, beaches and Sicilian adventures give me a shout.",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "..."
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Cavagrande - one of the deepest gorges in Europe"
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "..."
-        },
-        {
-          "id": 4,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "A beautiful Sicilian sunset"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "..."
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "..."
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "One of my favorite Sicilian dishes - \"Salsiccia e Patate\""
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "..."
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "name": "Lorenzo Sciuto",
-      "inTeam": false,
-      "admin": false,
-      "shortBio": [
-        {
-          "text": "Traveler, technologist, sports lover",
-          "emoj": ""
-        }
-      ],
-      "upvotes": 19,
-      "from": "Syracusa",
-      "languages": "Italian, English",
-      "resptime": "6 Hours",
-      "longBio": "I was born in this wonderful island full of sun and traditions 35 years ago, I grew up in the fascinating Siracusa, I studied in the vibrant city of Catania and I've been discovering the best places surrounding my cities since I was a child. I'm a travel lover, a culture enthusiast..and a food discoverer. Since I was young I've been using every free moment to explore new countries, new cultures and traditions. I spent one year living in Germany, I visited more than 20 different countries in Europe and outside. Now I’ve been living in Milan for 7 years but every opportunity is good to go back home and have a good Granita ca' brioscia as breakfast. You still don't know what am I talking about? Well, don't be shy, Sicily is waiting for you!",
-      "media": [
-        {
-          "id": 0,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Welcome to Sicily!"
-        },
-        {
-          "id": 1,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "..."
-        },
-        {
-          "id": 2,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "..."
-        },
-        {
-          "id": 3,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Pillirina beach"
-        },
-        {
-          "id": 4,
-          "isVideo": true,
-          "likes": 50,
-          "desc": "Feast of our patron Saint Lucia, 13th December"
-        },
-        {
-          "id": 5,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "\"Pasta ca' muddica\" by nonna Pina"
-        },
-        {
-          "id": 6,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Ortigia, summertime"
-        },
-        {
-          "id": 7,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "Lido di Avola, 24th February"
-        },
-        {
-          "id": 8,
-          "isVideo": false,
-          "likes": 50,
-          "desc": "How about some canoeing?!"
-        }
-      ]
-    }
-  ]
+                   {
+                     "id": 0,
+                     "name": "Andrea Taglia",
+                     "inTeam": true,
+                     "admin": true,
+                     "shortBio": [
+                       {
+                         "text": "Sea lover",
+                         "emoj": "🌊"
+                       },
+                       {
+                         "text": "Beach hunter",
+                         "emoj": "🏖️"
+                       },
+                       {
+                         "text": "Restless surfer",
+                         "emoj": "🏄"
+                       }
+                     ],
+                     "upvotes": 24,
+                     "from": "Syracuse",
+                     "languages": "Italian, English",
+                     "resptime": "15 Minutes",
+                     "longBio": "I have been out of Sicily for some years, from the UK to Singapore, but then it hit me: “A Sicilia è u megghiu postu ro munnu”. That is “Sicily is the best place in the world” in sicilian dialect. I love surfing as much as I love pretty much anything regarding the sea. If you need any tips about beaches or surfing spots, I’m the go-to-guy for you :)",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Yep... surfing in Sicily is awesome!"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Panino by Borderi"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Pillirina beach"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Feast of our patron Saint Lucia, 13th December"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "\"Pasta ca' muddica\" by nonna Pina"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Ortigia, summertime"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Lido di Avola, 24th February"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "How about some canoeing?!"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 1,
+                     "name": "Paolo Debellini",
+                     "inTeam": true,
+                     "admin": true,
+                     "shortBio": [
+                       {
+                         "text": "Outdoor sports enthusiast",
+                         "emoj": "🏅"
+                       },
+                       {
+                         "text": "Compulsive traveler",
+                         "emoj": "🗺️"
+                       }
+                     ],
+                     "upvotes": 25,
+                     "from": "Catania",
+                     "languages": "Italian, English",
+                     "resptime": "10 Minutes",
+                     "longBio": "I’m originally from the north of Italy, but every time I can, I don’t think twice and I visit my best friends from Sicily. I’m constantly overwhelmed by the astonishing mix of culture and natural beauty that only Sicily can offer, and the people.. The most generous and nice! Whenever you’re thinking of hiking or discovering the natural beauties of Sicily just ping me and I’d be happy to help",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Siciliy!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Sicilian Wedding"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Ortigia.. simply wonderful"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Etna Volcano, the best place for fresh air during summer"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Weird marine life at Acitrezza (Catania)"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Looking for the pirate's treasure...!!"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Fish feast like no other.. In Catania"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Snow blanket on the Etna Volcano"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "The volcano is getting angry..."
+                       }
+                     ]
+                   },
+                   {
+                     "id": 2,
+                     "name": "Bianca Lo Bello",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Travel addicted",
+                         "emoj": "🌎"
+                       },
+                       {
+                         "text": "Sea Lover",
+                         "emoj": "🌊"
+                       },
+                       {
+                         "text": "Restaurants and Pubs regular",
+                         "emoj": "🍸💥"
+                       },
+                       {
+                         "text": "Intrested in Fashion",
+                         "emoj": "👠👗"
+                       }
+                     ],
+                     "upvotes": 26,
+                     "from": "Syracusa",
+                     "languages": "Italian, English, Spanish",
+                     "resptime": "1 Hour",
+                     "longBio": "Even though one of my biggest passion is traveling and discovering new places, I feel Sicily is a magical island with beautiful landscapes and amazing food. So, I’m here to help you find what you want to do in the way you like✌ Since I’m a nightout person, I've tried many restaurants, clubs, pubs or just cool places where to grab something to eat while watching the sunset (from the local to the classier ones)🍹🍾 I love spending my days at the beach, breathing the sea air and enjoying breathtaking sunsets. I’m also passionate about fitness and healthy food🏋 And if you haven’t understood it yet, I’m a lover of the good life😃",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "I feel like a tourist walking through the ancient streets of my own city🏺"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "You cannot say goodbye to Sicily before eating cannoli👌"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "A peaceful place where to escape from the city📍"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "The typical Sicilian happy hour😋"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "I love spending my summer days in cool and comfortable beach club☀️"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "The capital of the baroque⚜️"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "In love with the colors of this little fishermen village🌸"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "What a magic sunset✨"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 3,
+                     "name": "Emanuele Garsia",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Student of Ancient Literature and Ancient History",
+                         "emoj": "🏛"
+                       },
+                       {
+                         "text": "Seeker of Odysseus’s places of travel",
+                         "emoj": "🧜"
+                       },
+                       {
+                         "text": "Avid reader",
+                         "emoj": "📚"
+                       }
+                     ],
+                     "upvotes": 32,
+                     "from": "Syracuse",
+                     "languages": "Italian, English",
+                     "resptime": "10 Minutes",
+                     "longBio": "Goethe used to say: “Without Sicily, Italy creates no image in the soul: here is the key to everything”. Sicily is always my beloved native home. Sicily is where Italian and Greek culture mingle together. That’s why I consider myself half Greek. And that’s my passion. If you need any tips about Greek and Roman antiquities, museums, archeological sites or mythological stories about Sicily I’m here to help you!",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "View of the ancient Greek theatre in Syracuse"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "What's better than scacciata?"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Fountain of Diana in Syracuse"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Feast of our patron Saint Lucia, 13th December"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Greek Tragedy represented nowadays"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Sunset in Ortygia"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Summer vibes"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Holding a cantaloup"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 4,
+                     "name": "Martina Zito",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Born in Syracuse",
+                         "emoj": "☀️"
+                       },
+                       {
+                         "text": "Based in Catania",
+                         "emoj": "🌋"
+                       },
+                       {
+                         "text": "Engineer on the road with passion for art",
+                         "emoj": "👷🏽‍♀️"
+                       }
+                     ],
+                     "upvotes": 22,
+                     "from": "Catania",
+                     "languages": "Italian, English",
+                     "resptime": "2 Hours",
+                     "longBio": "To me Sicily means sun, sea, colors, art, good food and good people; this is why I've chosen to stay in Sicily after graduation. I'm an engineer and for work, I drive around the island by car like a \"tuppetto\" (the typical Sicilian spinning top) from the largest and most famous cities to the most remote and unknown villages. In these years I have discovered that even the tiniest village has always a secret treasure to be discovered, and best of all, there will always be a person willing to welcome and help you:)",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Motta d'affermo, Fiumara d'arte Piramide 38 parallelo"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Acicastello, Lunch break with a view"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Catania, the square of Liotru"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Bronte, Her majesty etna"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Marsala, Le saline"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Siracusa, A Pillirina"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Siracusa, Blu plemmirio"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Gibellina, Gretto di Burri"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 5,
+                     "name": "Matteo Romano",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Actor and singer, theater is my job",
+                         "emoj": "🎭🎶"
+                       },
+                       {
+                         "text": "Nature lover: excursion and wild adventures",
+                         "emoj": "🌳🌼"
+                       },
+                       {
+                         "text": "Sea activities: boat trip, sailing tour, cliff diving, snorkeling, diving, surf and conoe trip",
+                         "emoj": "🌊🐚"
+                       },
+                       {
+                         "text": "Photographer, I know the best spots in town",
+                         "emoj": "📷"
+                       },
+                       {
+                         "text": "Food expert, I can suggest you the best places to eat",
+                         "emoj": "🍝"
+                       },
+                       {
+                         "text": "Archeological parks, I am very fascinated by the history, myths and culture of Sicily",
+                         "emoj": "🏛️"
+                       }
+                     ],
+                     "upvotes": 28,
+                     "from": "Syracuse",
+                     "languages": "Italian, English",
+                     "resptime": "30 Min",
+                     "longBio": "For work I travel a lot, I do theater tours all over Italy. I have seen and lived in many important cities and none of them have ever come close to Syracuse. The strength of this city is the amount of activities related to nature, sport, culture, food and relaxation you won't find anywhere else. With the right advice you can experience this land to its fullest potential, and discover its true soul. I love my land because it never ceases to surprise me and makes me discover new things, I guess sooner or later I will be able to discover them all",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Sunset"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Canoe trip (by sea)"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Canoe trip (by river)"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Wild adventure in Cavagrande"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Etna, snowboarding in front of the sea"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Archeological Park of Agrigento (Valle dei templi)"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Street market Ortigia"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "On the road"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 6,
+                     "name": "Umberto Puzzo",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Amateur cook and scuba diver",
+                         "emoj": "🍽"
+                       }
+                     ],
+                     "upvotes": 31,
+                     "from": "Syracuse",
+                     "languages": "Italian, English",
+                     "resptime": "1 Hour",
+                     "longBio": "I'm a simple man, for me, there's nothing better than the peace of marine depths and the pleasure of eating some delicious Sicilian meal. I love snorkeling and scuba-diving, and I know some very good places where you can enjoy them. I also believe that cooking, and especially, eating it’s how I express myself: it means I cook quite well and I eat a lot.. So, if you want to try the best Sicilian food, I'm your guy :)",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Yes, sea in Sicily rocks"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "About to cook some kgs of mussels with my grandma's receipt"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Pointing at \"scogghi ru frati\" or \"two brothers rocks\""
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Not believing to have broken another harpoon"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Walking by the narrow streets of Marzamemi by sunset"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Finding some crabs with the help of local fisherman Pinuzzo"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "The poetry of eating an arancino by the sea"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Me doing nothing useful on a boat"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 7,
+                     "name": "Damiano Sciuto",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Sicilian Wine connoisseur",
+                         "emoj": "🍷"
+                       },
+                       {
+                         "text": "Sicilian Food addicted",
+                         "emoj": "🍴"
+                       },
+                       {
+                         "text": "Sea lover",
+                         "emoj": "🐚"
+                       },
+                       {
+                         "text": "Plan routes, accommodations, explore, adventures, beaches, food, wine and restaurants",
+                         "emoj": ""
+                       }
+                     ],
+                     "upvotes": 23,
+                     "from": "Syracuse",
+                     "languages": "Italian, English, Spanish",
+                     "resptime": "4 Hours",
+                     "longBio": "Hey! Welcome to Sicily! My name is Damiano. I’m 32 and I come from Siracusa (Sicily), respectively one of the most spectacular city and island in the entire world. I love everything about this place, especially its warmth from both the sun and the people, the food, the wine, the beautiful sandy beaches, wild natural reserves, volcanos, traditions and festivals, history, Sicilian dialect and much much more!!! There is something for everyone in Sicily you just need to ask and you will find what’s right for an amazing stay!!! I am here for you, whenever you need any advice before or during your trip on the following: transportation, accommodation, tours, adventures, beaches, food, wine and restaurants. What can I say more: \"Mbare! Arricriati\" (Mate! Enjoy). Damiano",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": ""
+                       }
+                     ]
+                   },
+                   {
+                     "id": 8,
+                     "name": "Anna Taglia",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Sicilian heart based in Milan",
+                         "emoj": "🧡"
+                       },
+                       {
+                         "text": "Designer",
+                         "emoj": "🎨"
+                       },
+                       {
+                         "text": "Photography lover",
+                         "emoj": "📷"
+                       },
+                       {
+                         "text": "Gourmet & traditional food lover",
+                         "emoj": "🤤"
+                       },
+                       {
+                         "text": "Outdoor & Natural Beauty hunter",
+                         "emoj": "🌲"
+                       }
+                     ],
+                     "upvotes": 24,
+                     "from": "Syracuse",
+                     "languages": "Italian, English, Spanish",
+                     "resptime": "1 Hour",
+                     "longBio": "Sicily is that place where you could easily get tanned by the warmth of people...but there is the sun as well! It is just stunning how strolling around each and every city you will notice how the same pattern keeps repeating Greek, Romans, Norman and other populations that have followed. I have grown up having a “granita ca brioscia” (a typical Sicilian breakfast) by the Athena temple in Siracusa and enjoying bonfires by the crystal clear sea in one of the amazing beaches along the coast. I've been living in the UK and in the north of Italy, but there is absolutely such no place as Sicily: the breeze is different!!! The seaside, the typical food, the trails with breathtaking landscapes, experiences that cannot be summoned up in any word… If you want to feel Sicily the way a Sicilian girl would, I am here to give you tips! ",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Granita ca brioscia in Siracusa"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Panino at the traditional market"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "U ficu pala"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Canoeing under the Volcano etna"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Some sport by the sea while getting tanned"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Arancino e norma by the sea"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Photography and good wine around Sicily"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Lost in paradise"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 9,
+                     "name": "Carlo Poidimani",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Dolphin Lover",
+                         "emoj": "🐬"
+                       },
+                       {
+                         "text": "Cooking Pro",
+                         "emoj": "🍳"
+                       },
+                       {
+                         "text": "Kitesurf Addicted",
+                         "emoj": "🏂"
+                       }
+                     ],
+                     "upvotes": 27,
+                     "from": "Avola, Noto",
+                     "languages": "Italian, English",
+                     "resptime": "1 Hour",
+                     "longBio": "I've been studying and working all around the Europe (London, Milan, Berlin) and over time, I've realized that Sicily is one of the most beautiful places in the world. I’m here to sponsor food porn, great spots for kitesurfing, and excursions here and there:) plus, I can help you find dolphins. Just let me know if you're interested in any of that, and I’m the guy for you!",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Chlling with oranges, tangerines and lemons!"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Chilling with Dolphins - 1"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Hiking in Noto"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "The Sea is my Land"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Chilling with Dolphins - 2"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Chilling with Dolphins - 3"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Lido di Avola, 24th February"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "How about some canoeing?!"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 10,
+                     "name": "Antonio Ferro",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Passionate about all sports in particular beach soccer & beach tennis",
+                         "emoj": "⚽🎾"
+                       },
+                       {
+                         "text": "Lover of the sea",
+                         "emoj": "🌊"
+                       }
+                     ],
+                     "upvotes": 29,
+                     "from": "Syracuse",
+                     "languages": "Italian, English, Spanish",
+                     "resptime": "30 Minutes",
+                     "longBio": "Sicily is the country of oranges, of the flowery soil whose air, in spring, is all a perfume ... But what makes it a land necessary to be seen and unique in the world, is the fact that from one end to the other , it can be defined as a strange and divine museum of architecture (Guy de Maupassant). I truly believe in those words, I'm proud to be Sicilian and to spread the culture of the land of Archimedes around the world. I'm a lover of culture and history, which is why being born in Sicily is the greatest gift that life has given me.",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "“A granita ca brioscia” the typical Sicilian breakfast: almond granita with croissant “A fine ro munnu” (“The end of the world”)"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Pasta with sea urchins is a first course of fish with a unique and unmistakable flavor. A simple first course that contains all the scent of the sea. Only in some months of the year it is possible to buy sea urchin eggs in a fish shop; you can only buy eggs or the entire fruit to be cleaned later at home."
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Nonna Nella cala u’ panaro (Customs: The grandmother unrolling the bread basket)"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Santuario della Madonna delle Lacrime (place of prayer)"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "I love playing football on the beach"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Noto : in the province of Syracuse, one of the most beautiful baroque cities in the world Episcopal seat, called the 'capital of the Baroque', in 2002 its historic center was declared a World Heritage Site by UNESCO, together with the other late Baroque cities of the Val di Noto."
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Vergin Mary enclosed in a display case"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "96100: a place where you can go hiking with a breathtaking view"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 11,
+                     "name": "Peppe Mastronardi",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Sea lover",
+                         "emoj": "🌊"
+                       },
+                       {
+                         "text": "Football and gym addicted",
+                         "emoj": "⚽️🏋"
+                       }
+                     ],
+                     "upvotes": 30,
+                     "from": "Syracuse",
+                     "languages": "Italian, English",
+                     "resptime": "10 Minutes",
+                     "longBio": "I am a 100% Sicilian boy. I love the fantastic sea that surrounds my city, I love food and cooking, especially fish dishes and I am completely crazy for sports especially for football. I think I live in the most beautiful and fascinating city of Sicily, maybe out of the whole world. If you want to be guided and advised, I’m here for you. I will try to help you as much as possible to discover this fantastic city in all its facets and maybe make you fall in love with it, as I am.",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "January in Syracuse☀️🌊"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Boat day⛵️"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Playing football with Siracusa futsal team"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Normal routine in Syracuse😎"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Pasta with ricci😍 (typical sicilian food) "
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Around Ortigia, Syracuse"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Photo of november, after training on the beach with my friend… only in Syracuse"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Sunset in Syracuse 🌅😍"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 12,
+                     "name": "Sara Cocozza",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Travel and adventure lover",
+                         "emoj": "(🌋+🌊=😍)"
+                       },
+                       {
+                         "text": "Scuba Diving addicted",
+                         "emoj": "👌"
+                       },
+                       {
+                         "text": "Passionate about Sicilian cuisine",
+                         "emoj": "🍝🍽"
+                       }
+                     ],
+                     "upvotes": 25,
+                     "from": "Varese",
+                     "languages": "Italian, English, Spanish",
+                     "resptime": "1 Hour",
+                     "longBio": "Sicily has conquered my heart in every way. From the top of its volcano, to the depths of its seas. The beauty, charm and riches of this land are a constant call to this land. I love nature in all its forms, I love jogging and I am a scuba diving addicted. Nevertheless I love cooking, in particular, Sicilian cuisine greatly stimulates my appetite and my interests. I feel the expression of the culinary art developed since ancient times is closely connected to the historical, cultural and religious events of the island.",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Scuba diving in Paradise"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Ape Time"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Etna volcano with snow"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "U cannolu siciliano"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Never do diving alone XD"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Sicilian colors"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "I ru' Frati - the two brothers"
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Sunset at 'Monumento dei caduti' in Siracusa"
+                       }
+                     ]
+                   },
+                   {
+                     "id": 13,
+                     "name": "Harry Sutherland",
+                     "inTeam": false,
+                     "admin": false,
+                     "shortBio": [
+                       {
+                         "text": "Tennis player",
+                         "emoj": "🎾"
+                       },
+                       {
+                         "text": "Liverpool FC",
+                         "emoj": "❤"
+                       },
+                       {
+                         "text": "Food enthusiast",
+                         "emoj": ""
+                       },
+                       {
+                         "text": "Born in Scotland - raised in Sicily",
+                         "emoj": ""
+                       }
+                     ],
+                     "upvotes": 26,
+                     "from": "Noto",
+                     "languages": "English, Italian",
+                     "resptime": "1 Hour",
+                     "longBio": "My parents brought me to Sicily for the first time on holiday when I was 6 years old. The beautiful crystal clear sea, the smell of the homemade sugo at mezzogiorno on a Sunday and that intense August heat which was the perfect excuse for a granita col brioche, are my first memories of Sicily. My family decided to move and build a house in the  Sicilian countryside when I was 8 years old. A decision which not only gave me the opportunity to learn a second language, but most importantly allowed me to experience the little things that make Sicily such a beautiful place to live on a daily basis. If you want to know the best restaurants, ice cream shops, beaches and Sicilian adventures give me a shout.",
+                     "media": [
+                       {
+                         "id": 0,
+                         "isVideo": true,
+                         "likes": 0,
+                         "desc": "Welcome to Sicily!"
+                       },
+                       {
+                         "id": 1,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Jumping off the rocks of Cavagrande"
+                       },
+                       {
+                         "id": 2,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Cavagrande - one of the deepest gorges in Europe"
+                       },
+                       {
+                         "id": 3,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "'U beddu mari'"
+                       },
+                       {
+                         "id": 4,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "A beautiful Sicilian sunset - Calabernardo"
+                       },
+                       {
+                         "id": 5,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "A beautiful Villa in Sicily, near the sea"
+                       },
+                       {
+                         "id": 6,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Young, wild, free in Marina di Noto"
+                       },
+                       {
+                         "id": 7,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "One of my favorite Sicilian dishes - \"Salsiccia e Patate\""
+                       },
+                       {
+                         "id": 8,
+                         "isVideo": false,
+                         "likes": 0,
+                         "desc": "Thinking about where to go for my aperitivo"
+                       }
+                     ]
+                   }
+                 ]
 }

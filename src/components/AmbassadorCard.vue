@@ -4,10 +4,14 @@
       <vue-load-image>
         <img
           slot="image"
-          class="w-full rounded-br-large object-cover max-h-64 w-full object-top cursor-pointer focus:outline-none"
+          class="w-full rounded-br-large object-cover max-h-64 object-top cursor-pointer focus:outline-none"
           :src="`${publicPath}img/ambassadorPics/amb-${this.ambId}.jpg`"
         />
-        <img slot="preloader" src="https://i.gifer.com/4V0b.gif" />
+        <img
+          slot="preloader"
+          src="https://i.gifer.com/4V0b.gif"
+          class="w-full rounded-br-large object-cover max-h-64"
+        />
         <div slot="error" class="w-full h-full text-center flex justify-center">
           no image :(
         </div>
@@ -77,10 +81,6 @@ export default {
   props: {
     ambId: Number,
     noView: Boolean,
-    elevation: {
-      type: Number,
-      default: 8,
-    },
   },
   data: () => ({
     publicPath: process.env.BASE_URL,

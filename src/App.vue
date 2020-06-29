@@ -85,16 +85,16 @@
                   </a>
                 </nav>
                 <div
-                  class="border-t border-yellow-100 text-sm leading-5 font-medium text-white mt-5 pt-3 px-2 flex justify-center"
+                  class="border-t border-yellow-100 text-sm leading-5 font-medium text-white mt-5 pt-3 px-2 flex justify-center items-center"
                 >
                   {{ $t('nav.lang') }}
                   <img
-                    class="w-6 h-6 mx-2 ml-4 cursor-pointer"
+                    class="w-8 h-8 mx-2 ml-4 cursor-pointer"
                     @click="setLocale('it')"
                     src="@/assets/img/it.png"
                   />
                   <img
-                    class="w-6 h-6 mx-2 cursor-pointer"
+                    class="w-8 h-8 mx-2 cursor-pointer"
                     @click="setLocale('en')"
                     src="@/assets/img/en.png"
                   />
@@ -104,7 +104,7 @@
                 In partnership with
                 <a href="https://www.befactory.it/master" target="_blank">
                   <img
-                    class="w-16 h-16 ml-5 cursor-pointer"
+                    class="w-12 h-12 ml-5 cursor-pointer"
                     src="@/assets/img/BeAcademy.png"
                   />
                 </a>
