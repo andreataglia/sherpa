@@ -102,7 +102,7 @@
               </div>
               <div class="text-sm leading-5 font-medium text-white ml-2 px-2">
                 In partnership with
-                <a href="https://www.befactory.it/master" target="_blank">
+                <a href="https://www.beacademy.it/" target="_blank">
                   <img
                     class="w-12 h-12 ml-5 cursor-pointer"
                     src="@/assets/img/BeAcademy.png"
@@ -172,7 +172,7 @@
           </nav>
           <div class="text-sm leading-5 font-medium text-white mb-4 pt-3 px-2">
             In partnership with
-            <a href="https://www.befactory.it/master" target="_blank">
+            <a href="https://www.beacademy.it/" target="_blank">
               <img
                 class="w-16 h-16 ml-5 cursor-pointer"
                 src="@/assets/img/BeAcademy.png"
