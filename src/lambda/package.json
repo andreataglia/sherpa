@@ -4,6 +4,6 @@
     "netlify-lambda": "^1.6.0"
   },
   "scripts": {
-    "postinstall": "cd ../ && netlify-lambda install"
+    "postinstall": "netlify-lambda install"
   }
 }
