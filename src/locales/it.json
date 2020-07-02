@@ -99,6 +99,36 @@
     "text" : "Siamo Andrea and Paolo, due amici che stanno creando un fantastico servizio per accogliere le persone in questa terra meravigliosa. Sentiti liberissimo di contattarci per qualsiasi cosa su Telegram o per mail!",
     "andrea": "Contatta Andrea su Telegram",
     "paolo": "Contatta Paolo su Telegram",
-    "mail" : "Contattaci su: hello@welcometosicily.app"
+    "mail" : "Contattaci su: hello@welcometosicily.app",
+    "questions": {
+      "0": {
+        "header": "Cos'è Welcome to Sicily?",
+        "text": "Welcome to Sicily è un nuovo modo di connettere turisti e persone del posto, che noi chiamiamo Ambassadors. Ci siamo accorti nel tempo che ci siamo ossessionati con le \"cose da fare\" alla destinazione, tralasciando quelle che sono \"le cose giuste da fare\". Welcome to Sicily ti aiuta a trovare gli esperti locali che fanno al caso tuo. Niente piu stelline o medie voto, Welcome to Sicily si focalizza farti trovare le persone che ti piacciono di cui puoi fidarti. Una volta connesso con gli Ambassador puoi facilemte dialogare e chiedere tutto quello di cui hai bisogno tramite Telegram o Whatsapp."
+      },
+      "1": {
+        "header": "Il servizio è gratuito?",
+        "text": "Si assolutamente! Noi per primi non sapremo quanto far pagare. Ma gli Ambassador che si offrono come volontari non ricevono alcun compenso. Per questo motivo alla fine del tuo soggiorno, ti chiederemo se sei disposto a lasciare una mancia, completamente opzionale, che verrà condivisa da tutto il team di Ambassador."
+      },
+      "2": {
+        "header": "Funziona solo in Sicilia?",
+        "text": "Per adesso stiamo sperimentando solo in Sicilia, ma rimani nel loop, potremmo espandere il servizio in nuove location in tutto il mondo."
+      },
+      "3": {
+        "header": "Come funziona?",
+        "text": "Welcome to Sicily è molto semplice: ti presenteremo una serie di profili di esperti locali che noi chiamiamo Ambassador. Tu potrai scorrere e vedere i loro video e foto per identificare quelli che ti piacciono di piu, e che senti che ti possano aiutare per la tua vacanza. Puoi aggiungere dai 4 ai 9 Ambassador al tuo team. Una volta che tu credi che il tuo team sia definito, selezione il servizio di chat che preferisci e noi creeremo una chat di gruppo con gli Ambassador che tu hai scelto. Non ci sono limitazioni riguardo il numero di messaggi, e le cose che vuoi chiedere. Apri l'app, seleziona il team di Ambassador e inizia a chattare immediatamente!"
+      },
+      "4": {
+        "header": "Incontrerò gli Ambassador di persona?",
+        "text": "Per ora il servizio è solo via chat. In futuro potremmo aggiungere la possibilità di interagire con gli Ambassador di persona. Ovviamente, se diventi amico con qualcuno degli Ambassador nulla ti vieta di vedervi di persona. "
+      },
+      "5": {
+        "header": "Chi sono gli Ambassador?",
+        "text": "Gli Ambassador sono persone accuratamente selezionate per aiutarti ad avere la vacanza più bella della tua vita. Gli Ambassador sono persone con una grande passione per i posti che visiterai e le cose che farai. Gli Ambassador sono volenterosi di aiutarti perchè loro per primi credono che la Sicilia sia molto di più di quello che viene mostrato nei blog, guide locali e altri siti "
+      },
+      "6": {
+        "header": "E la privacy?",
+        "text": "Noi non vendiamo alcuna informazione relativa a tutte le interazioni che potresti avere prima, durante e dopo la chat con gli Ambassador. Ci limitiamo a leggere le conversazioni con il solo scopo di migliorare costantemente il servizio offerto. Lo stesso concetto si applica alla richiesta del tuo numero telefonico: ci serve esclusivamente per creare la chat su Whatsapp. Una volta che la conversazione finisce, tutti i dati relativi alla conversazione stessa verranno cancellati, incluso il tuo numero di telefono e tutte le chat. Se preferisci mantenere una privacy piu elevata abbiamo aggiunnto la possibilità di creare il gruppo su Telegram, che è un'alternativa valida se non vuoi rivelare la tua identità ."
+      }
+    }
   }
 }
