@@ -10,7 +10,7 @@
         <img
           slot="preloader"
           src="https://i.gifer.com/4V0b.gif"
-          class="w-full rounded-br-large object-cover max-h-64"
+          class="rounded-br-large object-cover w-104"
         />
         <div slot="error" class="w-full h-full text-center flex justify-center">
           no image :(
