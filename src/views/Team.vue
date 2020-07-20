@@ -6,10 +6,11 @@
       <div
         class="-mt-7 bg-gray-100 w-32 text-sm text-center rounded-full text-gray-700 font-bold"
       >
-        {{ $t('team.yourTeam') }}
+        {{ $t("team.yourTeam") }}
       </div>
       <p class="text-sm text-gray-500 ml-1 my-3">
-        {{ $t('team.helpText', { nMin: $minTeamSize, nMax: $maxTeamSize }) }}
+        {{ $t("team.helpText", { nMin: $minTeamSize, nMax: $maxTeamSize }) }}.
+        <br />{{ $t("team.helpText2") }}.
       </p>
       <div class="flex overflow-hidden mt-2 pl-4">
         <transition-group name="list" tag="p">
@@ -20,13 +21,13 @@
           />
         </transition-group>
 
-        <span class="inline-flex rounded-md hidden sm:inline-flex">
+        <span class="inline-flex rounded-md sm:inline-flex">
           <button
-            class="inline-flex btn btn-dark absolute right-0 h-10 flex justify-around uppercase rounded-md mr-3 sm:-mr-5 mt-3"
+            class="inline-flex btn btn-dark absolute right-0 h-10 justify-around uppercase rounded-md mr-3 sm:-mr-5 mt-3"
             :class="{ 'btn-disabled': !minSizeReached }"
             @click="teamIsSet()"
           >
-            {{ $t('team.btn.text') }}
+            {{ $t("team.btn.text") }}
             <svg
               class="ml-2 -mr-1 h-5 w-5"
               fill="currentColor"
@@ -57,44 +58,13 @@
         class="sm:mx-2 my-2 min-w-min-content"
         :amb-id="amb.id"
       ></ambassador-card>
-      <!-- <div class="relative max-w-sm rounded overflow-hidden shadow-lg">
-        <img
-          class="w-full rounded-br-large"
-          src="https://tailwindcss.com/img/card-top.jpg"
-        />
-        <button
-          class="btn btn-dark absolute right-0 -mt-16 mr-2 rounded-full w-11 h-11"
-        >
-          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2 6H0v2h2v2h2V8h2V6H4V4H2v2zm7 0a3 3 0 0 1 6 0v2a3 3 0 0 1-6 0V6zm11 9.14A15.93 15.93 0 0 0 12 13c-2.91 0-5.65.78-8 2.14V18h16v-2.86z"
-            />
-          </svg>
-        </button>
-        <button
-          class="btn btn-light absolute right-0 -mt-3 mr-2 flex flex-col items-center rounded-full w-11 h-11"
-        >
-          <svg class="h-4 w-4 -mt-1" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"
-            />
-          </svg>
-          <span class="text-xs">540</span>
-        </button>
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Andrea Taglia</div>
-          <p class="text-gray-700 text-base">
-            🌊 Sea lover 🏖️ Beach hunter 🏄 Restless surfer
-          </p>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import AmbassadorCard from '@/components/AmbassadorCard.vue';
-import TeamAvatar from '@/components/TeamAvatar.vue';
+import AmbassadorCard from "@/components/AmbassadorCard.vue";
+import TeamAvatar from "@/components/TeamAvatar.vue";
 
 export default {
   components: {
@@ -106,11 +76,11 @@ export default {
     teamIsSet() {
       let min = this.$minTeamSize;
       if (this.minSizeReached) {
-        this.$router.push('/teamisset');
+        this.$router.push("/teamisset");
       } else {
-        this.$toast(this.$t('team.btn.disabledMsg.title'), {
-          body: this.$t('team.btn.disabledMsg.body', { n: min }),
-          type: 'err',
+        this.$toast(this.$t("team.btn.disabledMsg.title"), {
+          body: this.$t("team.btn.disabledMsg.body", { n: min }),
+          type: "err",
         });
       }
     },

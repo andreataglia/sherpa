@@ -84,7 +84,7 @@
                     >
                       <source
                         :src="getMediaUrl(media.isVideo, media.id)"
-                        type="video/mp4"
+                        type="video/webm"
                       />
                     </video>
                     <img
@@ -295,7 +295,7 @@ export default {
           this.ambId +
           '-' +
           mediaId +
-          '.mp4'
+          '.webm'
         );
       } else {
         return (

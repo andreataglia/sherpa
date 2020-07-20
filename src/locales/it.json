@@ -28,6 +28,7 @@
   "team": {
     "yourTeam": "La Tua Squadra",
     "helpText": "Crea la tua squadra di minimo {nMin} e massimo {nMax} ambasciatori, poi clicca \"@:team.btn.text\"",
+    "helpText2": "Clicca sugli ambasciatori per vederne il profilo",
     "btn": {
       "text": "Prosegui",
       "disabledMsg": {

@@ -28,6 +28,7 @@
   "team": {
     "yourTeam": "Your Team",
     "helpText": "Create your team of {nMin} to {nMax} ambassadors, then click \"@:team.btn.text\"",
+    "helpText2": "Click on the ambassador to see their profile",
     "btn": {
       "text": "Let's Go",
       "disabledMsg": {

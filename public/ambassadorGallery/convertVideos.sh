@@ -2,5 +2,6 @@
 echo "starting"
 for f in *.mp4; 
 do 
-	ffmpeg -i "$f" -vcodec libx265 -crf 30 "${f%.mp4}"_compressed.mp4 
+	ffmpeg -i "$f" -vcodec libvpx -qmin 0 -qmax 50 -crf 10 -b:v 500K -acodec libvorbis "${f%.mp4}".webm
 done
+echo "done"

@@ -11,17 +11,11 @@
 .btn:hover {
   @apply bg-red-300;
 }
-.btn:active {
-  @apply bg-red-300;
-}
 
 .btn-light {
   @apply bg-yellow-200 text-gray-800;
 }
 .btn-light:hover {
-  @apply bg-yellow-100;
-}
-.btn-light:active {
   @apply bg-yellow-100;
 }
 
@@ -32,9 +26,6 @@
   @apply bg-gray-100 text-gray-400;
 }
 .btn-disabled:hover {
-  @apply bg-gray-100;
-}
-.btn-disabled:active {
   @apply bg-gray-100;
 }
 
