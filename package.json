@@ -16,7 +16,7 @@
     "@sendgrid/mail": "^7.2.1",
     "@tailwindcss/ui": "^0.3.0",
     "autoprefixer": "^9.8.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.4.4",
     "firestore-export-import": "^0.3.2",
     "postcss-cli": "^7.1.1",
